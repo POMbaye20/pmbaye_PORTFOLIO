@@ -7,4 +7,7 @@ début du travail le 7 septembre 2018 chantier num de Pantin 2018/2019
 ### BDD et Admin  (création de la t utilisateurs et arbo de l'admin)
 
 ## Technologies utilisées 
+* HTML 5
+* PHP 7
+* CSS 3
 
