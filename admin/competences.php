@@ -51,6 +51,7 @@ if (isset($_GET['id_competence'])) { // on récupère ce que je supprime dans l'
                     <th>Les compétences</th>
                     <th>Niveau</th>
                     <th>Catégorie</th>
+                    <th>Modifier</th>
                     <th>Suppression</th>
                 </tr>
             </thead><!-- fin <thead> -->
@@ -63,6 +64,7 @@ if (isset($_GET['id_competence'])) { // on récupère ce que je supprime dans l'
                     <td><?php echo $ligne_competence['competence']; ?></td>
                     <td><?php echo $ligne_competence['niveau']; ?></td>
                     <td><?php echo $ligne_competence['categorie']; ?></td>
+                    <td><a href="modif_competence.php?id_competence=<?php echo $ligne_competence['id_competence']; ?> " >modif</a></td>
                     <td><a href="competences.php?id_competence=<?php echo $ligne_competence['id_competence']; ?> " >suppr</a></td>
                 </tr>
                 <?php 

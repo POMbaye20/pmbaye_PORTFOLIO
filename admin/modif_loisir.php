@@ -1,5 +1,19 @@
 <?php require 'connexion.php'; 
 
+// gestion mise à jour d'une information
+if (isset($_POST['loisir'])) { 
+
+    $loisir = addslashes($_POST['loisir']);
+    $id_loisir = $_POST['id_loisir'];
+
+    $pdoCV -> exec(" UPDATE t_loisirs SET loisir = '$loisir' WHERE id_loisir = '$id_loisir' ");
+    header('location: ../admin/loisirs.php');
+    exit();
+} // fin du (isset($_POST['loisir']))
+
+
+
+
 // je récupère l'id de ce que je mets à jour
 $id_loisir = $_GET['id_loisir']; // par son id et avec GET 
 $sql = $pdoCV -> query (" SELECT * FROM  t_loisirs WHERE id_loisir='$id_loisir' ");
