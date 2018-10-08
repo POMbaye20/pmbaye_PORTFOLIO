@@ -1,5 +1,4 @@
 <?php require 'connexion.php'; ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,19 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php
-        $sql = $pdoCV->query("SELECT * FROM t_users");
-        $line_user = $sql->fetch();
+        // requête pour une seule info
+        $sql = $pdoCV -> query("SELECT * FROM t_utilisateurs");   
+        $ligne_utilisateur = $sql->fetch();
+
+      
+
     ?>
-    <title>Admin : <?php echo $line_user['pseudo']; ?></title>
+    <title>Admin : <?php echo $ligne_utilisateur['pseudo']; ?></title>
     <link rel="stylesheet" href="test_style.css">
 </head>
 <body>
     <h1>Test</h1>
-    <?php
-       
+    <p><?php echo $ligne_utilisateur['prenom']. ' ' . $ligne_utilisateur['nom']; ?></p>
+    <hr>
+    <?php 
+        //requête popur compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
+        $sql = $pdoCV -> prepare("SELECT * FROM t_loisirs");
+        $sql -> execute();
+        $nbr_loisirs = $sql -> rowCount();
     ?>
 
-    <?php echo $line_user['firstname']; ?>
+      
+    <h5>Il y a <?php echo $nbr_loisirs; ?> loisirs</h5>
+        <ul>
+            <?php  
+                while ($ligne_loisir=$sql->fetch()) 
+                {
+            ?>
+            <li><?php echo $ligne_loisir['loisir']; ?></li>
+            <?php 
+                } // ferme le while
+            ?>
+        </ul>
+
+      
 </body>
 </html>
 
