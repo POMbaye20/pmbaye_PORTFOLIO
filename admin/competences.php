@@ -25,6 +25,37 @@ if (isset($_GET['id_competence'])) { // on récupère ce que je supprime dans l'
     header("location: ../admin/competences.php");
     
 }   // fin de isset($_GET['id_competence']) pour la suppresion
+
+// ******************* TRI PAR ORDRE CROISSANT ET DECROISSANT *******************
+
+$order = '';
+if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET['order']))
+
+	if($_GET['column'] == 'competence'){
+		$order = ' ORDER BY competence';
+	}
+
+	elseif($_GET['column'] = 'niveau'){
+		$order = ' ORDER BY niveau';
+	}
+
+	
+	elseif($_GET['column'] == 'categorie'){
+		$order = ' ORDER BY categorie';
+    }
+    
+    if($_GET['order'] == 'asc'){
+		$order.= ' ASC';
+	}
+
+	elseif($_GET['order'] == 'desc'){
+		$order.= ' DESC';
+	}
+
+
+}	//  fin de if(isset($_GET['order']) && isset($_GET['column']))
+
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -38,19 +69,22 @@ if (isset($_GET['id_competence'])) { // on récupère ce que je supprime dans l'
 <h1>Les compétences et insertion d'une nouvelle compétence</h1>
     <?php 
         //requête popur compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
-        $sql = $pdoCV -> prepare("SELECT * FROM t_competences");
-        $sql -> execute();
+        $sql = $pdoCV -> prepare("SELECT * FROM t_competences" . $order);
+        $sql -> execute();  // j'exécute la requête
         $nbr_competences = $sql -> rowCount();
     ?>
+
+    
+
 
     <div class="voir">
         <table border="1">
         <caption>La liste des compétences : <?php echo $nbr_competences; ?></caption>
             <thead>
                 <tr>
-                    <th>Les compétences</th>
-                    <th>Niveau</th>
-                    <th>Catégorie</th>
+                    <th>Les compétences<a href="competences.php?column=competence&order=asc">Croissant</a> | <a href="competences.php?column=competence&order=desc">Décroissant</a></th>
+                    <th>Niveau<a href="competences.php?column=competence&order=asc">Croissant</a> | <a href="competences.php?column=competence&order=desc">Décroissant</a></th>
+                    <th>Catégorie<a href="competences.php?column=competence&order=asc">Croissant</a> | <a href="competences.php?column=competence&order=desc">Décroissant</a></th>
                     <th>Modifier</th>
                     <th>Suppression</th>
                 </tr>
@@ -96,7 +130,7 @@ if (isset($_GET['id_competence'])) { // on récupère ce que je supprime dans l'
         <div class="">
             <button type="submit">Insérer une compétence</button>
         </div>
-    </form>
+    </form><!-- Fin dui formulaire -->
 
 </body>
 </html>

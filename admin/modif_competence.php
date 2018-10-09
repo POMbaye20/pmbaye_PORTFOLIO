@@ -48,16 +48,37 @@ $ligne_competence = $sql -> fetch(); // va récupérer les données
        <div class="">
             <label for="categorie">Catégorie</label>                
             <select name="categorie">
-                <option value=Développement>Développement</option>
-                <option value="Infographie">Infographie</option>
-                <option value="Gestion de projet">Gestion de projet</option>
+                                            <!-- Développement -->
+                <option value="Développement"
+                    <?php // pour ajouter select="selected" à la balise option si c'est la catégorie de la compétence
+                        if (!(strcmp("Développement", $ligne_competence['categorie']))) { // strcmp compare les chaînes de caractères
+                            echo "selected=\"selected\"";
+                        }
+                    ?>>Développement</option>
+                
+
+                                            <!-- Infographie -->
+                <option value="Infographie"  <?php 
+                        if (!(strcmp("Infographie", $ligne_competence['categorie']))) { 
+                            echo "selected=\"selected\"";
+                        }
+                    ?>>Infographie</option>
+
+                                            <!-- Gestion de projet -->
+                <option value="Gestion de projet" 
+                    <?php 
+                        if (!(strcmp("Gestion de projet", $ligne_competence['categorie']))) { 
+                            echo "selected=\"selected\"";
+                        }
+                    ?>>Gestion de projet</option>                 
             </select>       
-       </div>
+       </div><!-- Fin du menu déroulant pour les catégories -->
 
         <div class="">
         <input type="hidden" name="id_competence" value="<?php echo $ligne_competence['id_competence']; ?>">
             <button type="submit">MAJ</button>
         </div>
     </form><!-- fin form -->
+
 </body>
 </html>

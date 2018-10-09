@@ -40,6 +40,6 @@ $ligne_loisir = $sql -> fetch(); // va récupérer les données
         <input type="hidden" name="id_loisir" value="<?php echo $ligne_loisir['id_loisir']; ?>">
             <button type="submit">MAJ</button>
         </div>
-    </form><!-- fin form -->
+    </form><!-- fin du formulaire -->
 </body>
 </html>
