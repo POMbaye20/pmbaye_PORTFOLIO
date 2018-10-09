@@ -35,7 +35,7 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
 		$order = ' ORDER BY competence';
 	}
 
-	elseif($_GET['column'] = 'niveau'){
+	elseif($_GET['column'] == 'niveau'){
 		$order = ' ORDER BY niveau';
 	}
 
@@ -82,9 +82,9 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
         <caption>La liste des compétences : <?php echo $nbr_competences; ?></caption>
             <thead>
                 <tr>
-                    <th>Les compétences<a href="competences.php?column=competence&order=asc">Croissant</a> | <a href="competences.php?column=competence&order=desc">Décroissant</a></th>
-                    <th>Niveau<a href="competences.php?column=competence&order=asc">Croissant</a> | <a href="competences.php?column=competence&order=desc">Décroissant</a></th>
-                    <th>Catégorie<a href="competences.php?column=competence&order=asc">Croissant</a> | <a href="competences.php?column=competence&order=desc">Décroissant</a></th>
+                    <th>Les compétences<a href="competences.php?column=competence&order=asc"> Croissant</a> | <a href="competences.php?column=competence&order=desc">Décroissant</a></th>
+                    <th>Niveau<a href="competences.php?column=niveau&order=asc"> Croissant</a> | <a href="competences.php?column=niveau&order=desc">Décroissant</a></th>
+                    <th>Catégorie<a href="competences.php?column=categorie&order=asc"> Croissant</a> | <a href="competences.php?column=categorie&order=desc">Décroissant</a></th>
                     <th>Modifier</th>
                     <th>Suppression</th>
                 </tr>
