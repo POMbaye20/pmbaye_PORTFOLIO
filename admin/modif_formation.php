@@ -1,7 +1,7 @@
 <?php require 'connexion.php'; 
 
 // gestion mise à jour d'une information
-if (isset($_POST['formation'])) { 
+if (isset($_POST['titre_form'])) { 
 
     $titre_form = addslashes($_POST['titre_form']);
     $stitre_form = addslashes($_POST['stitre_form']);
@@ -20,7 +20,7 @@ if (isset($_POST['formation'])) {
 
 // je récupère l'id de ce que je mets à jour
 $id_formation = $_GET['id_formation']; // par son id et avec GET 
-$sql = $pdoCV -> query (" SELECT * FROM  t_formations WHERE id_formation='$id_formation' ");
+$sql = $pdoCV -> query (" SELECT * FROM t_formations WHERE id_formation='$id_formation' ");
 $ligne_formation = $sql -> fetch(); // va récupérer les données 
 
 ?>
@@ -45,28 +45,29 @@ $ligne_formation = $sql -> fetch(); // va récupérer les données
     <!-- Mise à jour d'une nouvelle compétence formulaire  -->
     <div class="form-group">
         <form action="modif_formation.php" method="post">
-           <div class="">
+           <div class="form-group">
                 <label for="titre_form">Titre de la formation</label>                
                 <input type="text" name="titre_form" value="<?php echo $ligne_formation['titre_form']; ?>" required>    
            </div>
     
-           <div class="">
+           <div class="form-group">
                 <label for="stitre_form">Sous titre de la formation</label>                
                 <input type="text" name="stitre_form" value="<?php echo $ligne_formation['stitre_form']; ?>" required>
            </div>
     
-           <div class="">
+           <div class="form-group">
                 <label for="dates_form">Date de la formation</label>                
                 <input type="text" name="dates_form" value="<?php echo $ligne_formation['dates_form']; ?>" required>
            </div>
 
-           <div class="">
+           <div class="form-group">
                 <label for="description_form">Description de la formation</label>                
                 <input type="text" name="description_form" value="<?php echo $ligne_formation['description_form']; ?>" required>
            </div>
     
-            <div class="">
+            <div class="form-group">
                 <button class="btn btn-success" type="submit">MAJ</button>
+                <input type="hidden" name="id_formation" value="<?php echo $ligne_formation['id_formation']; ?>">
             </div>
         </form><!-- fin form -->
     </div>
