@@ -30,9 +30,19 @@ if (isset($_GET['id_loisir'])) { // on récupère ce que je supprime dans l'url 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Lien Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Lien Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!-- Mon style CSS -->
+    <link rel="stylesheet" href="css/style.css">
     <title>Admin : Les loisirs</title>
 </head>
 <body>
+
+     <!-- Ici, j'inclus ma page naviagtion.php -->
+     <?php require 'inc/navigation.php'; ?>
+
 <h1>Les loisirs et insertion d'un nouveau loisir</h1>
     <?php 
         //requête popur compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
@@ -58,8 +68,8 @@ if (isset($_GET['id_loisir'])) { // on récupère ce que je supprime dans l'url 
             ?>
                 <tr>
                     <td><?php echo $ligne_loisir['loisir']; ?></td>
-                    <td><a href="modif_loisir.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?> " >modif.</a></td>
-                    <td><a href="loisirs.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?> " >suppr.</a></td>
+                    <td><a href="modif_loisir.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?> " ><i class="fas fa-edit"></i></a></td>
+                    <td><a href="loisirs.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?> " ><i class="fas fa-trash"></i></a></td>
                 </tr>
                 <?php 
                     }  // fin de la boucle while
@@ -76,8 +86,12 @@ if (isset($_GET['id_loisir'])) { // on récupère ce que je supprime dans l'url 
             <input type="text" name="loisir" placeholder="Nouveau loisir" required>    
        </div>
         <div class="">
-            <button type="submit">Insérer un loisir</button>
+            <button class="btn btn-primary" type="submit">Insérer un loisir</button>
         </div>
     </form>
+     <!-- Lien Bootstrap script JS  -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>

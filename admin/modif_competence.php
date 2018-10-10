@@ -30,8 +30,16 @@ $ligne_competence = $sql -> fetch(); // va récupérer les données
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin : mise à jour d'une compétence</title>
+    <!-- Lien Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Mon style CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+     <!-- Ici, j'inclus ma page naviagtion.php -->
+     <?php require 'inc/navigation.php'; ?>
+
     <h1>Mise à jour d'une compétence</h1>
     <!-- Mise à jour d'une nouvelle compétence formulaire  -->
     <form action="modif_competence.php" method="post">
