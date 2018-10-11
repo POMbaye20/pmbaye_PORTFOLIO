@@ -1,7 +1,7 @@
 <footer class="mt-4 ">
   <div class="bg-dark text-white">
     <div class="card-header">
-      pmbaye.fr 2018 Coming soon !
+      pmbaye.fr 2018 Coming soon ! <i class="fas fa-hourglass-half"></i>
     </div>
     <div class="card-body">
       <h5 class="card-title">Réseaux sociaux et moi</h5>

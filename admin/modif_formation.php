@@ -62,7 +62,7 @@ $ligne_formation = $sql -> fetch(); // va récupérer les données
 
            <div class="form-group">
                 <label for="description_form">Description de la formation</label>                
-                <input type="text" name="description_form" value="<?php echo $ligne_formation['description_form']; ?>" required>
+                <textarea class="form-control" name="description_form" value="<?php echo $ligne_formation['description_form']; ?>"></textarea>
            </div>
     
             <div class="form-group">

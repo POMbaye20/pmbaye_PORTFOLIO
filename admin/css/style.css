@@ -1,5 +1,5 @@
-/* formations.php */
-/* Jumbotron formations.php */
+/************************************************** formations.php **************************************************/
+/****** Jumbotron formations.php ******/
 .jumbotron {
     background: lightblue;
     text-align: center;
@@ -46,7 +46,7 @@
 
 
 
-/* Footer le pied de page */
+/************************************************** Footer le pied de page **************************************************/
 footer {
     text-align: center;
     font-family: 'Times New Roman', Times, serif;

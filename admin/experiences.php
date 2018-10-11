@@ -112,12 +112,12 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
         
                 <div class="form-group">
                     <label for="stitre_exp">Sous Titre de l'expérience</label>                
-                    <input type="text" name="stitre_exp" placeholder="Sous titre de la expérience" class="form-control" required>    
+                    <input type="text" name="stitre_exp" placeholder="Sous titre de l'expérience" class="form-control" required>    
                </div>
         
                 <div class="form-group">
                     <label for="dates_exp">Date de l'expérience</label>                
-                    <input type="text" name="dates_exp" placeholder="Date de la expérience" class="form-control" required>    
+                    <input type="text" name="dates_exp" placeholder="Date de l'expérience" class="form-control" required>    
                </div>
         
                 <div class="form-group">

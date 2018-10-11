@@ -62,7 +62,7 @@ $ligne_experience = $sql -> fetch(); // va récupérer les données
 
            <div class="form-group">
                 <label for="description_exp">Description de l'expérience</label>                
-                <input type="text" name="description_exp" value="<?php echo $ligne_experience['description_exp']; ?>" required>
+                <textarea class="form-control" name="description_exp" value="<?php echo $ligne_experience['description_exp']; ?>"></textarea>
            </div>
     
             <div class="form-group">
