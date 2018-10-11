@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
     <!-- Lien CSS Bootstrap en CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+     <!-- Lien Font Awesome -->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!-- Mon style CSS -->
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
@@ -15,6 +18,14 @@
 
     <!-- Ici, j'inclus ma page naviagtion.php -->
     <?php require 'inc/navigation.php'; ?>
+
+
+     <div class="jumbotron"><!-- début .jumbotron -->
+        <h1 class="display-4">Bienvenue dans mon site Portfolio (CV)</h1>
+        <p class="lead">Étant développeur intégrateur web, je vais vous présenter dans ce site mon parcours avant d'en arriver là, avec mes formations et mes expériences professionnelles</p>
+        <hr class="my-4">
+        <p>Bonne visite !!! <i class="fas fa-smile"></i></p>
+    </div><!-- fin ..jumbotron -->
 
   
 

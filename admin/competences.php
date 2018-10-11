@@ -78,6 +78,16 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
      <!-- Ici, j'inclus ma page naviagtion.php -->
      <?php require 'inc/navigation.php'; ?>
 
+
+    <!-- Mon jumbotron -->
+      <div class="jumbotron"><!-- début .jumbotron -->
+        <h1 class="display-4">Bienvenue dans ma page de mes compétences</h1>
+        <p class="lead">Dans cette page, je vais présenter les compétences que j'ai pu acquérir</p>
+        <hr class="my-4">
+        <p>Ci - dessous, voici les différentes compétences que j'ai pu acquérir dans ce domaine</p>
+    </div><!-- fin ..jumbotron -->
+
+
 <h1 class="text-primary">Les compétences et insertion d'une nouvelle compétence</h1>
     <?php 
         //requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
@@ -123,7 +133,10 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
             </table><!-- fin <table> -->
         </div>
         <hr>
+
         <!-- Formulaire d'insertion d'une nouvelle compétence  -->
+        <h1>Insérer une nouvelle compétence</h1>
+
         <form action="competences.php" method="post">
            <div class="#">
                 <label for="competence">Compétences</label>                
@@ -153,5 +166,4 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-</body>
-</html>
+<?php require 'inc/footer.php'; ?>

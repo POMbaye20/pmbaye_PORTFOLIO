@@ -38,12 +38,12 @@ $ligne_formation = $sql -> fetch(); // va récupérer les données
 </head>
 <body>
 
-     <!-- Ici, j'inclus ma page naviagtion.php -->
+     <!-- Ici, j'inclus ma page navigation.php -->
      <?php require 'inc/navigation.php'; ?>
 
     <h1>Mise à jour d'une formation</h1>
     <!-- Mise à jour d'une nouvelle compétence formulaire  -->
-    <div class="form-group">
+    <div class="form-group"><!-- Début .form-group -->
         <form action="modif_formation.php" method="post">
            <div class="form-group">
                 <label for="titre_form">Titre de la formation</label>                
@@ -66,11 +66,11 @@ $ligne_formation = $sql -> fetch(); // va récupérer les données
            </div>
     
             <div class="form-group">
-                <button class="btn btn-success" type="submit">MAJ</button>
+                <button class="btn btn-danger" type="submit">MAJ</button>
                 <input type="hidden" name="id_formation" value="<?php echo $ligne_formation['id_formation']; ?>">
             </div>
         </form><!-- fin form -->
-    </div>
+    </div><!-- Fin .form-group -->
 
 </body>
 </html>

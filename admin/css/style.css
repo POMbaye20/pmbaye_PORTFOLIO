@@ -1,2 +1,55 @@
+/* formations.php */
+/* Jumbotron formations.php */
+.jumbotron {
+    background: lightblue;
+    text-align: center;
+}
 
+.table {
+    text-align: center;
+}
+
+.form_formation {
+    text-align: center; 
+    width: 50%;
+    border-radius: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer le pied de page */
+footer {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+
+}
 

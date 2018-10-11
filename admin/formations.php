@@ -2,7 +2,7 @@
  
 // insertion d'un formulaire
 if (isset($_POST['titre_form'])) { // si on a reçu une nouvelle formation
-    if ($_POST['titre_form'] !='' && $_POST['stitre_form'] !='' && $_POST['stitre_form'] !='' && $_POST['dates_form'] !='' && $_POST['description_form'] !='' ) {
+    if ($_POST['titre_form'] !=''  && $_POST['stitre_form'] !='' && $_POST['dates_form'] !='' && $_POST['description_form'] !='' ) {
 
         $titre_form = addslashes($_POST['titre_form']);
         $stitre_form = addslashes($_POST['stitre_form']);
@@ -43,8 +43,18 @@ if (isset($_GET['id_formation'])) { // on récupère ce que je supprime dans l'u
 </head>
 <body>
 
-     <!-- Ici, j'inclus ma page naviagtion.php -->
+     <!-- Ici, j'inclus ma page navigation.php -->
      <?php require 'inc/navigation.php'; ?>
+
+
+     <div class="jumbotron"><!-- début .jumbotron -->
+        <h1 class="display-4">Bienvenue dans ma page de formation <i class="fas fa-graduation-cap"></i></h1>
+        <p class="lead">Dans cette page, je vais présenter les différentes formations effectuées avec leurs périodes</p>
+        <hr class="my-4">
+        <p>Voici mon tableau des différentes formations ci - dessous</p>
+    </div><!-- fin ..jumbotron -->
+    
+
 
 <h1>Les formations et insertion d'une nouvelle formation</h1>
     <?php 
@@ -55,7 +65,7 @@ if (isset($_GET['id_formation'])) { // on récupère ce que je supprime dans l'u
     ?>
 
    <div class="voir">
-        <table border="1">
+        <table class="table table-hover" border="1">
         <caption>Mes formations : <?php echo $nbr_formations; ?> </caption>
             <thead>
                 <tr>
@@ -89,30 +99,37 @@ if (isset($_GET['id_formation'])) { // on récupère ce que je supprime dans l'u
    </div>
     <hr>
     <!-- Insertion d'une nouvelle formations dans le formulaire  -->
-    <form action="formations.php" method="post">
-       <div class="form-group">
-            <label for="titre_form">Titre de la formation</label>                
-            <input type="text" name="titre_form" placeholder="Nouvelle formation" required>    
-       </div>
+   
+       <div class="container-fluid">
 
-        <div class="form-group">
-            <label for="titre_form">Sous Titre de la formation</label>                
-            <input type="text" name="stitre_form" placeholder="Sous titre de la formation" required>    
-       </div>
+        <h1 >Insérer une nouvelle formation</h1>
 
-        <div class="form-group">
-            <label for="titre_form">Date de la formation</label>                
-            <input type="text" name="dates_form" placeholder="Date de la formation" required>    
+            <form class="form_formation" action="formations.php" method="post">
+               <div class="form-group">
+                    <label for="titre_form">Titre de la formation</label>                
+                    <input type="text" name="titre_form" placeholder="Nouvelle formation" class="form-control" required>    
+               </div>
+        
+                <div class="form-group">
+                    <label for="stitre_form">Sous Titre de la formation</label>                
+                    <input type="text" name="stitre_form" placeholder="Sous titre de la formation" class="form-control" required>    
+               </div>
+        
+                <div class="form-group">
+                    <label for="dates_form">Date de la formation</label>                
+                    <input type="text" name="dates_form" placeholder="Date de la formation" class="form-control" required>    
+               </div>
+        
+                <div class="form-group">
+                    <label for="description_form">Description de la formation</label>                
+                    <textarea name="description_form" class="form-control"></textarea>
+               </div>
+                <div class="">
+                    <button class="btn btn-success" type="submit">Insérer une formation</button>
+                </div>
+            </form>
        </div>
-
-        <div class="form-group">
-            <label for="titre_form">Description de la formation</label>                
-            <input type="text" name="description_form" placeholder="Description de la formation" required>    
-       </div>
-        <div class="">
-            <button class="btn btn-success" type="submit">Insérer une formation</button>
-        </div>
-    </form>
+   
      <!-- Lien Bootstrap script JS  -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
