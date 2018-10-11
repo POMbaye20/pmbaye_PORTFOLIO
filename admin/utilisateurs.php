@@ -40,7 +40,7 @@ if (isset($_GET['id_utilisateur'])) { // on récupère ce que je supprime dans l
 </head>
 <body>
 
-     <!-- Ici, j'inclus ma page naviagtion.php -->
+     <!-- Ici, j'inclus ma page navigation.php -->
      <?php require 'inc/navigation.php'; ?>
 
 <h1>Les loisirs et insertion d'un nouveau loisir</h1>
