@@ -1,5 +1,11 @@
+body {
+    font-family: 'Roboto Slab', serif;
+    
+}
+
+
 /************************************************** formations.php **************************************************/
-/****** Jumbotron formations.php ******/
+/****** Jumbotron ******/
 .jumbotron {
     background: lightblue;
     text-align: center;
@@ -14,6 +20,27 @@
     width: 50%;
     border-radius: 50px;
 }
+
+/************************************************** loisirs.php **************************************************/
+
+.loisir { color: red; text-align: center; }
+
+.table_loisir {
+    text-align: center;
+    width: 100%;
+    font-family: 'Lora', serif;
+}
+
+/************************************************** formations.php **************************************************/
+
+.container-fluid {
+    text-align: center; 
+}
+
+
+
+
+
 
 
 

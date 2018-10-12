@@ -1,7 +1,7 @@
-<?php require 'connexion.php';
+<?php require 'connexion.php';  // ici, je require 'connexion.php' qui est connecté à la BDD. 
 
-// insertion d'un élément dans la base
-if (isset($_POST['competence'])) { // si on a reçu une nouvelle competence
+// insertion d'un élément dans la base de données
+if (isset($_POST['competence'])) { // si on a reçu une nouvelle compétence
     if ($_POST['competence'] !='' && $_POST['niveau'] !='' && $_POST['categorie'] !='' ) {
 
         $competence = addslashes($_POST['competence']);
@@ -12,10 +12,10 @@ if (isset($_POST['competence'])) { // si on a reçu une nouvelle competence
         header("location: ../admin/competences.php");
             exit(); 
 
-    } // ferme le if n'est pas vide
+    } // ferme le if(isset($_POST['competence'])) (n'est pas vide)
 } // fin de isset($_POST['competence'])
 
-// suppresion d'un élément de la BDD
+// suppresion d'un élément de la base de données
 if (isset($_GET['id_competence'])) { // on récupère ce que je supprime dans l'url par son id
     $efface = $_GET['id_competence']; // je passe l'id dans une variable $efface
 
@@ -65,7 +65,7 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Lien Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <!-- Lien Font Awesome -->
+    <!-- Lien Font Awesome pour insérer des icônes  -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!-- Mon style CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -93,7 +93,7 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
         //requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
         $sql = $pdoCV -> prepare("SELECT * FROM t_competences" . $order);
         $sql -> execute();  // j'exécute la requête
-        $nbr_competences = $sql -> rowCount();
+        $nbr_competences = $sql -> rowCount(); // ici, rowCount() indique le nombre d'éléments
     ?>
 
     
@@ -123,7 +123,7 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
                         <td><?php echo $ligne_competence['niveau']; ?></td>
                         <td><?php echo $ligne_competence['categorie']; ?></td>
                         <td><a href="modif_competence.php?id_competence=<?php echo $ligne_competence['id_competence']; ?> " ><i class="fas fa-edit"></i></a></td>
-                        <td><a href="competences.php?id_competence=<?php echo $ligne_competence['id_competence']; ?> " ><i class="fas fa-trash"></i></a></td>
+                        <td><a href="competences.php?id_competence=<?php echo $ligne_competence['id_competence']; ?> " ><i class="fas fa-trash text-danger"></i></a></td>
                     </tr>
                     <?php 
                         }  // fin de la boucle while

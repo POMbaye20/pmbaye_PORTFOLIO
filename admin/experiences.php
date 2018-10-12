@@ -88,7 +88,7 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
                     <td><?php echo $ligne_experience['dates_exp']; ?></td>
                     <td><?php echo $ligne_experience['description_exp']; ?></td>
                     <td><a href="modif_experience.php?id_experience=<?php echo $ligne_experience['id_experience']; ?> " ><i class="fas fa-edit"></i></a></td>
-                    <td><a href="experiences.php?id_experience=<?php echo $ligne_formation['id_experience']; ?> " ><i class="fas fa-trash"></i></a></td>
+                    <td><a href="experiences.php?id_experience=<?php echo $ligne_experience['id_experience']; ?> " ><i class="fas fa-trash"></i></a></td>
                 </tr>
                 <?php 
                     }  // fin de la boucle while

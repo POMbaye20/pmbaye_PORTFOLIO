@@ -88,7 +88,7 @@ if (isset($_GET['id_formation'])) { // on récupère ce que je supprime dans l'u
                     <td><?php echo $ligne_formation['dates_form']; ?></td>
                     <td><?php echo $ligne_formation['description_form']; ?></td>
                     <td><a href="modif_formation.php?id_formation=<?php echo $ligne_formation['id_formation']; ?> " ><i class="fas fa-edit"></i></a></td>
-                    <td><a href="formations.php?id_formation=<?php echo $ligne_formation['id_formation']; ?> " ><i class="fas fa-trash"></i></a></td>
+                    <td><a href="formations.php?id_formation=<?php echo $ligne_formation['id_formation']; ?> " ><i class="fas fa-trash text-danger"></i></a></td>
                 </tr>
                 <?php 
                     }  // fin de la boucle while
