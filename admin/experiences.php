@@ -48,15 +48,15 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
 
 
      <div class="jumbotron"><!-- début .jumbotron -->
-        <h1 class="display-4">Voici ma page avec mes expériences professionnelles</h1>
-        <p class="lead">Je vais ici parler de mes expériences professionnelles en entreprise</p>
+        <h1 class="display-4">Voici la page avec mes expériences professionnelles</h1>
+        <p class="lead">Je vais présenter ici de mes expériences professionnelles en entreprise </p>
         <hr class="my-4">
         <p>Voici mon tableau des différentes expériences ci - dessous</p>
     </div><!-- fin ..jumbotron -->
     
 
 
-<h1>Les formations et insertion d'une nouvelle expérience <i class="fas fa-check"></i></h1>
+<h1>Les formations et insertion d'une nouvelle expérience <i class="fas fa-check text-success"></i></h1>
     <?php 
         //requête popur compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
         $sql = $pdoCV -> prepare("SELECT * FROM t_experiences");
@@ -64,7 +64,7 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
         $nbr_experiences = $sql -> rowCount();
     ?>
 
-   <div class="voir">
+   <div class="table_exp">
         <table class="table table-hover" border="1">
         <caption>Mes expériences professionnelles : <?php echo $nbr_experiences; ?> </caption>
             <thead>
@@ -88,7 +88,7 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
                     <td><?php echo $ligne_experience['dates_exp']; ?></td>
                     <td><?php echo $ligne_experience['description_exp']; ?></td>
                     <td><a href="modif_experience.php?id_experience=<?php echo $ligne_experience['id_experience']; ?> " ><i class="fas fa-edit"></i></a></td>
-                    <td><a href="experiences.php?id_experience=<?php echo $ligne_experience['id_experience']; ?> " ><i class="fas fa-trash"></i></a></td>
+                    <td><a href="experiences.php?id_experience=<?php echo $ligne_experience['id_experience']; ?> " ><i class="fas fa-trash text-danger"></i></a></td>
                 </tr>
                 <?php 
                     }  // fin de la boucle while
@@ -134,5 +134,5 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-</body>
-</html>
+
+<?php require 'inc/footer.php'; ?>

@@ -140,16 +140,16 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
         <form action="competences.php" method="post">
            <div class="#">
                 <label for="competence">Compétences</label>                
-                <input type="text" name="competence" placeholder="Nouvelle compétence" required>    
+                <input type="text" name="competence" placeholder="Nouvelle compétence" class="form-control" required>    
            </div>
            <div class="#">
                 <label for="niveau">Niveau</label>                
-                <input type="text" name="niveau" placeholder="niveau en chiffre" required>    
+                <input type="text" name="niveau" placeholder="niveau en chiffre" class="form-control" required>    
            </div>
            <div class="#">
                 <label for="categorie">Catégorie</label>                
                 <select name="categorie">
-                    <option value=Développement>Développement</option>
+                    <option value=Développement >Développement</option>
                     <option value="Infographie">Infographie</option>
                     <option value="Gestion de projet">Gestion de projet</option>
                 </select>    

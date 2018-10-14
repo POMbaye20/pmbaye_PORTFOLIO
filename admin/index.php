@@ -30,6 +30,12 @@
         <p>Bonne visite !!! <i class="fas fa-smile"></i></p>
     </div><!-- fin ..jumbotron -->
 
+
+    <a href="formations.php" class="btn btn-warning btn-lg " role="button" aria-pressed="true">Liens vers mes formations</a>
+    <a href="experiences.php" class="btn btn-secondary btn-lg " role="button" aria-pressed="true">Allez vers mes expériences professionneles</a>
+    <a href="#" class="btn btn-danger btn-lg " role="button" aria-pressed="true">Voir mon profil et coordonnées</a>
+
+
   
 
 
@@ -41,5 +47,4 @@
 
 
 
-</body>
-</html>
+<?php require 'inc/footer.php'; ?>
