@@ -1,5 +1,7 @@
 <?php require 'connexion.php'; 
 
+session_start(); // à mettre dans toutes les pages de l'admin
+
 // traitement pour la connexion à l'admin 
 if (isset($_POST['connexion'])) {
     
@@ -24,6 +26,8 @@ if (isset($_POST['connexion'])) {
         $_SESSION['mdp'] = $ligne_utilisateur['mdp'];
 
         // echo $ligne_utilisateur['nom'];
+
+        header('location:../admin/index.php');
     }
 
 } // fin de if (isset($_POST['connexion']))

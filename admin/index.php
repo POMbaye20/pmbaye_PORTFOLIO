@@ -1,4 +1,17 @@
-<?php require 'connexion.php'; ?>
+<?php require 'connexion.php'; 
+
+session_start(); // à mettre dans toutes les pages de l'admin
+
+if(isset($_SESSION['connexion_admin'])) { // si on est connecté  on récupère les variables de la session    
+    $email = $_SESSION['email'];
+    $mdp = $_SESSION['mdp'];
+    $nom = $_SESSION['nom'];
+    // echo $nom;
+} else {     // si on n'est pas connecté on ne peut pas se connecter
+    header('location:authentification.php');
+}
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -105,9 +118,9 @@
 
                                                         <!-- Liens de raccourci vers les pages importantes  -->
 <div class="raccourci">
-        <a href="formations.php" class="btn btn-warning btn-lg raccourci_link " role="button" aria-pressed="true">Formations</a>
-        <a href="experiences.php" class="btn btn-secondary btn-lg raccourci_link " role="button" aria-pressed="true">Expériences professionnelles</a>
-        <a href="utilisateurs.php" class="btn btn-danger btn-lg raccourci_link " role="button" aria-pressed="true">Profil </a>
+    <a href="formations.php" class="btn btn-warning btn-lg raccourci_link " role="button" aria-pressed="true">Formations</a>
+    <a href="experiences.php" class="btn btn-secondary btn-lg raccourci_link " role="button" aria-pressed="true">Expériences professionnelles</a>
+    <a href="utilisateurs.php" class="btn btn-danger btn-lg raccourci_link " role="button" aria-pressed="true">Profil </a>
 </div>   
 
   
