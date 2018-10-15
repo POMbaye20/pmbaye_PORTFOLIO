@@ -2,7 +2,7 @@
  
 // insertion d'un formulaire
 if (isset($_POST['titre_exp'])) { // si on a reçu une nouvelle expérience
-    if ($_POST['titre_exp'] !=''  && $_POST['stitre_exp'] !='' && $_POST['dates_exp'] !='' && $_POST['description_exp'] !='' ) {
+    if ($_POST['titre_exp'] !=''  && $_POST['stitre_exp']  !='' && $_POST['dates_exp'] !='' && $_POST['description_exp'] !='' ) {
 
         $titre_exp = addslashes($_POST['titre_exp']);
         $stitre_exp = addslashes($_POST['stitre_exp']);
@@ -44,7 +44,7 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
 <body>
 
      <!-- Ici, j'inclus ma page navigation.php -->
-     <?php require 'inc/navigation.php'; ?>
+     <?php require 'inc/navigation.inc.php'; ?>
 
 
      <div class="jumbotron"><!-- début .jumbotron -->
@@ -135,4 +135,4 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-<?php require 'inc/footer.php'; ?>
+<?php require 'inc/footer.inc.php'; ?>

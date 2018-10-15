@@ -37,7 +37,7 @@ $ligne_loisir = $sql -> fetch(); // va récupérer les données
 <body>
 
     <!-- Ici, j'inclus ma page naviagtion.php -->
-    <?php require 'inc/navigation.php'; ?>
+    <?php require 'inc/navigation.inc.php'; ?>
 
     <h1>Mise à jour d'un loisir</h1>
     <!-- Mise à jour d'un nouveau loisir formulaire  -->

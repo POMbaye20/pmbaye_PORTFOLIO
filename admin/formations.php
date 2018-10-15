@@ -44,7 +44,7 @@ if (isset($_GET['id_formation'])) { // on récupère ce que je supprime dans l'u
 <body>
 
      <!-- Ici, j'inclus ma page navigation.php -->
-     <?php require 'inc/navigation.php'; ?>
+     <?php require 'inc/navigation.inc.php'; ?>
 
 
      <div class="jumbotron"><!-- début .jumbotron -->
@@ -64,7 +64,7 @@ if (isset($_GET['id_formation'])) { // on récupère ce que je supprime dans l'u
         $nbr_formations = $sql -> rowCount();
     ?>
 
-   <div class="voir">
+   <div class="bg-dark">
         <table class="table table-dark" border="1">
         <caption>Mes formations : <?php echo $nbr_formations; ?> </caption>
             <thead>
@@ -100,9 +100,9 @@ if (isset($_GET['id_formation'])) { // on récupère ce que je supprime dans l'u
     <hr>
     <!-- Insertion d'une nouvelle formations dans le formulaire  -->
    
-       <div class="container-fluid">
+       <div class="form_formation">
 
-        <h1 >Insérer une nouvelle formation</h1>
+        <h1>Insérer une nouvelle formation</h1>
 
             <form class="form_formation" action="formations.php" method="post">
                <div class="form-group">
@@ -135,4 +135,4 @@ if (isset($_GET['id_formation'])) { // on récupère ce que je supprime dans l'u
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-<?php require 'inc/footer.php'; ?>
+<?php require 'inc/footer.inc.php'; ?>

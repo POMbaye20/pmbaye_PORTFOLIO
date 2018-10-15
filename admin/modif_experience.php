@@ -35,29 +35,33 @@ $ligne_experience = $sql -> fetch(); // va récupérer les données
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- Mon style CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+     <!-- Lien Font Awesome -->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
 </head>
 <body>
 
      <!-- Ici, j'inclus ma page navigation.php -->
-     <?php require 'inc/navigation.php'; ?>
+     <?php require 'inc/navigation.inc.php'; ?>
 
-    <h1>Mise à jour d'une expérience</h1>
+    <h1>Mise à jour d'une expérience <i class="fas fa-pen-alt"></i></h1>
     <!-- Mise à jour d'une nouvelle compétence formulaire  -->
     <div class="form-group"><!-- Début .form-group -->
         <form action="modif_experience.php" method="post">
            <div class="form-group">
                 <label for="titre_exp">Titre de l'expérience </label>                
-                <input type="text" name="titre_exp" value="<?php echo $ligne_experience['titre_exp']; ?>" required>    
+                <input type="text" class="form-control" name="titre_exp" value="<?php echo $ligne_experience['titre_exp']; ?>" required>    
            </div>
     
            <div class="form-group">
                 <label for="stitre_exp">Sous titre de l'expérience</label>                
-                <input type="text" name="stitre_exp" value="<?php echo $ligne_experience['stitre_exp']; ?>" required>
+                <input type="text" class="form-control" name="stitre_exp" value="<?php echo $ligne_experience['stitre_exp']; ?>" required>
            </div>
     
            <div class="form-group">
                 <label for="dates_exp">Date de la expérience</label>                
-                <input type="text" name="dates_exp" value="<?php echo $ligne_experience['dates_exp']; ?>" required>
+                <input type="text" class="form-control" name="dates_exp" value="<?php echo $ligne_experience['dates_exp']; ?>" required>
            </div>
 
            <div class="form-group">

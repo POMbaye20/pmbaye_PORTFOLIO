@@ -39,7 +39,7 @@ $ligne_formation = $sql -> fetch(); // va récupérer les données
 <body>
 
      <!-- Ici, j'inclus ma page navigation.php -->
-     <?php require 'inc/navigation.php'; ?>
+     <?php require 'inc/navigation.inc.php'; ?>
 
     <h1>Mise à jour d'une formation</h1>
     <!-- Mise à jour d'une nouvelle compétence formulaire  -->

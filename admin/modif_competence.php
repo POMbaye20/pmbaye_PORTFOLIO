@@ -38,7 +38,7 @@ $ligne_competence = $sql -> fetch(); // va récupérer les données
 <body>
 
      <!-- Ici, j'inclus ma page naviagtion.php -->
-     <?php require 'inc/navigation.php'; ?>
+     <?php require 'inc/navigation.inc.php'; ?>
 
     <h1>Mise à jour d'une compétence</h1>
     <!-- Mise à jour d'une nouvelle compétence formulaire  -->

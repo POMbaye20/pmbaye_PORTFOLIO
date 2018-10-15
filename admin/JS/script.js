@@ -1,9 +1,13 @@
-$( document ).ready(function() {  // débur du document ready où à l'intérieur je vaus effectuer les fonctions
+$(function() {
+
+
+    var competence = $('.competence');   // ma variable pour mon sélécteur 
+    var niveau = $('.niveau');   // Ma variable pour ma zone de texte
+    var categorie = $('categorie');   // Ma variable pour ma zone de texte
 
 
 
 
 
 
-
-}); // Fin du document ready
+}); // fin du document ready ($function())

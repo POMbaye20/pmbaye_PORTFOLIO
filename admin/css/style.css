@@ -1,15 +1,27 @@
 body {
     font-family: 'Roboto Slab', serif;
+    background: whitesmoke;
+}
+
+/****** Jumbotron ******/
+.jumbotron {
+    background: lightsteelblue;
+    text-align: center;
+}
+
+/************************************************** index.php **************************************************/
+
+.raccourci {
+    text-align: center;    
+}
+
+.raccourci_link {
+    margin-left: 30px;
     
 }
 
-
 /************************************************** formations.php **************************************************/
-/****** Jumbotron ******/
-.jumbotron {
-    background: lightblue;
-    text-align: center;
-}
+
 
 .table {
     text-align: center;
@@ -20,6 +32,7 @@ body {
     width: 50%;
     border-radius: 50px;
 }
+    
 
 /************************************************** loisirs.php **************************************************/
 
@@ -41,44 +54,8 @@ body {
 
 .table_exp {
     background: lightgrey;
-      
+     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /************************************************** Footer le pied de page **************************************************/
 footer {
@@ -86,4 +63,7 @@ footer {
     font-family: 'Times New Roman', Times, serif;
 }
 
+.linkedin {
+    font-size: 30px;
+}
 

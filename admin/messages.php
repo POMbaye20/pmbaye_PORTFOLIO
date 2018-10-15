@@ -44,7 +44,7 @@ if (isset($_GET['id_message'])) { // on récupère ce que je supprime dans l'url
 <body>
 
      <!-- Ici, j'inclus ma page navigation.php -->
-     <?php require 'inc/navigation.php'; ?>
+     <?php require 'inc/navigation.inc.php'; ?>
 
 
      <div class="jumbotron"><!-- début .jumbotron -->
@@ -83,11 +83,9 @@ if (isset($_GET['id_message'])) { // on récupère ce que je supprime dans l'url
             ?>
                 <tr>
                     <td><?php echo $ligne_message['nom']; ?></td>
-                    <td><?php echo $ligne_message['email']; ?></td>
+                    <td><?php echo $ligne_message['email'];  ?></td>
                     <td><?php echo $ligne_message['sujet']; ?></td>
                     <td><?php echo $ligne_message['message']; ?></td>
-                    <td><a href="modif_message.php?id_message=<?php echo $ligne_message['id_message']; ?> " ><i class="fas fa-edit"></i></a></td>
-                    <td><a href="messages.php?id_message=<?php echo $ligne_message['id_message']; ?> " ><i class="fas fa-trash text-danger"></i></a></td>
                 </tr>
                 <?php 
                     }  // fin de la boucle while
@@ -101,7 +99,7 @@ if (isset($_GET['id_message'])) { // on récupère ce que je supprime dans l'url
    
        <div class="container-fluid">
 
-        <h1 >Envoer un nouveau message</h1>
+        <h1 >Envoyer un nouveau message</h1>
 
             <form class="form_message" action="messages.php" method="post">
                <div class="form-group">
@@ -110,8 +108,8 @@ if (isset($_GET['id_message'])) { // on récupère ce que je supprime dans l'url
                </div>
         
                 <div class="form-group">
-                    <label for="email">Email</label>                
-                    <input type="text" name="email" placeholder="Email @" class="form-control" required>    
+                    <label for="email">Email <i class="fas fa-at"></i></label>                
+                    <input type="text" name="email" placeholder="xxx@xxx.fr" class="form-control" required>    
                </div>
         
                 <div class="form-group">
@@ -134,4 +132,4 @@ if (isset($_GET['id_message'])) { // on récupère ce que je supprime dans l'url
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-<?php require 'inc/footer.php'; ?>
+<?php require 'inc/footer.inc.php'; ?>

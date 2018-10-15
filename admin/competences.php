@@ -70,13 +70,14 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
     <!-- Mon style CSS -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Java Script -->
+    <script src="js/script.js"></script>
     <title>Admin : Les compétences</title>
     
 </head>
 <body>
 
      <!-- Ici, j'inclus ma page naviagtion.php -->
-     <?php require 'inc/navigation.php'; ?>
+     <?php require 'inc/navigation.inc.php'; ?>
 
 
     <!-- Mon jumbotron -->
@@ -99,9 +100,9 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
     
 
 
-   <div class="container-fluid"><!-- Début de container-fluid -->
+   
 
-        <div class="voir">
+        <div class="table_skills">
             <table border="1" class="table table-dark">
             <caption>La liste des compétences : <?php echo $nbr_competences; ?></caption>
                 <thead>
@@ -138,17 +139,17 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
         <h1>Insérer une nouvelle compétence</h1>
 
         <form action="competences.php" method="post">
-           <div class="#">
+           <div class="competences">
                 <label for="competence">Compétences</label>                
                 <input type="text" name="competence" placeholder="Nouvelle compétence" class="form-control" required>    
            </div>
-           <div class="#">
+           <div class="niveau">
                 <label for="niveau">Niveau</label>                
                 <input type="text" name="niveau" placeholder="niveau en chiffre" class="form-control" required>    
            </div>
-           <div class="#">
+           <div class="categorie">
                 <label for="categorie">Catégorie</label>                
-                <select name="categorie">
+                <select name="categorie" class="custom-select my-1 mr-sm-2">
                     <option value=Développement >Développement</option>
                     <option value="Infographie">Infographie</option>
                     <option value="Gestion de projet">Gestion de projet</option>
@@ -159,11 +160,11 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
             </div>
         </form><!-- Fin du formulaire -->
 
-   </div><!-- Fin .container-fluid -->
+   
 
    <!-- Lien Bootstrap script JS  -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-<?php require 'inc/footer.php'; ?>
+<?php require 'inc/footer.inc.php'; ?>
