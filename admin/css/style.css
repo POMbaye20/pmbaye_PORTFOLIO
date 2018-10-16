@@ -17,7 +17,12 @@ body {
 
 .raccourci_link {
     margin-left: 30px;
-    
+}
+
+.titre {
+    text-align: center;
+    font-size: 30px;
+    color: tan  ;   
 }
 
 /************************************************** formations.php **************************************************/
@@ -29,14 +34,12 @@ body {
 
 .form_formation {
     text-align: center; 
-    width: 50%;
-    border-radius: 50px;
 }
     
 
 /************************************************** loisirs.php **************************************************/
 
-.loisir { color: red; text-align: center; }
+.loisir { color: purple; text-align: center; }
 
 .table_loisir {
     text-align: center;
@@ -53,8 +56,7 @@ body {
 /************************************************** experiences.php **************************************************/
 
 .table_exp {
-    background: lightgrey;
-     
+    background: lightgrey; 
 }
 
 /************************************************** Footer le pied de page **************************************************/
@@ -64,6 +66,11 @@ footer {
 }
 
 .linkedin {
+    font-size: 30px;
+}
+
+.github {
+    color: purple;
     font-size: 30px;
 }
 

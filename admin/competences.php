@@ -82,7 +82,7 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
 
     <!-- Mon jumbotron -->
       <div class="jumbotron"><!-- début .jumbotron -->
-        <h1 class="display-4">Bienvenue dans ma page de mes compétences</h1>
+        <h1 class="display-4">Bienvenue dans la page compétences <i class="far fa-keyboard"></i></h1>
         <p class="lead">Dans cette page, je vais présenter les compétences que j'ai pu acquérir</p>
         <hr class="my-4">
         <p>Ci - dessous, voici les différentes compétences que j'ai pu acquérir dans ce domaine</p>

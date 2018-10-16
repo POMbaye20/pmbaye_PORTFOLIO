@@ -28,12 +28,12 @@
       </li>
 
       <!-- Lien pour l'admin s'il veut se connecter -->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link text-white" href="#">Connexion <i class="fas fa-sign-in-alt text-success"></i></a>
-      </li>
+      </li> -->
 
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link" href="../admin/index.php?deconnexion=oui" > <?php echo $ligne_utilisateur['pseudo']; ?> Se déconnecter <i class="fas fa-sign-out-alt text-danger"></i></a>
       </li>
     </ul> <!--  fin </ul> -->
 

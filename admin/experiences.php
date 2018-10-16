@@ -48,7 +48,7 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
 
 
      <div class="jumbotron"><!-- début .jumbotron -->
-        <h1 class="display-4">Voici la page avec mes expériences professionnelles</h1>
+        <h1 class="display-4">Expériences professionnelles</h1>
         <p class="lead">Je vais présenter ici de mes expériences professionnelles en entreprise </p>
         <hr class="my-4">
         <p>Voici mon tableau des différentes expériences ci - dessous</p>

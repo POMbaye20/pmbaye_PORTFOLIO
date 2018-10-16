@@ -21,6 +21,7 @@ if (isset($_POST['connexion'])) {
 
         $_SESSION['connexion_admin'] = 'connecté'; // connexion pour l'admin
 
+        $_SESSION['id_utilisateur'] = $ligne_utilisateur['id_utilisateur'];
         $_SESSION['email'] = $ligne_utilisateur['email'];
         $_SESSION['nom'] = $ligne_utilisateur['nom'];
         $_SESSION['mdp'] = $ligne_utilisateur['mdp'];
@@ -41,6 +42,8 @@ if (isset($_POST['connexion'])) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <!-- Lien Bootstrap -->
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <!-- Lien Font Awesome pour insérer des icônes  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
      <!-- Lien google fonts Roboto Slab -->
      <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"> 
      <!-- Mon style CSS -->
@@ -51,12 +54,12 @@ if (isset($_POST['connexion'])) {
 <body>
     <form action="authentification.php" method="post">
     <h1>Admin : authentification</h1>
-    <label for="email">Votre email</label>
+    <label for="email">Votre email <i class="fas fa-at"></i></label>
     <input type="email" name="email" class="form-control" placeholder="xxx@xxx.fr" required>
 
-    <label for="mdp">Mot de passe</label>
+    <label for="mdp">Mot de passe <i class="fas fa-key"></i></label>
     <input type="password" name="mdp" class="form-control" placeholder="Mot de passe" required>
-    <button name="connexion" type="submit" class="form-control">Se connecter</button>
+    <button name="connexion" type="submit" class="btn btn-success form-control">Se connecter</button>
 
     </form>
 </body>

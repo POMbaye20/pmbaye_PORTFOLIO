@@ -50,6 +50,14 @@ if (isset($_GET['id_loisir'])) { // on récupère ce que je supprime dans l'url 
 
     <!-- Ici, j'inclus ma page navigation.php avec un require -->
     <?php require 'inc/navigation.inc.php'; ?>
+
+    <!-- Mon jumbotron -->
+    <div class="jumbotron"><!-- début .jumbotron -->
+        <h1 class="display-4">Bienvenue dans la page loisirs <i class="far fa-futbol"></i> <i class="fas fa-tv"></i> <i class="fas fa-plane"></i></h1>
+        <p class="lead">Dans cette page, je vais présenter mes loisirs</p>
+        <hr class="my-4">
+        <p>En dessous, voici ma liste des loisirs</p>
+    </div><!-- fin ..jumbotron -->
     
    
 <div class="container-fluid"><!-- début .container-fluid -->

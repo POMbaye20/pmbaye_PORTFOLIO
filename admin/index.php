@@ -1,13 +1,32 @@
 <?php require 'connexion.php'; 
 
+
+// La connexion 
 session_start(); // à mettre dans toutes les pages de l'admin
 
 if(isset($_SESSION['connexion_admin'])) { // si on est connecté  on récupère les variables de la session    
+    $id_utilisateur = $_SESSION['id_utilisateur'];
     $email = $_SESSION['email'];
     $mdp = $_SESSION['mdp'];
     $nom = $_SESSION['nom'];
-    // echo $nom;
+    // echo $id_utilisateur;
 } else {     // si on n'est pas connecté on ne peut pas se connecter
+    header('location:authentification.php');
+}
+
+// La déconnexion
+// pour vider les variables de session destroy dans un if ! 
+if (isset($_GET['deconnexion'])) { //  on récupère le terme deconnexion en GET
+    
+    $_SESSION['connexion_admin'] = '';
+    $_SESSION['id_utilisateur'] = '';
+    $_SESSION['email'] = '';
+    $_SESSION['nom'] = '';
+    $_SESSION['mdp'] = '';
+
+    unset($_SESSION['connexion_admin']); // unset() détruit la variable connexion_admin
+    session_destroy();
+
     header('location:authentification.php');
 }
 
@@ -31,12 +50,21 @@ if(isset($_SESSION['connexion_admin'])) { // si on est connecté  on récupère 
     <!-- Java Script -->
     <script src="js/script.js"></script>
 
-    <title>Page d'acccueil</title>
+    <?php 
+        // requete pour une seule information 
+    $sql = $pdoCV -> query("SELECT * FROM t_utilisateurs WHERE id_utilisateur = '$id_utilisateur' ");
+    $ligne_utilisateur = $sql -> fetch();
+    ?>
+
+    <title>La page d'accueil</title>
 </head>
 <body>
 
     <!-- Ici, j'inclus ma page naviagtion.php -->
     <?php require 'inc/navigation.inc.php'; ?>
+
+    <h1>Bonjour <?php echo $ligne_utilisateur['pseudo']; ?></h1>
+  
 
 
      <div class="jumbotron"><!-- début .jumbotron -->
@@ -45,7 +73,9 @@ if(isset($_SESSION['connexion_admin'])) { // si on est connecté  on récupère 
         <hr class="my-4">
         <p>Bonne visite !!! <i class="fas fa-smile"></i></p>
         <p><i class="fab fa-angellist"></i></p>
-    </div><!-- fin ..jumbotron -->
+    </div><!-- fin .jumbotron -->
+
+    
 
 
 
