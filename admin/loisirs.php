@@ -1,12 +1,46 @@
 <?php require 'connexion.php'; 
+
+// La connexion 
+session_start(); // à mettre dans toutes les pages de l'admin
+
+if(isset($_SESSION['connexion_admin'])) { // si on est connecté  on récupère les variables de la session    
+    $id_utilisateur = $_SESSION['id_utilisateur'];
+    $email = $_SESSION['email'];
+    $mdp = $_SESSION['mdp'];
+    $nom = $_SESSION['nom'];
+    // echo $id_utilisateur;
+} else {     // si on n'est pas connecté on ne peut pas se connecter
+    header('location:authentification.php');
+}
+// requete pour une seule information 
+$sql = $pdoCV -> query("SELECT * FROM t_utilisateurs WHERE id_utilisateur = '$id_utilisateur' ");
+$ligne_utilisateur = $sql -> fetch();
+
+// La déconnexion
+// pour vider les variables de session destroy dans un if ! 
+if (isset($_GET['deconnexion'])) { //  on récupère le terme deconnexion en GET
+    
+    $_SESSION['connexion_admin'] = '';
+    $_SESSION['id_utilisateur'] = '';
+    $_SESSION['email'] = '';
+    $_SESSION['nom'] = '';
+    $_SESSION['mdp'] = '';
+
+    unset($_SESSION['connexion_admin']); // unset() détruit la variable connexion_admin
+    session_destroy();
+
+    header('location:authentification.php');
+}
+
+
  
-// insertion d'un formulaire
+// Insertion d'un formulaire
 if (isset($_POST['loisir'])) { // si on a reçu un nouveau loisir
     if ($_POST['loisir'] !='' ) {
 
         $loisir = addslashes($_POST['loisir']);
-        $pdoCV -> exec(" INSERT INTO t_loisirs VALUES (NULL, '$loisir', '1') ");
-
+        $pdoCV -> exec(" INSERT INTO t_loisirs VALUES (NULL, '$loisir', '$id_utilisateur') ");
+   
         header("location: ../admin/loisirs.php");
             exit(); 
 
@@ -44,7 +78,13 @@ if (isset($_GET['id_loisir'])) { // on récupère ce que je supprime dans l'url 
     <!-- Roboto Google Fonts -->
      <!-- Lien google fonts Roboto Slab -->
      <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"> 
-    <title>Admin : Les loisirs</title>
+
+    <?php 
+        // requete pour une seule information 
+    // $sql = $pdoCV -> query("SELECT * FROM t_utilisateurs WHERE id_utilisateur = '$id_utilisateur' ");
+    // $ligne_utilisateur = $sql -> fetch();
+    ?>
+    <title>Admin : <?php echo $ligne_utilisateur['pseudo']; ?></title>
 </head>
 <body>
 
@@ -65,7 +105,7 @@ if (isset($_GET['id_loisir'])) { // on récupère ce que je supprime dans l'url 
     <h1 class="loisir mt-4">Les loisirs et insertion d'un nouveau loisir</h1>
         <?php 
             //requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
-            $sql = $pdoCV -> prepare("SELECT * FROM t_loisirs");
+            $sql = $pdoCV -> prepare("SELECT * FROM t_loisirs WHERE id_utilisateur = '$id_utilisateur'");
             $sql -> execute();
             $nbr_loisirs = $sql -> rowCount();
         ?>

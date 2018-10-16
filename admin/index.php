@@ -14,6 +14,10 @@ if(isset($_SESSION['connexion_admin'])) { // si on est connecté  on récupère 
     header('location:authentification.php');
 }
 
+// requete pour une seule information 
+$sql = $pdoCV -> query("SELECT * FROM t_utilisateurs WHERE id_utilisateur = '$id_utilisateur' ");
+$ligne_utilisateur = $sql -> fetch();
+
 // La déconnexion
 // pour vider les variables de session destroy dans un if ! 
 if (isset($_GET['deconnexion'])) { //  on récupère le terme deconnexion en GET
@@ -49,12 +53,6 @@ if (isset($_GET['deconnexion'])) { //  on récupère le terme deconnexion en GET
 
     <!-- Java Script -->
     <script src="js/script.js"></script>
-
-    <?php 
-        // requete pour une seule information 
-    $sql = $pdoCV -> query("SELECT * FROM t_utilisateurs WHERE id_utilisateur = '$id_utilisateur' ");
-    $ligne_utilisateur = $sql -> fetch();
-    ?>
 
     <title>La page d'accueil</title>
 </head>

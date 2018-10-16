@@ -33,7 +33,7 @@
       </li> -->
 
       <li class="nav-item">
-        <a class="nav-link" href="../admin/index.php?deconnexion=oui" > <?php echo $ligne_utilisateur['pseudo']; ?> Se déconnecter <i class="fas fa-sign-out-alt text-danger"></i></a>
+        <a class="nav-link texte-white " href="../admin/index.php?deconnexion=oui" > <?php echo $ligne_utilisateur['pseudo']; ?> Déconnexion<i class="fas fa-sign-out-alt text-danger"></i></a>
       </li>
     </ul> <!--  fin </ul> -->
 

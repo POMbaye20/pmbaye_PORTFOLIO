@@ -1,4 +1,37 @@
 <?php require 'connexion.php'; 
+
+// La connexion 
+session_start(); // à mettre dans toutes les pages de l'admin
+
+if(isset($_SESSION['connexion_admin'])) { // si on est connecté  on récupère les variables de la session    
+    $id_utilisateur = $_SESSION['id_utilisateur'];
+    $email = $_SESSION['email'];
+    $mdp = $_SESSION['mdp'];
+    $nom = $_SESSION['nom'];
+    // echo $id_utilisateur;
+} else {     // si on n'est pas connecté on ne peut pas se connecter
+    header('location:authentification.php');
+}
+// requete pour une seule information 
+$sql = $pdoCV -> query("SELECT * FROM t_utilisateurs WHERE id_utilisateur = '$id_utilisateur' ");
+$ligne_utilisateur = $sql -> fetch();
+
+// La déconnexion
+// pour vider les variables de session destroy dans un if ! 
+if (isset($_GET['deconnexion'])) { //  on récupère le terme deconnexion en GET
+    
+    $_SESSION['connexion_admin'] = '';
+    $_SESSION['id_utilisateur'] = '';
+    $_SESSION['email'] = '';
+    $_SESSION['nom'] = '';
+    $_SESSION['mdp'] = '';
+
+    unset($_SESSION['connexion_admin']); // unset() détruit la variable connexion_admin
+    session_destroy();
+
+    header('location:authentification.php');
+}
+
  
 // insertion d'un formulaire
 if (isset($_POST['titre_exp'])) { // si on a reçu une nouvelle expérience
