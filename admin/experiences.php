@@ -41,7 +41,7 @@ if (isset($_POST['titre_exp'])) { // si on a reçu une nouvelle expérience
         $stitre_exp = addslashes($_POST['stitre_exp']);
         $dates_exp = addslashes($_POST['dates_exp']);
         $description_exp = addslashes($_POST['description_exp']);
-        $pdoCV -> exec(" INSERT INTO t_experiences VALUES (NULL, '$titre_exp', '$stitre_exp', '$dates_exp', '$description_exp', '1') ");
+        $pdoCV -> exec(" INSERT INTO t_experiences VALUES (NULL, '$titre_exp', '$stitre_exp', '$dates_exp', '$description_exp', '$id_utilisateur') ");
 
         header("location: ../admin/experiences.php");
             exit(); 
@@ -72,7 +72,7 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!-- Mon style CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <title>Admin : Expériences</title>
+    <title>Admin Expériences :   <?php echo $ligne_utilisateur['pseudo']; ?></title>
 </head>
 <body>
 
@@ -81,18 +81,19 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
 
 
      <div class="jumbotron"><!-- début .jumbotron -->
-        <h1 class="display-4">Expériences professionnelles</h1>
+        <h1 class="display-4">Expériences professionnelles <i class="fas fa-briefcase"></i></h1>
         <p class="lead">Je vais présenter ici de mes expériences professionnelles en entreprise </p>
         <hr class="my-4">
-        <p>Voici mon tableau des différentes expériences ci - dessous</p>
+        <p>Dans le tableau ci-dessous, je vous présente mes expériences professionnelles</p>
+        <i class="fas fa-arrow-down"></i>
     </div><!-- fin ..jumbotron -->
     
 
 
-<h1>Les formations et insertion d'une nouvelle expérience <i class="fas fa-check text-success"></i></h1>
+<h1 class="text-center">Mes expériences professionnelles <i class="fas fa-briefcase"></i></h1>
     <?php 
         //requête popur compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
-        $sql = $pdoCV -> prepare("SELECT * FROM t_experiences");
+        $sql = $pdoCV -> prepare("SELECT * FROM t_experiences WHERE id_utilisateur = '$id_utilisateur'");
         $sql -> execute();
         $nbr_experiences = $sql -> rowCount();
     ?>
@@ -104,7 +105,7 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
                 <tr>
                     <th>Titre de l'expérience</th>
                     <th>Sous titre de l'expérience</th>
-                    <th>Date de l'expérience</th>
+                    <th>Date de l'expérience <i class="fas fa-calendar-alt"></i></th>
                     <th>Description de l'expérience</th>
                     <th>Modification</th>
                     <th>Suppression</th>
@@ -135,7 +136,7 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
    
        <div class="container-fluid">
 
-        <h1 >Insérer une nouvelle expérience</h1>
+        <h1 class="text-center">Insérer une nouvelle expérience professionnelle</h1>
 
             <form class="form_experience" action="experiences.php" method="post">
                <div class="form-group">
@@ -158,7 +159,7 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
                     <textarea name="description_exp" class="form-control"></textarea>
                </div>
                 <div class="">
-                    <button class="btn btn-success" type="submit">Insérer une expérience</button>
+                    <button class="btn btn-success form-control" type="submit">Insérer une expérience</button>
                 </div>
             </form>
        </div>

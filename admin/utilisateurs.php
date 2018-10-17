@@ -1,4 +1,36 @@
 <?php require 'connexion.php'; 
+
+// La connexion 
+session_start(); // à mettre dans toutes les pages de l'admin
+
+if(isset($_SESSION['connexion_admin'])) { // si on est connecté  on récupère les variables de la session    
+    $id_utilisateur = $_SESSION['id_utilisateur'];
+    $email = $_SESSION['email'];
+    $mdp = $_SESSION['mdp'];
+    $nom = $_SESSION['nom'];
+    // echo $id_utilisateur;
+} else {     // si on n'est pas connecté on ne peut pas se connecter
+    header('location:authentification.php');
+}
+// requete pour une seule information 
+$sql = $pdoCV -> query("SELECT * FROM t_utilisateurs WHERE id_utilisateur = '$id_utilisateur' ");
+$ligne_utilisateur = $sql -> fetch();
+
+// La déconnexion
+// pour vider les variables de session destroy dans un if ! 
+if (isset($_GET['deconnexion'])) { //  on récupère le terme deconnexion en GET
+    
+    $_SESSION['connexion_admin'] = '';
+    $_SESSION['id_utilisateur'] = '';
+    $_SESSION['email'] = '';
+    $_SESSION['nom'] = '';
+    $_SESSION['mdp'] = '';
+
+    unset($_SESSION['connexion_admin']); // unset() détruit la variable connexion_admin
+    session_destroy();
+
+    header('location:authentification.php');
+}
  
 // insertion d'un formulaire
 if (isset($_POST['prenom'])) { // si on a reçu un nouveau loisir
@@ -54,17 +86,17 @@ if (isset($_GET['id_utilisateur'])) { // on récupère ce que je supprime dans l
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!-- Mon style CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <title>Admin : Mon profil</title>
+    <title>Admin : Profil utilisateurs</title>
 </head>
 <body>
 
      <!-- Ici, j'inclus ma page navigation.php -->
      <?php require 'inc/navigation.inc.php'; ?>
 
-<h1>Mon profil et informations</h1>
+<h1>Utilisateurs et informations</h1>
     <?php 
         //requête popur compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
-        $sql = $pdoCV -> prepare("SELECT * FROM t_utilisateurs");
+        $sql = $pdoCV -> prepare("SELECT * FROM t_utilisateurs ");
         $sql -> execute();
         $nbr_utilisateurs = $sql -> rowCount();
     ?>
@@ -79,7 +111,7 @@ if (isset($_GET['id_utilisateur'])) { // on récupère ce que je supprime dans l
                     <th>Email</th>
                     <th>Téléphone</th>
                     <th>Portable</th>
-                    <th>MDP</th>
+                    <!-- <th>MDP</th> -->
                     <th>Pseudo</th>
                     <th>Age</th>
                     <th>Anniversaire</th>
@@ -100,12 +132,13 @@ if (isset($_GET['id_utilisateur'])) { // on récupère ce que je supprime dans l
                 {
             ?>
                 <tr>
+                
                     <td><?php echo $ligne_utilisateur['prenom']; ?></td>
                     <td><?php echo $ligne_utilisateur['nom']; ?></td>
                     <td><?php echo $ligne_utilisateur['email']; ?></td>
                     <td><?php echo $ligne_utilisateur['telephone']; ?></td>
                     <td><?php echo $ligne_utilisateur['portable']; ?></td>
-                    <td><?php echo $ligne_utilisateur['mdp']; ?></td>
+                    <!-- <td><?php echo $ligne_utilisateur['mdp']; ?></td> -->
                     <td><?php echo $ligne_utilisateur['pseudo']; ?></td>
                     <td><?php echo $ligne_utilisateur['age']; ?></td>
                     <td><?php echo $ligne_utilisateur['anniversaire']; ?></td>
@@ -116,8 +149,7 @@ if (isset($_GET['id_utilisateur'])) { // on récupère ce que je supprime dans l
                     <td><?php echo $ligne_utilisateur['ville']; ?></td>
                     <td><?php echo $ligne_utilisateur['pays']; ?></td>
                     <td><?php echo $ligne_utilisateur['commentaire']; ?></td>
-                    <!-- <td><a href="modif_utilisateur.php?id_utilisateur=<//?php echo $ligne_utilisateur['id_utilisateur']; ?> " ><i class="fas fa-edit"></i></a></td>
-                    <td><a href="utilisateurs.php?id_utilisateur= <?//php echo $ligne_utilisateur['id_utilisateur']; ?> " ><i class="fas fa-trash text-danger"></i></a></td> -->
+               
                 </tr>
                 <?php 
                     }  // fin de la boucle while
@@ -125,18 +157,8 @@ if (isset($_GET['id_utilisateur'])) { // on récupère ce que je supprime dans l
             </tbody>
         
         </table><!-- fin <table> -->
-   </div>
-    <hr>
-    <!-- Insertion d'un nouveau loisir formulaire  -->
-    <!-- <form action="utilisateurs.php" method="post">
-       <div class="#">
-            <label for="prenom">Prénom</label>                
-            <input type="text" name="loisir" placeholder="Nouveau loisir" required>    
-       </div>
-        <div class="">
-            <button class="btn btn-primary" type="submit">Insérer un loisir</button>
-        </div>
-    </form> -->
+
+  
      <!-- Lien Bootstrap script JS  -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

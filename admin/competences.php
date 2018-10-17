@@ -39,7 +39,7 @@ if (isset($_POST['competence'])) { // si on a reçu une nouvelle compétence
         $competence = addslashes($_POST['competence']);
         $niveau = addslashes($_POST['niveau']);
         $categorie = addslashes($_POST['categorie']);
-        $pdoCV -> exec(" INSERT INTO t_competences VALUES (NULL, '$competence', '$niveau', '$categorie', '1') ");
+        $pdoCV -> exec(" INSERT INTO t_competences VALUES (NULL, '$competence', '$niveau', '$categorie', '$id_utilisateur') ");
 
         header("location: ../admin/competences.php");
             exit(); 
@@ -124,7 +124,7 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
 <h1 class="text-primary">Les compétences et insertion d'une nouvelle compétence</h1>
     <?php 
         //requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
-        $sql = $pdoCV -> prepare("SELECT * FROM t_competences" . $order);
+        $sql = $pdoCV -> prepare("SELECT * FROM t_competences WHERE id_utilisateur = '$id_utilisateur' $order");
         $sql -> execute();  // j'exécute la requête
         $nbr_competences = $sql -> rowCount(); // ici, rowCount() indique le nombre d'éléments
     ?>

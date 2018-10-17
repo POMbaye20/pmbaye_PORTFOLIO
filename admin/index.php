@@ -77,7 +77,8 @@ if (isset($_GET['deconnexion'])) { //  on récupère le terme deconnexion en GET
 
 
 
-     <!-- Diaporama -->
+     <!-- Diaporama Slider -->
+
   <h2 class="titre mb-4">Présentation des rubriques</h2>
 
 
@@ -102,6 +103,7 @@ if (isset($_GET['deconnexion'])) { //  on récupère le terme deconnexion en GET
                    
                   </div>
               </div>
+
               <div class="carousel-item">
                   <img src="img/langages.jpg" alt="Mes compétences acquises" class="w-100 d-block">
                   <!-- la légende de la photo -->
@@ -110,6 +112,8 @@ if (isset($_GET['deconnexion'])) { //  on récupère le terme deconnexion en GET
                       <p class="text-dark font-weight-bold">Mes compétences acquises au cour de la formation</p>
                   </div>
               </div>
+
+
               <div class="carousel-item">
                   <img src="img/hobbies.jpg" alt="Loisirs" class="w-100 d-block">
                   <!-- la légende de la photo -->
@@ -119,6 +123,7 @@ if (isset($_GET['deconnexion'])) { //  on récupère le terme deconnexion en GET
                   </div>
               </div>
 
+
               <div class="carousel-item">
                   <img src="img/formations.jpg" alt="Formations" class="w-100 d-block">
                   <!-- la légende de la photo -->
@@ -127,7 +132,11 @@ if (isset($_GET['deconnexion'])) { //  on récupère le terme deconnexion en GET
                       <p class="text-dark font-weight-bold">Présentation de mes formations précédentes</p>
                   </div>
               </div>
-          </div>
+
+
+          </div><!-- fin .carousel-inner -->
+
+
           <!-- ici nous plaçons les contrôles du diaporama -->
           <a href="#carousel01" role="button" class="carousel-control-prev" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -148,7 +157,7 @@ if (isset($_GET['deconnexion'])) { //  on récupère le terme deconnexion en GET
 <div class="raccourci">
     <a href="formations.php" class="btn btn-warning btn-lg raccourci_link " role="button" aria-pressed="true">Formations</a>
     <a href="experiences.php" class="btn btn-secondary btn-lg raccourci_link " role="button" aria-pressed="true">Expériences professionnelles</a>
-    <a href="utilisateurs.php" class="btn btn-danger btn-lg raccourci_link " role="button" aria-pressed="true">Profil </a>
+    <a href="utilisateurs.php" class="btn btn-danger btn-lg raccourci_link " role="button" aria-pressed="true">Utilisateur </a>
 </div>   
 
   

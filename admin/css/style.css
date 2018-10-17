@@ -1,11 +1,21 @@
+/************************************************** Navbar (navigation.inc.php) **************************************************/
+
+nav {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+a:hover {
+    background: skyblue;
+}
+
 body {
     font-family: 'Roboto Slab', serif;
     background: whitesmoke;
 }
 
-/****** Jumbotron ******/
+/************************************************** Jumbotron **************************************************/
 .jumbotron {
-    background: lightsteelblue;
+    background: skyblue;
     text-align: center;
 }
 
@@ -26,7 +36,6 @@ body {
 }
 
 /************************************************** formations.php **************************************************/
-
 
 .table {
     text-align: center;
@@ -59,7 +68,7 @@ body {
     background: lightgrey; 
 }
 
-/************************************************** Footer le pied de page **************************************************/
+/************************************************** Footer (footer.inc.php) **************************************************/
 footer {
     text-align: center;
     font-family: 'Times New Roman', Times, serif;

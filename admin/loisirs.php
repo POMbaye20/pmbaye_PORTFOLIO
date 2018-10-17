@@ -84,7 +84,7 @@ if (isset($_GET['id_loisir'])) { // on récupère ce que je supprime dans l'url 
     // $sql = $pdoCV -> query("SELECT * FROM t_utilisateurs WHERE id_utilisateur = '$id_utilisateur' ");
     // $ligne_utilisateur = $sql -> fetch();
     ?>
-    <title>Admin : <?php echo $ligne_utilisateur['pseudo']; ?></title>
+    <title>Admin Loisirs : <?php echo $ligne_utilisateur['pseudo']; ?></title>
 </head>
 <body>
 
