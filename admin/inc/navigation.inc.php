@@ -21,10 +21,7 @@
                 </div>
             </div><!-- fin .dropdown menu déroulant -->
 
-            <li class="nav-item">
-              <a class="nav-link text-white" href="messages.php">Contact <i class="far fa-envelope text-primary"></i></a>
-            </li>
-
+            
             <li class="nav-item">
               <a class="nav-link text-white " href="../admin/index.php?deconnexion=oui" > <?php echo $ligne_utilisateur['pseudo']; ?> Se déconnecter<i class="fas fa-sign-out-alt text-danger"></i></a>
             </li>

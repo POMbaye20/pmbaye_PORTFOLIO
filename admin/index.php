@@ -61,12 +61,12 @@ if (isset($_GET['deconnexion'])) { //  on récupère le terme deconnexion en GET
     <!-- Ici, j'inclus ma page naviagtion.php -->
     <?php require 'inc/navigation.inc.php'; ?>
 
-    <h1>Bonjour <?php echo $ligne_utilisateur['pseudo']; ?></h1>
+    <h1>Hello <?php echo $ligne_utilisateur['pseudo']; ?> !!</h1>
   
 
 
      <div class="jumbotron"><!-- début .jumbotron -->
-        <h1 class="display-4">Bienvenue dans mon site Portfolio (CV)</h1>
+        <h1 class="display-4 ">Bienvenue dans mon site Portfolio (CV)</h1>
         <p class="lead">Étant développeur intégrateur web, je vais vous présenter dans ce site mon parcours avant d'en arriver là, avec mes formations et mes expériences professionnelles</p>
         <hr class="my-4">
         <p>Bonne visite !!! <i class="fas fa-smile"></i></p>
@@ -156,8 +156,8 @@ if (isset($_GET['deconnexion'])) { //  on récupère le terme deconnexion en GET
                                                         <!-- Liens de raccourci vers les pages importantes  -->
 <div class="raccourci">
     <a href="formations.php" class="btn btn-warning btn-lg raccourci_link " role="button" aria-pressed="true">Formations</a>
-    <a href="experiences.php" class="btn btn-secondary btn-lg raccourci_link " role="button" aria-pressed="true">Expériences professionnelles</a>
-    <a href="utilisateurs.php" class="btn btn-danger btn-lg raccourci_link " role="button" aria-pressed="true">Utilisateur </a>
+    <a href="experiences.php" class="btn btn-success btn-lg raccourci_link " role="button" aria-pressed="true">Expériences professionnelles</a>
+    <a href="utilisateurs.php" class="btn btn-info btn-lg raccourci_link " role="button" aria-pressed="true">Utilisateur </a>
 </div>   
 
   

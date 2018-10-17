@@ -8,9 +8,9 @@ if (isset($_POST['nom'])) { // si on a reçu un nouveau message
         $email = addslashes($_POST['email']);
         $sujet = addslashes($_POST['sujet']);
         $message = addslashes($_POST['message']);
-        $pdoCV -> exec(" INSERT INTO t_messages VALUES (NULL, '$nom', '$email', '$sujet', '$message', '1') ");
+        $pdoCV -> exec(" INSERT INTO t_messages VALUES (NULL, '$nom', '$email', '$sujet', '$message') ");
 
-        header("location: ../admin/messages.php");
+        header("location: ../admin/index.php");
             exit(); 
 
     } // ferme le if n'est pas vide
@@ -44,62 +44,25 @@ if (isset($_GET['id_message'])) { // on récupère ce que je supprime dans l'url
 <body>
 
      <!-- Ici, j'inclus ma page navigation.php -->
-     <?php require 'inc/navigation.inc.php'; ?>
+     <?php //require 'inc/navigation.inc.php'; ?>
 
 
      <div class="jumbotron"><!-- début .jumbotron -->
-        <h1 class="display-4">La page consacrée aux messages <i class="far fa-envelope"></i></h1>
-        <p class="lead">Page afin de vérifier si je reçois des messages de la part des visiteurs</p>
+        <h1 class="display-4">Me contacter <i class="far fa-envelope"></i></h1>
+        
         <hr class="my-4">
         
     </div><!-- fin ..jumbotron -->
     
 
-
-<h1>Insertion d'un nouveau message <i class="far fa-envelope"></i></h1>
-    <?php 
-        //requête popur compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
-        $sql = $pdoCV -> prepare("SELECT * FROM t_messages");
-        $sql -> execute();
-        $nbr_messages = $sql -> rowCount();
-    ?>
-
-   <div class="table_message">
-        <table class="table table-hover" border="1">
-        <caption>Mes nouveaux messages <?php echo $nbr_messages; ?> </caption>
-            <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>Email</th>
-                    <th>Sujet</th>
-                    <th>Message</th>
-                    
-                </tr>
-            </thead>
     
-            <tbody>
-            <?php  while($ligne_message = $sql -> fetch()) 
-                {
-            ?>
-                <tr>
-                    <td><?php echo $ligne_message['nom']; ?></td>
-                    <td><?php echo $ligne_message['email'];  ?></td>
-                    <td><?php echo $ligne_message['sujet']; ?></td>
-                    <td><?php echo $ligne_message['message']; ?></td>
-                </tr>
-                <?php 
-                    }  // fin de la boucle while
-                ?>
-            </tbody>
-        
-        </table><!-- fin <table> -->
-   </div>
-    <hr>
-    <!-- Insertion d'un nouveau message de la part d'un visiteur dans le formulaire  -->
-   
        <div class="container-fluid">
 
-        <h1 >Envoyer un nouveau message</h1>
+
+        
+
+        <h2>Renseignez les informations suivantes</h2>
+
 
             <form class="form_message" action="messages.php" method="post">
                <div class="form-group">
