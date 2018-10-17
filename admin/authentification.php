@@ -59,7 +59,7 @@ if (isset($_POST['connexion'])) {
 
     <label for="mdp">Mot de passe <i class="fas fa-key"></i></label>
     <input type="password" name="mdp" class="form-control" placeholder="Mot de passe" required>
-    <button name="connexion" type="submit" class="btn btn-success form-control">Se connecter</button>
+    <button name="connexion" type="submit" class="btn btn-success form-control ">Se connecter</button>
 
     </form>
 </body>
