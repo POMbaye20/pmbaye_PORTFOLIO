@@ -76,53 +76,62 @@ $ligne_competence = $sql -> fetch(); // va récupérer les données
      <!-- Ici, j'inclus ma page navigation.php -->
      <?php require 'inc/navigation.inc.php'; ?>
 
-    <h1>Mise à jour d'une compétence</h1>
-    <!-- Mise à jour d'une nouvelle compétence formulaire  -->
-    <form action="modif_competence.php" method="post">
-       <div class="">
-            <label for="competence">Compétences</label>                
-            <input class="form-control" type="text" name="competence" value="<?php echo $ligne_competence['competence']; ?>" required>    
-       </div>
+    <div class="container col-lg-6 "><!-- début de .container-fluid -->
 
-       <div class="">
-            <label for="niveau">Niveau</label>                
-            <input class="form-control" type="text" name="niveau" value="<?php echo $ligne_competence['niveau']; ?>" required>
-       </div>
+        <h1>Mise à jour d'une compétence</h1>
+        <!-- Mise à jour d'une nouvelle compétence formulaire  -->
+        <form action="modif_competence.php" method="post">
+           <div class="">
+                <label for="competence">Compétences</label>                
+                <input class="form-control" type="text" name="competence" value="<?php echo $ligne_competence['competence']; ?>" required>    
+           </div>
+    
+           <div class="">
+                <label for="niveau">Niveau</label>                
+                <input class="form-control" type="text" name="niveau" value="<?php echo $ligne_competence['niveau']; ?>" required>
+           </div>
+    
+           <div class="">
+                <label for="categorie">Catégorie</label>                
+                <select class="custom-select" name="categorie">
+                                                <!-- Développement -->
+                    <option value="Développement"
+                        <?php // pour ajouter select="selected" à la balise option si c'est la catégorie de la compétence
+                            if (!(strcmp("Développement", $ligne_competence['categorie']))) { // strcmp compare les chaînes de caractères
+                                echo "selected=\"selected\"";
+                            }
+                        ?>>Développement</option>
+                    
+    
+                                                <!-- Infographie -->
+                    <option value="Infographie"  <?php 
+                            if (!(strcmp("Infographie", $ligne_competence['categorie']))) { 
+                                echo "selected=\"selected\"";
+                            }
+                        ?>>Infographie</option>
+    
+                                                <!-- Gestion de projet -->
+                    <option value="Gestion de projet" 
+                        <?php 
+                            if (!(strcmp("Gestion de projet", $ligne_competence['categorie']))) { 
+                                echo "selected=\"selected\"";
+                            }
+                        ?>>Gestion de projet</option>                 
+                </select>       
+           </div><!-- Fin du menu déroulant pour les catégories -->
+    
+            <div class="">
+            <input class="form-control" type="hidden" name="id_competence" value="<?php echo $ligne_competence['id_competence']; ?>">
+                <button class="mt-4 bg-danger" type="submit">MAJ</button>
+            </div>
+        </form><!-- fin form -->
 
-       <div class="">
-            <label for="categorie">Catégorie</label>                
-            <select class="custom-select" name="categorie">
-                                            <!-- Développement -->
-                <option value="Développement"
-                    <?php // pour ajouter select="selected" à la balise option si c'est la catégorie de la compétence
-                        if (!(strcmp("Développement", $ligne_competence['categorie']))) { // strcmp compare les chaînes de caractères
-                            echo "selected=\"selected\"";
-                        }
-                    ?>>Développement</option>
-                
+    </div><!-- fin de .container-fluid -->
 
-                                            <!-- Infographie -->
-                <option value="Infographie"  <?php 
-                        if (!(strcmp("Infographie", $ligne_competence['categorie']))) { 
-                            echo "selected=\"selected\"";
-                        }
-                    ?>>Infographie</option>
 
-                                            <!-- Gestion de projet -->
-                <option value="Gestion de projet" 
-                    <?php 
-                        if (!(strcmp("Gestion de projet", $ligne_competence['categorie']))) { 
-                            echo "selected=\"selected\"";
-                        }
-                    ?>>Gestion de projet</option>                 
-            </select>       
-       </div><!-- Fin du menu déroulant pour les catégories -->
-
-        <div class="">
-        <input class="form-control" type="hidden" name="id_competence" value="<?php echo $ligne_competence['id_competence']; ?>">
-            <button class="mt-4 bg-danger" type="submit">MAJ</button>
-        </div>
-    </form><!-- fin form -->
-
+<!-- Lien Bootstrap script JS  -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>

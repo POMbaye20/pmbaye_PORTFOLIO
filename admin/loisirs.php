@@ -85,6 +85,8 @@ if (isset($_GET['id_loisir'])) { // on récupère ce que je supprime dans l'url 
     // $ligne_utilisateur = $sql -> fetch();
     ?>
     <title>Admin Loisirs : <?php echo $ligne_utilisateur['pseudo']; ?></title>
+     <!-- ck editor 4 -->
+     <script src="../ckeditor.js"></script>
 </head>
 <body>
 

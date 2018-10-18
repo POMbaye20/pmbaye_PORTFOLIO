@@ -72,42 +72,61 @@ $ligne_experience = $sql -> fetch(); // va récupérer les données
      <!-- Lien Font Awesome -->
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
+     <!-- ck editor 4 -->
+     <script src="ckeditor/ckeditor.js"></script>
+
 </head>
 <body>
 
      <!-- Ici, j'inclus ma page navigation.php -->
      <?php require 'inc/navigation.inc.php'; ?>
 
-    <h1>Mise à jour d'une expérience <i class="fas fa-pen-alt"></i></h1>
-    <!-- Mise à jour d'une nouvelle compétence formulaire  -->
-    <div class="form-group"><!-- Début .form-group -->
-        <form action="modif_experience.php" method="post">
-           <div class="form-group">
-                <label for="titre_exp">Titre de l'expérience </label>                
-                <input type="text" class="form-control" name="titre_exp" value="<?php echo $ligne_experience['titre_exp']; ?>" required>    
-           </div>
-    
-           <div class="form-group">
-                <label for="stitre_exp">Sous titre de l'expérience</label>                
-                <input type="text" class="form-control" name="stitre_exp" value="<?php echo $ligne_experience['stitre_exp']; ?>" required>
-           </div>
-    
-           <div class="form-group">
-                <label for="dates_exp">Date de la expérience</label>                
-                <input type="text" class="form-control" name="dates_exp" value="<?php echo $ligne_experience['dates_exp']; ?>" required>
-           </div>
+   <div class="container-fluid col-lg-6"><!-- début de .container-fluid -->
 
-           <div class="form-group">
-                <label for="description_exp">Description de l'expérience</label>                
-                <textarea class="form-control" name="description_exp" value="<?php echo $ligne_experience['description_exp']; ?>"></textarea>
-           </div>
+        <h1>Mise à jour d'une expérience <i class="fas fa-pen-alt"></i></h1>
+        <!-- Mise à jour d'une nouvelle compétence formulaire  -->
+        <div class="form-group"><!-- Début .form-group -->
+            <form action="modif_experience.php" method="post">
+               <div class="form-group">
+                    <label for="titre_exp">Titre de l'expérience </label>                
+                    <input type="text" class="form-control" name="titre_exp" value="<?php echo $ligne_experience['titre_exp']; ?>" required>    
+               </div>
+        
+               <div class="form-group">
+                    <label for="stitre_exp">Sous titre de l'expérience</label>                
+                    <input type="text" class="form-control" name="stitre_exp" value="<?php echo $ligne_experience['stitre_exp']; ?>" required>
+               </div>
+        
+               <div class="form-group">
+                    <label for="dates_exp">Date de la expérience</label>                
+                    <input type="text" class="form-control" name="dates_exp" value="<?php echo $ligne_experience['dates_exp']; ?>" required>
+               </div>
     
-            <div class="form-group">
-                <button class="btn btn-danger" type="submit">MAJ</button>
-                <input type="hidden" name="id_experience" value="<?php echo $ligne_experience['id_experience']; ?>">
-            </div>
-        </form><!-- fin form -->
-    </div><!-- Fin .form-group -->
+               <div class="form-group">
+                    <label for="description_exp">Description de l'expérience</label>                
+                    <textarea type="text" class="form-control" name="description_exp" id="description_exp"><?php echo $ligne_experience['description_exp']; ?></textarea>
+    
+                        <script>
+                            // Replace the <textarea id="descirption_form"> with a CKEditor
+                            // instance, using default configuration.
+                            CKEDITOR.replace( 'description_exp' );
+                        </script>
+    
+               </div>
+        
+                <div class="form-group">
+                    <button class="btn btn-danger" type="submit">MAJ</button>
+                    <input type="hidden" name="id_experience" value="<?php echo $ligne_experience['id_experience']; ?>">
+                </div>
+            </form><!-- fin form -->
+        </div><!-- Fin .form-group -->
 
+   </div><!-- fin de .container-fluid -->
+
+
+ <!-- Lien Bootstrap script JS  -->
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>

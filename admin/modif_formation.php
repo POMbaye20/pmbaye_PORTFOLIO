@@ -68,42 +68,65 @@ $ligne_formation = $sql -> fetch(); // va récupérer les données
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- Mon style CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+     <!-- Lien Font Awesome -->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
+
+    <!-- ck editor 4 -->
+    <script src="ckeditor/ckeditor.js"></script>
+
 </head>
 <body>
 
      <!-- Ici, j'inclus ma page navigation.php -->
-     <?php require 'inc/navigation.inc.php'; ?>
+         <?php require 'inc/navigation.inc.php'; ?>
+    
+   <div class="container-fluid col-lg-6"><!-- début .container-fluid -->
+        <h1>Mise à jour d'une formation</h1>
+        <!-- Mise à jour d'une nouvelle compétence formulaire  -->
+        <div class="form-group"><!-- Début .form-group -->
+            <form action="modif_formation.php" method="post">
+               <div class="form-group">
+                    <label for="titre_form">Titre de la formation</label>                
+                    <input class="form-control" type="text" name="titre_form" value="<?php echo $ligne_formation['titre_form']; ?>" required>    
+               </div>
+        
+               <div class="form-group">
+                    <label for="stitre_form">Sous titre de la formation</label>                
+                    <input class="form-control" type="text" name="stitre_form" value="<?php echo $ligne_formation['stitre_form']; ?>" required>
+               </div>
+        
+               <div class="form-group">
+                    <label for="dates_form">Date de la formation</label>                
+                    <input class="form-control" type="text" name="dates_form" value="<?php echo $ligne_formation['dates_form']; ?>" required>
+               </div>
+    
+               <div class="form-group">
+                    <label for="description_form">Description de la formation</label>                
+                    <textarea type="text" class="form-control" name="description_form" id="description_form" ><?php echo $ligne_formation['description_form']; ?></textarea>
+                        <script>
+                            // Replace the <textarea id="descirption_form"> with a CKEditor
+                            // instance, using default configuration.
+                            CKEDITOR.replace( 'description_form' );
+                        </script>
+               </div>
+    
+               <?php echo $ligne_formation['description_form']; ?>
+        
+                <div class="form-group">
+                    <button class="btn btn-danger" type="submit">MAJ</button>
+                    <input type="hidden" name="id_formation" value="<?php echo $ligne_formation['id_formation']; ?>">
+                </div>
+            </form><!-- fin form -->
+        </div><!-- Fin .form-group -->
+   </div><!-- fin de ..container-fluid -->
 
-    <h1>Mise à jour d'une formation</h1>
-    <!-- Mise à jour d'une nouvelle compétence formulaire  -->
-    <div class="form-group"><!-- Début .form-group -->
-        <form action="modif_formation.php" method="post">
-           <div class="form-group">
-                <label for="titre_form">Titre de la formation</label>                
-                <input type="text" name="titre_form" value="<?php echo $ligne_formation['titre_form']; ?>" required>    
-           </div>
-    
-           <div class="form-group">
-                <label for="stitre_form">Sous titre de la formation</label>                
-                <input type="text" name="stitre_form" value="<?php echo $ligne_formation['stitre_form']; ?>" required>
-           </div>
-    
-           <div class="form-group">
-                <label for="dates_form">Date de la formation</label>                
-                <input type="text" name="dates_form" value="<?php echo $ligne_formation['dates_form']; ?>" required>
-           </div>
-
-           <div class="form-group">
-                <label for="description_form">Description de la formation</label>                
-                <textarea class="form-control" name="description_form" value="<?php echo $ligne_formation['description_form']; ?>"></textarea>
-           </div>
-    
-            <div class="form-group">
-                <button class="btn btn-danger" type="submit">MAJ</button>
-                <input type="hidden" name="id_formation" value="<?php echo $ligne_formation['id_formation']; ?>">
-            </div>
-        </form><!-- fin form -->
-    </div><!-- Fin .form-group -->
+   <!-- Lien Bootstrap script JS  -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 </body>
 </html>

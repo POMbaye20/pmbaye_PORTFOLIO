@@ -101,8 +101,8 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!-- Mon style CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- Java Script -->
-    <script src="js/script.js"></script>
+    <!-- ck editor 4 -->
+    <script src="ckeditor/ckeditor.js"></script>
     <title>Admin : Les compétences</title>
     
 </head>

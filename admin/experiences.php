@@ -72,6 +72,8 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!-- Mon style CSS -->
     <link rel="stylesheet" href="css/style.css">
+     <!-- ck editor 4 -->
+     <script src="ckeditor/ckeditor.js"></script>
     <title>Admin Expériences :   <?php echo $ligne_utilisateur['pseudo']; ?></title>
 </head>
 <body>
@@ -90,79 +92,86 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
     
 
 
-<h1 class="text-center">Mes expériences professionnelles <i class="fas fa-briefcase"></i></h1>
-    <?php 
-        //requête popur compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
-        $sql = $pdoCV -> prepare("SELECT * FROM t_experiences WHERE id_utilisateur = '$id_utilisateur'");
-        $sql -> execute();
-        $nbr_experiences = $sql -> rowCount();
-    ?>
-
-   <div class="table_exp">
-        <table class="table table-hover" border="1">
-        <caption>Mes expériences professionnelles : <?php echo $nbr_experiences; ?> </caption>
-            <thead>
-                <tr>
-                    <th>Titre de l'expérience</th>
-                    <th>Sous titre de l'expérience</th>
-                    <th>Date de l'expérience <i class="fas fa-calendar-alt"></i></th>
-                    <th>Description de l'expérience</th>
-                    <th>Modification</th>
-                    <th>Suppression</th>
-                </tr>
-            </thead>
+<div class="container-fluid col-lg-8"><!-- début de .container-fluid -->
+    <h1 class="text-center">Mes expériences professionnelles <i class="fas fa-briefcase"></i></h1>
+        <?php 
+            //requête popur compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
+            $sql = $pdoCV -> prepare("SELECT * FROM t_experiences WHERE id_utilisateur = '$id_utilisateur'");
+            $sql -> execute();
+            $nbr_experiences = $sql -> rowCount();
+        ?>
     
-            <tbody>
-            <?php  while($ligne_experience = $sql -> fetch()) 
-                {
-            ?>
-                <tr>
-                    <td><?php echo $ligne_experience['titre_exp']; ?></td>
-                    <td><?php echo $ligne_experience['stitre_exp']; ?></td>
-                    <td><?php echo $ligne_experience['dates_exp']; ?></td>
-                    <td><?php echo $ligne_experience['description_exp']; ?></td>
-                    <td><a href="modif_experience.php?id_experience=<?php echo $ligne_experience['id_experience']; ?> " ><i class="fas fa-edit"></i></a></td>
-                    <td><a href="experiences.php?id_experience=<?php echo $ligne_experience['id_experience']; ?> " ><i class="fas fa-trash text-danger"></i></a></td>
-                </tr>
-                <?php 
-                    }  // fin de la boucle while
+       <div class="table_exp">
+            <table class="table table-hover" border="1">
+            <caption>Mes expériences professionnelles : <?php echo $nbr_experiences; ?> </caption>
+                <thead>
+                    <tr>
+                        <th>Titre de l'expérience</th>
+                        <th>Sous titre de l'expérience</th>
+                        <th>Date de l'expérience <i class="fas fa-calendar-alt"></i></th>
+                        <th>Description de l'expérience</th>
+                        <th>Modification</th>
+                        <th>Suppression</th>
+                    </tr>
+                </thead>
+        
+                <tbody>
+                <?php  while($ligne_experience = $sql -> fetch()) 
+                    {
                 ?>
-            </tbody>
-        
-        </table><!-- fin <table> -->
-   </div>
-    <hr>
-    <!-- Insertion d'une nouvelle expérience dans le formulaire  -->
-   
-       <div class="container-fluid">
-
-        <h1 class="text-center">Insérer une nouvelle expérience professionnelle</h1>
-
-            <form class="form_experience" action="experiences.php" method="post">
-               <div class="form-group">
-                    <label for="titre_exp">Titre de l'expérience</label>                
-                    <input type="text" name="titre_exp" placeholder="Nouvelle expérience" class="form-control" required>    
-               </div>
-        
-                <div class="form-group">
-                    <label for="stitre_exp">Sous Titre de l'expérience</label>                
-                    <input type="text" name="stitre_exp" placeholder="Sous titre de l'expérience" class="form-control" required>    
-               </div>
-        
-                <div class="form-group">
-                    <label for="dates_exp">Date de l'expérience</label>                
-                    <input type="text" name="dates_exp" placeholder="Date de l'expérience" class="form-control" required>    
-               </div>
-        
-                <div class="form-group">
-                    <label for="description_exp">Description de l'expérience</label>                
-                    <textarea name="description_exp" class="form-control"></textarea>
-               </div>
-                <div class="">
-                    <button class="btn btn-success form-control" type="submit">Insérer une expérience</button>
-                </div>
-            </form>
+                    <tr>
+                        <td><?php echo $ligne_experience['titre_exp']; ?></td>
+                        <td><?php echo $ligne_experience['stitre_exp']; ?></td>
+                        <td><?php echo $ligne_experience['dates_exp']; ?></td>
+                        <td><?php echo $ligne_experience['description_exp']; ?></td>
+                        <td><a href="modif_experience.php?id_experience=<?php echo $ligne_experience['id_experience']; ?> " ><i class="fas fa-edit"></i></a></td>
+                        <td><a href="experiences.php?id_experience=<?php echo $ligne_experience['id_experience']; ?> " ><i class="fas fa-trash text-danger"></i></a></td>
+                    </tr>
+                    <?php 
+                        }  // fin de la boucle while
+                    ?>
+                </tbody>
+            
+            </table><!-- fin <table> -->
        </div>
+        <hr>
+        <!-- Insertion d'une nouvelle expérience dans le formulaire  -->
+       
+           <div class="container-fluid">
+    
+            <h1 class="text-center">Insérer une nouvelle expérience professionnelle</h1>
+    
+                <form class="form_experience" action="experiences.php" method="post">
+                   <div class="form-group">
+                        <label for="titre_exp">Titre de l'expérience</label>                
+                        <input type="text" name="titre_exp" placeholder="Nouvelle expérience" class="form-control" required>    
+                   </div>
+            
+                    <div class="form-group">
+                        <label for="stitre_exp">Sous Titre de l'expérience</label>                
+                        <input type="text" name="stitre_exp" placeholder="Sous titre de l'expérience" class="form-control" required>    
+                   </div>
+            
+                    <div class="form-group">
+                        <label for="dates_exp">Date de l'expérience</label>                
+                        <input type="text" name="dates_exp" placeholder="Date de l'expérience" class="form-control" required>    
+                   </div>
+            
+                    <div class="form-group">
+                        <label for="description_exp">Description de l'expérience</label>                
+                        <textarea type="text" name="description_exp" class="form-control" id="description_exp"></textarea>
+                        <script>
+                                // Replace the <textarea id="editor1"> with a CKEditor
+                                // instance, using default configuration.
+                                CKEDITOR.replace( 'description_exp' );
+                        </script>
+                   </div>
+                    <div class="">
+                        <button class="btn btn-success form-control" type="submit">Insérer une expérience</button>
+                    </div>
+                </form>
+           </div>
+</div><!-- fin de ..container-fluid -->
    
      <!-- Lien Bootstrap script JS  -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
