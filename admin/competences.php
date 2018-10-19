@@ -121,7 +121,9 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
     </div><!-- fin ..jumbotron -->
 
 
-<div class="container-fluid col-lg-6">
+<div class="container-fluid col-lg-6"><!-- début .container-fluid -->
+
+
         <h1 class="text-primary">Les compétences et insertion d'une nouvelle compétence</h1>
             <?php 
                 //requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
@@ -130,11 +132,7 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
                 $nbr_competences = $sql -> rowCount(); // ici, rowCount() indique le nombre d'éléments
             ?>
     
-            
-    
-    
-        
-    
+
                 <div class="table_skills">
                     <table border="1" class="table table-dark">
                     <caption>La liste des compétences : <?php echo $nbr_competences; ?></caption>
@@ -195,7 +193,7 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
                     </form><!-- Fin du formulaire -->
                 </div><!-- fin .card -->
 
-</div>
+</div><!-- fin .container-fluid -->
    
 
    <!-- Lien Bootstrap script JS  -->
