@@ -137,40 +137,42 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
         <hr>
         <!-- Insertion d'une nouvelle expérience dans le formulaire  -->
        
-           <div class="container-fluid">
+           
     
-            <h1 class="text-center">Insérer une nouvelle expérience professionnelle</h1>
-    
-                <form class="form_experience" action="experiences.php" method="post">
-                   <div class="form-group">
-                        <label for="titre_exp">Titre de l'expérience</label>                
-                        <input type="text" name="titre_exp" placeholder="Nouvelle expérience" class="form-control" required>    
-                   </div>
-            
-                    <div class="form-group">
-                        <label for="stitre_exp">Sous Titre de l'expérience</label>                
-                        <input type="text" name="stitre_exp" placeholder="Sous titre de l'expérience" class="form-control" required>    
-                   </div>
-            
-                    <div class="form-group">
-                        <label for="dates_exp">Date de l'expérience</label>                
-                        <input type="text" name="dates_exp" placeholder="Date de l'expérience" class="form-control" required>    
-                   </div>
-            
-                    <div class="form-group">
-                        <label for="description_exp">Description de l'expérience</label>                
-                        <textarea type="text" name="description_exp" class="form-control" id="description_exp"></textarea>
-                        <script>
-                                // Replace the <textarea id="editor1"> with a CKEditor
-                                // instance, using default configuration.
-                                CKEDITOR.replace( 'description_exp' );
-                        </script>
-                   </div>
-                    <div class="">
-                        <button class="btn btn-success form-control" type="submit">Insérer une expérience</button>
-                    </div>
-                </form>
-           </div>
+          <div class="card form_experience">
+                <h1 class="text-center">Insérer une nouvelle expérience professionnelle</h1>
+        
+                    <form class="form_experience" action="experiences.php" method="post">
+                       <div class="form-group">
+                            <label for="titre_exp">Titre de l'expérience</label>                
+                            <input type="text" name="titre_exp" placeholder="Nouvelle expérience" class="form-control" required>    
+                       </div>
+                
+                        <div class="form-group">
+                            <label for="stitre_exp">Sous Titre de l'expérience</label>                
+                            <input type="text" name="stitre_exp" placeholder="Sous titre de l'expérience" class="form-control" required>    
+                       </div>
+                
+                        <div class="form-group">
+                            <label for="dates_exp">Date de l'expérience</label>                
+                            <input type="text" name="dates_exp" placeholder="Date" class="form-control" required>    
+                       </div>
+                
+                        <div class="form-group">
+                            <label for="description_exp">Description de l'expérience</label>                
+                            <textarea type="text" name="description_exp" class="form-control" id="description_exp"></textarea>
+                            <script>
+                                    // Replace the <textarea id="editor1"> with a CKEditor
+                                    // instance, using default configuration.
+                                    CKEDITOR.replace( 'description_exp' );
+                            </script>
+                       </div>
+                        <div class="">
+                            <button class="btn btn-success form-control" type="submit">Insérer une expérience</button>
+                        </div>
+                    </form>
+          </div>
+           
 </div><!-- fin de ..container-fluid -->
    
      <!-- Lien Bootstrap script JS  -->

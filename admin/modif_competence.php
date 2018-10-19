@@ -120,7 +120,7 @@ $ligne_competence = $sql -> fetch(); // va récupérer les données
                 </select>       
            </div><!-- Fin du menu déroulant pour les catégories -->
     
-            <div class="">
+            <div>
             <input class="form-control" type="hidden" name="id_competence" value="<?php echo $ligne_competence['id_competence']; ?>">
                 <button class="mt-4 bg-danger" type="submit">MAJ</button>
             </div>

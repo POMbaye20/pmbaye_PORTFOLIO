@@ -121,77 +121,81 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
     </div><!-- fin ..jumbotron -->
 
 
-<h1 class="text-primary">Les compétences et insertion d'une nouvelle compétence</h1>
-    <?php 
-        //requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
-        $sql = $pdoCV -> prepare("SELECT * FROM t_competences WHERE id_utilisateur = '$id_utilisateur' $order");
-        $sql -> execute();  // j'exécute la requête
-        $nbr_competences = $sql -> rowCount(); // ici, rowCount() indique le nombre d'éléments
-    ?>
-
+<div class="container-fluid col-lg-6">
+        <h1 class="text-primary">Les compétences et insertion d'une nouvelle compétence</h1>
+            <?php 
+                //requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
+                $sql = $pdoCV -> prepare("SELECT * FROM t_competences WHERE id_utilisateur = '$id_utilisateur' $order");
+                $sql -> execute();  // j'exécute la requête
+                $nbr_competences = $sql -> rowCount(); // ici, rowCount() indique le nombre d'éléments
+            ?>
     
-
-
-   
-
-        <div class="table_skills">
-            <table border="1" class="table table-dark">
-            <caption>La liste des compétences : <?php echo $nbr_competences; ?></caption>
-                <thead>
-                    <tr class="table-active">
-                        <th>Les compétences<a href="competences.php?column=competence&order=asc"> <i class="fas fa-sort-alpha-up"></i></a> | <a href="competences.php?column=competence&order=desc"><i class="fas fa-sort-alpha-down"></i></a></th>
-                        <th>Niveau<a href="competences.php?column=niveau&order=asc"> <i class="far fa-arrow-alt-circle-up"></i></a> | <a href="competences.php?column=niveau&order=desc"><i class="far fa-arrow-alt-circle-down"></i></a></th>
-                        <th>Catégorie<a href="competences.php?column=categorie&order=asc"> <i class="far fa-arrow-alt-circle-up"></i></a> | <a href="competences.php?column=categorie&order=desc"><i class="far fa-arrow-alt-circle-down"></i></a></th>
-                        <th>Modifier</th>
-                        <th>Supprimer</th>
-                    </tr>
-                </thead><!-- fin <thead> -->
-        
-                <tbody>
-                <?php  while($ligne_competence = $sql -> fetch()) 
-                    {
-                ?>
-                    <tr>
-                        <td><?php echo $ligne_competence['competence']; ?></td>
-                        <td><?php echo $ligne_competence['niveau']; ?></td>
-                        <td><?php echo $ligne_competence['categorie']; ?></td>
-                        <td><a href="modif_competence.php?id_competence=<?php echo $ligne_competence['id_competence']; ?> " ><i class="fas fa-edit"></i></a></td>
-                        <td><a href="competences.php?id_competence=<?php echo $ligne_competence['id_competence']; ?> " ><i class="fas fa-trash text-danger"></i></a></td>
-                    </tr>
-                    <?php 
-                        }  // fin de la boucle while
-                    ?>
-                </tbody><!-- fin <tbody> -->
             
-            </table><!-- fin <table> -->
-        </div>
-        <hr>
+    
+    
+        
+    
+                <div class="table_skills">
+                    <table border="1" class="table table-dark">
+                    <caption>La liste des compétences : <?php echo $nbr_competences; ?></caption>
+                        <thead>
+                            <tr class="table-active">
+                                <th>Les compétences<a href="competences.php?column=competence&order=asc"> <i class="fas fa-sort-alpha-up"></i></a> | <a href="competences.php?column=competence&order=desc"><i class="fas fa-sort-alpha-down"></i></a></th>
+                                <th>Niveau<a href="competences.php?column=niveau&order=asc"> <i class="far fa-arrow-alt-circle-up"></i></a> | <a href="competences.php?column=niveau&order=desc"><i class="far fa-arrow-alt-circle-down"></i></a></th>
+                                <th>Catégorie<a href="competences.php?column=categorie&order=asc"> <i class="far fa-arrow-alt-circle-up"></i></a> | <a href="competences.php?column=categorie&order=desc"><i class="far fa-arrow-alt-circle-down"></i></a></th>
+                                <th>Modifier</th>
+                                <th>Supprimer</th>
+                            </tr>
+                        </thead><!-- fin <thead> -->
+                
+                        <tbody>
+                        <?php  while($ligne_competence = $sql -> fetch()) 
+                            {
+                        ?>
+                            <tr>
+                                <td><?php echo $ligne_competence['competence']; ?></td>
+                                <td><?php echo $ligne_competence['niveau']; ?></td>
+                                <td><?php echo $ligne_competence['categorie']; ?></td>
+                                <td><a href="modif_competence.php?id_competence=<?php echo $ligne_competence['id_competence']; ?> " ><i class="fas fa-edit"></i></a></td>
+                                <td><a href="competences.php?id_competence=<?php echo $ligne_competence['id_competence']; ?> " ><i class="fas fa-trash text-danger"></i></a></td>
+                            </tr>
+                            <?php 
+                                }  // fin de la boucle while
+                            ?>
+                        </tbody><!-- fin <tbody> -->
+                    
+                    </table><!-- fin <table> -->
+                </div>
+                <hr>
+    
+                <!-- Formulaire d'insertion d'une nouvelle compétence  -->
+                <h1>Insérer une nouvelle compétence</h1>
+    
+                <div class="card"><!-- début .card -->
+                    <form action="competences.php" method="post">
+                    <div class="competences">
+                            <label for="competence">Compétences</label>                
+                            <input type="text" name="competence" placeholder="Nouvelle compétence" class="form-control" required>    
+                    </div>
+                    <div class="niveau">
+                            <label for="niveau">Niveau</label>                
+                            <input type="text" name="niveau" placeholder="niveau en chiffre" class="form-control" required>    
+                    </div>
+                    <div class="categorie">
+                            <label for="categorie">Catégorie</label>                
+                            <select name="categorie" class="custom-select my-1 mr-sm-2">
+                                <option value=Développement >Développement</option>
+                                <option value="Infographie">Infographie</option>
+                                <option value="Gestion de projet">Gestion de projet</option>
+                            </select>    
+                    </div>
+                        <div class="">
+                            <button class="btn btn-success" type="submit">Insérer une compétence</button>
+                        </div>
+                    </form><!-- Fin du formulaire -->
+                </div><!-- fin .card -->
 
-        <!-- Formulaire d'insertion d'une nouvelle compétence  -->
-        <h1>Insérer une nouvelle compétence</h1>
-
-        <form action="competences.php" method="post">
-           <div class="competences">
-                <label for="competence">Compétences</label>                
-                <input type="text" name="competence" placeholder="Nouvelle compétence" class="form-control" required>    
-           </div>
-           <div class="niveau">
-                <label for="niveau">Niveau</label>                
-                <input type="text" name="niveau" placeholder="niveau en chiffre" class="form-control" required>    
-           </div>
-           <div class="categorie">
-                <label for="categorie">Catégorie</label>                
-                <select name="categorie" class="custom-select my-1 mr-sm-2">
-                    <option value=Développement >Développement</option>
-                    <option value="Infographie">Infographie</option>
-                    <option value="Gestion de projet">Gestion de projet</option>
-                </select>    
-           </div>
-            <div class="">
-                <button class="btn btn-success" type="submit">Insérer une compétence</button>
-            </div>
-        </form><!-- Fin du formulaire -->
-
+</div>
    
 
    <!-- Lien Bootstrap script JS  -->

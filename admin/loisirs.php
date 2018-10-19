@@ -95,14 +95,14 @@ if (isset($_GET['id_loisir'])) { // on récupère ce que je supprime dans l'url 
 
     <!-- Mon jumbotron -->
     <div class="jumbotron"><!-- début .jumbotron -->
-        <h1 class="display-4">Bienvenue dans la page loisirs <i class="far fa-futbol"></i> <i class="fas fa-tv"></i> <i class="fas fa-plane"></i></h1>
+        <h1 class="display-4">Bienvenue dans la page loisirs <i class="far fa-futbol "></i> <i class="fas fa-tv text-dark"></i> <i class="fas fa-plane"></i></h1>
         <p class="lead">Dans cette page, je vais présenter mes loisirs</p>
         <hr class="my-4">
         <p>En dessous, voici ma liste des loisirs</p>
     </div><!-- fin ..jumbotron -->
     
    
-<div class="container-fluid"><!-- début .container-fluid -->
+<div class="container-fluid col-lg-6"><!-- début .container-fluid -->
 
     <h1 class="loisir mt-4">Les loisirs et insertion d'un nouveau loisir</h1>
         <?php 
@@ -112,48 +112,57 @@ if (isset($_GET['id_loisir'])) { // on récupère ce que je supprime dans l'url 
             $nbr_loisirs = $sql -> rowCount();
         ?>
 
-    <div class="table_loisir"><!-- début .table_loisir -->
-            <table class="table_loisir  " border="1">
-            <caption>La liste des loisirs : <?php echo $nbr_loisirs; ?> </caption>
-                <thead class="bg-primary">
-                    <tr>
-                        <th>Les loisirs</th>
-                        <th>Modifier</th>
-                        <th>Suppression</th>
-                    </tr>
-                </thead>
-        
-                <tbody>
-                <?php  while($ligne_loisir = $sql -> fetch()) 
-                    {
-                ?>
-                    <tr>
-                        <td><?php echo $ligne_loisir['loisir']; ?></td>
-                        <td><a href="modif_loisir.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?> " ><i class="fas fa-edit"></i></a></td>
-                        <td><a href="loisirs.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?> " ><i class="fas fa-trash text-danger"></i></a></td>
-                    </tr>
+    <div class="row"><!-- début .row -->
 
-                    <?php 
-                        }  // fin de la boucle while
-                    ?>
+        <div class="col"><!-- début col -->
 
-                </tbody>
+                <div class="table_loisir"><!-- début .table_loisir -->
+                        <table class="table_loisir  " border="1">
+                        <caption>La liste des loisirs : <?php echo $nbr_loisirs; ?> </caption>
+                            <thead class="bg-primary">
+                                <tr>
+                                    <th>Les loisirs</th>
+                                    <th>Modifier</th>
+                                    <th>Suppression</th>
+                                </tr>
+                            </thead>
+                    
+                            <tbody>
+                            <?php  while($ligne_loisir = $sql -> fetch()) 
+                                {
+                            ?>
+                                <tr>
+                                    <td><?php echo $ligne_loisir['loisir']; ?></td>
+                                    <td><a href="modif_loisir.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?> " ><i class="fas fa-edit"></i></a></td>
+                                    <td><a href="loisirs.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?> " ><i class="fas fa-trash text-danger"></i></a></td>
+                                </tr>
             
-            </table><!-- fin <table> -->
-    </div><!-- fin .table_loisir -->
+                                <?php 
+                                    }  // fin de la boucle while
+                                ?>
+            
+                            </tbody>
+                        
+                        </table><!-- fin <table> -->
+                </div><!-- fin .table_loisir -->
 
-        <hr>
-        <!-- Insertion d'un nouveau loisir formulaire  -->
-        <form action="loisirs.php" method="post">
-        <div class="mt-4">
-                <label for="loisir">Loisir</label>                
-                <input class="form-control" type="text" name="loisir" placeholder="Nouveau loisir" required>    
-        </div>
-
-            <div class="mt-4">
-                <button class="btn btn-success" type="submit">Insérer un loisir</button>
-            </div>
-        </form>
+        </div><!-- fin col -->
+        
+                <hr>
+                <!-- Insertion d'un nouveau loisir formulaire  -->
+               <div class="col"><!-- début col 2 -->
+                    <form action="loisirs.php" method="post">
+                    <div class="mt-4">
+                            <label for="loisir">Loisir</label>                
+                            <input class="form-control" type="text" name="loisir" placeholder="Nouveau loisir" required>    
+                    </div>
+            
+                        <div class="mt-4">
+                            <button class="btn btn-success" type="submit">Insérer un loisir</button>
+                        </div>
+                    </form>
+               </div><!-- fin col 2 -->
+    </div><!-- fin .row -->
 
 </div><!-- fin .container-fluid -->
 

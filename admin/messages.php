@@ -39,7 +39,7 @@ if (isset($_GET['id_message'])) { // on récupère ce que je supprime dans l'url
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!-- Mon style CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <title>Admin : Message (contact) </title>
+    <title>Contact</title>
 </head>
 <body>
 
@@ -56,13 +56,10 @@ if (isset($_GET['id_message'])) { // on récupère ce que je supprime dans l'url
     
 
     
-       <div class="container-fluid">
-
-
-        
+       <div class="container-fluid col-lg-6"><!-- début .container-fluid -->
+      
 
         <h2>Renseignez les informations suivantes</h2>
-
 
             <form class="form_message" action="messages.php" method="post">
                <div class="form-group">
@@ -88,7 +85,8 @@ if (isset($_GET['id_message'])) { // on récupère ce que je supprime dans l'url
                     <button class="btn btn-success" type="submit">Envoyer</button>
                 </div>
             </form>
-       </div>
+
+       </div><!-- fin .container-fluid -->
    
      <!-- Lien Bootstrap script JS  -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

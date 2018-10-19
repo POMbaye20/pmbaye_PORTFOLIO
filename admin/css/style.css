@@ -2,21 +2,25 @@
 
 nav {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
 }
 
 a:hover {
-    background: skyblue;
+    /* background: skyblue; */
 }
 
 body {
     font-family: 'Roboto Slab', serif;
     background: whitesmoke;
+    
 }
 
 /************************************************** Jumbotron **************************************************/
 .jumbotron {
-    background: skyblue;
+    background: linear-gradient(skyblue, lightgrey );
     text-align: center;
+    background: url(../img/sunset.jpg);
+    color: white;
 }
 
 /************************************************** index.php **************************************************/
@@ -69,10 +73,16 @@ body {
     background: lightgrey; 
 }
 
+.form_experience {
+    background: lightcyan;
+    text-align: center; 
+}
+
 /************************************************** Footer (footer.inc.php) **************************************************/
 footer {
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
+
 }
 
 .linkedin {
@@ -82,5 +92,9 @@ footer {
 .github {
     color: purple;
     font-size: 30px;
+}
+
+.reseaux {
+    letter-spacing: 5px;
 }
 

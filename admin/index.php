@@ -61,7 +61,7 @@ if (isset($_GET['deconnexion'])) { //  on récupère le terme deconnexion en GET
     <!-- Ici, j'inclus ma page naviagtion.php -->
     <?php require 'inc/navigation.inc.php'; ?>
 
-    <h1>Hello <?php echo $ligne_utilisateur['pseudo']; ?> !!</h1>
+    <h1>Welcome <?php echo $ligne_utilisateur['pseudo']; ?> !!</h1>
   
 
 

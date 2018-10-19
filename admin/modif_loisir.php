@@ -71,17 +71,25 @@ $ligne_loisir = $sql -> fetch(); // va récupérer les données
     <!-- Ici, j'inclus ma page naviagtion.php -->
     <?php require 'inc/navigation.inc.php'; ?>
 
-    <h1>Mise à jour d'un loisir</h1>
-    <!-- Mise à jour d'un nouveau loisir formulaire  -->
-    <form action="modif_loisir.php" method="post">
-       <div class="">
-            <label for="loisir">Loisir</label>                
-            <input type="text" name="loisir" value="<?php echo $ligne_loisir['loisir']; ?>" required>    
-       </div>
-        <div class="">
-        <input type="hidden" name="id_loisir" value="<?php echo $ligne_loisir['id_loisir']; ?>">
-            <button type="submit">MAJ</button>
-        </div>
-    </form><!-- fin du formulaire -->
+   <div class="container-fluid col-lg-6 mt-4">
+        <h1>Mise à jour d'un loisir</h1>
+        <!-- Mise à jour d'un nouveau loisir formulaire  -->
+        <form action="modif_loisir.php" method="post">
+           <div class="">
+                <label for="loisir">Loisir</label>                
+                <input class="form-control" type="text" name="loisir" value="<?php echo $ligne_loisir['loisir']; ?>" required>    
+           </div>
+            <div class="">
+            <input type="hidden" name="id_loisir" value="<?php echo $ligne_loisir['id_loisir']; ?>">
+                <button class="mt-4 bg-danger" type="submit">MAJ</button>
+            </div>
+        </form><!-- fin du formulaire -->
+   </div>
+
+
+     <!-- Lien Bootstrap script JS (pour le menu déroulant)  -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>
