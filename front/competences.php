@@ -30,7 +30,7 @@
 
     <!-- Jumbotron -->
    <div class="jumbotron competences"><!-- début .jumbotron -->
-            <h1 class="display-4">Compétences acquises </h1>
+            <h1 class="display-4">Compétences acquises <i class="far fa-keyboard"></i></h1>
             <p class="lead">Je vais vous montrer ici les compétences que j'ai pu acquérir au cours de mes formations précédentes </p>
             <hr class="my-4">
             <p>Dans ce site, je vais vous présenter mon CV avec les différentes expériences professionnlles que j'ai pu acquérir, ainsi que les compétences acquises, les formations faites en amont, enfin mes différents loisirs</p>

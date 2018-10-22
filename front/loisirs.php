@@ -9,19 +9,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Lien Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <!-- Lien Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     
-    <!-- Mon style CSS -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Google fonts Lora -->
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i" rel="stylesheet">
-
-    <!-- Roboto Google Fonts -->
-     <!-- Lien google fonts Roboto Slab -->
+    <!-- Je fais un require de tous les liens (Bootstrap, Font awesome, CSS)  -->
+    <?php require 'inc/link.inc.php'; ?>
    
     <title>Les loisirs</title>
   
@@ -34,7 +24,7 @@
     <!-- Mon jumbotron -->
 
     <div class="jumbotron loisirs"><!-- début .jumbotron -->
-        <h1 class="display-4">Mes loisirs <i class="far fa-futbol "></i> <i class="fas fa-tv "></i> <i class="fas fa-plane text-white"></i></h1>
+        <h1 class="display-4">Mes loisirs <i class="fas fa-music"></i> <i class="fas fa-tv "></i> <i class="fas fa-plane    "></i></h1>
         <p class="lead">Dans cette page, je vais présenter mes loisirs</p>
         <hr class="my-4">
         <p>En dessous, voici ma liste des loisirs</p>
@@ -45,10 +35,9 @@
 
     
         <?php 
-            //requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
+            //requête pour afficher la liste des loisirs dans le tableau
             $sql = $pdoCV -> prepare("SELECT * FROM t_loisirs ");
             $sql -> execute();
-            $nbr_loisirs = $sql -> rowCount();
         ?>
 
     <div class="row"><!-- début .row -->
@@ -81,7 +70,7 @@
             
                             </tbody>
                         
-                        </table><!-- fin <table> -->
+                        </table><!-- fin </table> -->
                 
         </div><!-- fin col -->
         
