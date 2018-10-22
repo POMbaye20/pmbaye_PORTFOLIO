@@ -10,7 +10,7 @@ if (isset($_POST['nom'])) { // si on a reçu un nouveau message
         $message = addslashes($_POST['message']);
         $pdoCV -> exec(" INSERT INTO t_messages VALUES (NULL, '$nom', '$email', '$sujet', '$message') ");
 
-        header("location: ../admin/index.php");
+        header("location: ../front/index.php");
             exit(); 
 
     } // ferme le if n'est pas vide
@@ -44,13 +44,13 @@ if (isset($_GET['id_message'])) { // on récupère ce que je supprime dans l'url
 <body>
 
      <!-- Ici, j'inclus ma page navigation.php -->
-     <?php //require 'inc/navigation.inc.php'; ?>
+     <?php require 'inc/navigation.inc.php'; ?>
 
 
      <div class="jumbotron"><!-- début .jumbotron -->
-        <h1 class="display-4">Me contacter <i class="far fa-envelope"></i></h1>
+        <h1 class="display-4 text-center">Me contacter <i class="far fa-envelope"></i></h1>
         
-        <hr class="my-4">
+        <!-- <hr class="my-4"> -->
         
     </div><!-- fin ..jumbotron -->
     

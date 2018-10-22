@@ -1,0 +1,59 @@
+
+/* jumbotron  */
+
+/* index.php */
+.home {
+    background:url(../img/fond_jumbotron.jpg );
+    text-align: center;
+}
+
+/* Body page d'acccueil */
+.language { width: 100%; height: 550px; }
+
+/* competences.php  */
+.competences {
+    background: linear-gradient(lightskyblue, grey, lightgreen);
+    text-align: center;
+}
+
+/* loisirs.php */
+.loisirs {
+    /* background: url(../img/coucher_soleil.jpg) ; */
+    text-align: center; 
+}
+
+.table_loisirs {
+   width: 60%;
+    text-align: center; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******************************************************************* Footer  *******************************************************************/
+.contact {
+
+}
