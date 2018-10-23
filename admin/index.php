@@ -155,19 +155,20 @@ if (isset($_GET['deconnexion'])) { //  on récupère le terme deconnexion en GET
   </div><!-- fin rangée Diaporama -->
     </div>
     <div class="col-sm">
-      <p>Dans le menu déroulant situé dans la navigation, vous trouverez les difféentes rubriques du CV</p>
+      <p>Dans le menu déroulant situé dans la navigation, vous trouverez toutes rubriques du CV</p>
       <p>Également en aperçu dans le slider situé à gauche de la page</p>
+      <p>Enfin, il y a trois boutons ci-dessous pour accéder aux rubriques les plus importantes</p>
     </div>
     
   </div>
    
-                                    <!-- Bouton d'accès vers les pages importantes  -->
-    
-        <div class="btn-group">
-            <button type="button" class="btn btn-primary" a href="formations.php">Formations</button>
-            <button type="button" class="btn btn-danger" a href="competences.php">Compétences</button>
-            <button type="button" class="btn btn-success" a href="experiences.php">Expériences</button>
-        </div> 
+                                    <!-- Liens de raccourci vers les pages importantes  -->
+
+    <div class="raccourci">
+       <a href="competences.php"><button type="button" class="btn btn-primary btn-md">Compétences</button></a>
+        <a href="experiences.php"><button type="button" class="btn btn-success btn-md">Expériences</button></a>
+        <a href="formations.php"><button type="button" class="btn btn-danger btn-md">Formations</button></a>
+    </div>
 
 </div><!-- fin .container-fluid -->
 

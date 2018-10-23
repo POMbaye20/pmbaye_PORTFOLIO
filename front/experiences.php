@@ -27,7 +27,7 @@
 <div class="container-fluid col-lg-6 col-md-12"><!-- début container-fluid -->
     
 
-    <h1 class="text-center">Expériences professionnelles</h1>
+    
         <?php 
             //requête popur compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
             $sql = $pdoCV -> prepare("SELECT * FROM t_experiences");
@@ -40,10 +40,10 @@
             
                 <thead class="experiences">
                     <tr class="text-danger">
-                        <th>Titre de l'expérience</th>
-                        <th>Sous titre de l'expérience</th>
-                        <th>Date de l'expérience </th>
-                        <th>Description de l'expérience</th>
+                        <th>Titre</th>
+                        <th>Sous titre</th>
+                        <th>Date</th>
+                        <th>Description</th>
                        
                     </tr>
                 </thead>
