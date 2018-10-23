@@ -16,9 +16,9 @@
                     </button>
                     <div class="dropdown-menu">
                     <a class="dropdown-item" href="competences.php">Compétences</a>
-                    <a class="dropdown-item" href="loisirs.php">Loisirs</a>
-                    <a class="dropdown-item" href="formations.php">Formations</a>
                     <a class="dropdown-item" href="experiences.php">Expériences professionnelles</a>
+                    <a class="dropdown-item" href="formations.php">Formations</a>
+                    <a class="dropdown-item" href="loisirs.php">Loisirs</a>
                     </div>
                 </div><!-- fin .dropdown menu déroulant -->
 
@@ -29,10 +29,6 @@
                 
             </ul><!--  fin </ul> -->
 
-            <form class="form-inline my-2 my-lg-0"><!-- début form pour la barre de recherche -->
-            <input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search">
-            <button class="btn btn-outline-dark my-2 my-sm-0 text-white" type="submit">Recherche</button>
-            </form><!-- fin form pour la barre de recherche -->
 
     </div><!-- fin de .collapse navbar-collapse -->
 

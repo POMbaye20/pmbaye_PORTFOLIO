@@ -10,53 +10,53 @@
      <!-- Je fais un require de tous les liens (Bootstrap, Font awesome, CSS)  -->
      <?php require 'inc/link.inc.php'; ?>
 
-    <title>Mes formations</title>
+    <title>Les expériences professionnelles</title>
 </head>
 <body>
 
     <?php require 'inc/navigation.inc.php'; ?>
 
-    <div class="jumbotron formations "><!-- début .jumbotron -->
-        <h1 class="display-4">Formations <i class="fas fa-graduation-cap"></i></h1>
-        <p class="lead">Bienvenue dans ma page formation où je vais vous lister les différentes formations que j'ai effectué</p>
-        <!-- <hr class="my-4"> -->
-        <!-- <p>Voir le tableau des formations ci-dessous</p> -->
+    <div class="jumbotron experiences"><!-- début .jumbotron -->
+        <h1 class="display-4">Expériences <i class="fas fa-briefcase"></i></h1>
+        <p class="lead">Voici la page des expériences professionnelles</p>
+        <hr class="my-4">
+        <p>Voir le tableau des expériences ci-dessous</p>
     </div><!-- fin ..jumbotron -->
 
 
 <div class="container-fluid col-lg-6 col-md-12"><!-- début container-fluid -->
     
 
-    <h1 class="text-center">Formations</h1>
+    <h1 class="text-center">Expériences professionnelles</h1>
         <?php 
             //requête popur compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
-            $sql = $pdoCV -> prepare("SELECT * FROM t_formations");
+            $sql = $pdoCV -> prepare("SELECT * FROM t_experiences");
             $sql -> execute();
            
         ?>
     
     <div class="">
-            <table class="table table-light table-responsive" border="1">
+            <table class="table table-light table-hover" border="1">
             
-                <thead>
-                    <tr class="text-primary">
-                        <th>Titre</th>
-                        <th>Sous titre</th>
-                        <th>Date </th>
-                        <th>Description</th>
+                <thead class="experiences">
+                    <tr class="text-danger">
+                        <th>Titre de l'expérience</th>
+                        <th>Sous titre de l'expérience</th>
+                        <th>Date de l'expérience </th>
+                        <th>Description de l'expérience</th>
                        
                     </tr>
                 </thead>
         
                 <tbody>
-                <?php  while($ligne_formation = $sql -> fetch()) 
+                <?php  while($ligne_experience = $sql -> fetch()) 
                     {
                 ?>
                     <tr>
-                        <td><?php echo $ligne_formation['titre_form']; ?></td>
-                        <td><?php echo $ligne_formation['stitre_form']; ?></td>
-                        <td><?php echo $ligne_formation['dates_form']; ?></td>
-                        <td><?php echo $ligne_formation['description_form']; ?></td>
+                        <td><?php echo $ligne_experience['titre_exp']; ?></td>
+                        <td><?php echo $ligne_experience['stitre_exp']; ?></td>
+                        <td><?php echo $ligne_experience['dates_exp']; ?></td>
+                        <td><?php echo $ligne_experience['description_exp']; ?></td>
                         
                     </tr>
                     <?php 

@@ -23,7 +23,7 @@
 
     <!-- Mon jumbotron -->
 
-    <div class="jumbotron loisirs"><!-- début .jumbotron -->
+    <div class="jumbotron loisirs "><!-- début .jumbotron -->
         <h1 class="display-4">Mes loisirs <i class="fas fa-music"></i> <i class="fas fa-tv "></i> <i class="fas fa-plane    "></i></h1>
         <p class="lead">Dans cette page, je vais présenter mes loisirs</p>
         <hr class="my-4">
@@ -44,13 +44,13 @@
 
         <div class="table table-hover "><!-- début col -->
 
-        <h1 class="mt-4 text-center">Mes loisirs </h1>
+        <h1 class="mt-4 text-center ">Mes loisirs </h1>
 
                         <table class="table_loisir mx-auto table_loisirs mb-4 mt-4" border="1">
                         
                             <thead class="bg-dark text-white">
                                 <tr>
-                                    <th>Les listes des loisirs</th>
+                                    <th>La liste des loisirs</th>
                                     
                                 </tr>
                             </thead>

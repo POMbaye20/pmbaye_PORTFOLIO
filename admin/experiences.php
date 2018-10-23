@@ -84,9 +84,8 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
 
      <div class="jumbotron"><!-- début .jumbotron -->
         <h1 class="display-4">Expériences professionnelles <i class="fas fa-briefcase"></i></h1>
-        <p class="lead">Je vais présenter ici de mes expériences professionnelles en entreprise </p>
-        <hr class="my-4">
-        <p>Dans le tableau ci-dessous, je vous présente mes expériences professionnelles</p>
+        <p class="lead">Les différentes expériences professionnelles acquises en entreprise durant les périodes de stage avec différentes missions ou durant les emploi</p>
+        
         <i class="fas fa-arrow-down"></i>
     </div><!-- fin ..jumbotron -->
     
@@ -103,13 +102,13 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
     
        <div class="table_exp">
             <table class="table table-hover" border="1">
-            <caption>Mes expériences professionnelles : <?php echo $nbr_experiences; ?> </caption>
+            <caption><?php echo $nbr_experiences; ?> expériences professionnelles</caption>
                 <thead>
                     <tr>
-                        <th>Titre de l'expérience</th>
-                        <th>Sous titre de l'expérience</th>
-                        <th>Date de l'expérience <i class="fas fa-calendar-alt"></i></th>
-                        <th>Description de l'expérience</th>
+                        <th>Titre</th>
+                        <th>Sous titre</th>
+                        <th>Date</th>
+                        <th>Description</th>
                         <th>Modification</th>
                         <th>Suppression</th>
                     </tr>
@@ -140,26 +139,26 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
            
     
           <div class="card form_experience">
-                <h1 class="text-center">Insérer une nouvelle expérience professionnelle</h1>
+                <h1 class="text-center">Insérer </h1>
         
                     <form class="form_experience" action="experiences.php" method="post">
                        <div class="form-group">
-                            <label for="titre_exp">Titre de l'expérience</label>                
+                            <label for="titre_exp">Titre </label>                
                             <input type="text" name="titre_exp" placeholder="Nouvelle expérience" class="form-control" required>    
                        </div>
                 
                         <div class="form-group">
-                            <label for="stitre_exp">Sous Titre de l'expérience</label>                
-                            <input type="text" name="stitre_exp" placeholder="Sous titre de l'expérience" class="form-control" required>    
+                            <label for="stitre_exp">Sous Titre </label>                
+                            <input type="text" name="stitre_exp" placeholder="Sous titre " class="form-control" required>    
                        </div>
                 
                         <div class="form-group">
-                            <label for="dates_exp">Date de l'expérience</label>                
+                            <label for="dates_exp">Date </label>                
                             <input type="text" name="dates_exp" placeholder="Date" class="form-control" required>    
                        </div>
                 
                         <div class="form-group">
-                            <label for="description_exp">Description de l'expérience</label>                
+                            <label for="description_exp">Description </label>                
                             <textarea type="text" name="description_exp" class="form-control" id="description_exp"></textarea>
                             <script>
                                     // Replace the <textarea id="editor1"> with a CKEditor
@@ -167,17 +166,16 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
                                     CKEDITOR.replace( 'description_exp' );
                             </script>
                        </div>
-                        <div class="">
-                            <button class="btn btn-success form-control" type="submit">Insérer une expérience</button>
+
+                        <div class="col-lg-6 text-center btn-experiences">
+                            <button class="btn btn-success form-control" type="submit">Ajouter</button>
                         </div>
                     </form>
           </div>
            
 </div><!-- fin de ..container-fluid -->
    
-     <!-- Lien Bootstrap script JS  -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
+
+<!-- Ici, je fais un require de mon footer.inc.php  -->
 <?php require 'inc/footer.inc.php'; ?>

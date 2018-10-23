@@ -114,17 +114,16 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
 
     <!-- Mon jumbotron -->
       <div class="jumbotron"><!-- début .jumbotron -->
-        <h1 class="display-4">Bienvenue dans la page compétences <i class="far fa-keyboard"></i></h1>
-        <p class="lead">Dans cette page, je vais présenter les compétences que j'ai pu acquérir</p>
-        <hr class="my-4">
-        <p>Ci - dessous, voici les différentes compétences que j'ai pu acquérir dans ce domaine</p>
+        <h1 class="display-4">Compétences <i class="far fa-keyboard"></i></h1>
+        <p class="lead">Compétences acquises au cours des formations et expériences </p>
+  
     </div><!-- fin ..jumbotron -->
 
 
 <div class="container-fluid col-lg-6"><!-- début .container-fluid -->
 
 
-        <h1 class="text-primary">Les compétences et insertion d'une nouvelle compétence</h1>
+        <h1 class="text-primary">Voir la liste et mettre à jour </h1>
             <?php 
                 //requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
                 $sql = $pdoCV -> prepare("SELECT * FROM t_competences WHERE id_utilisateur = '$id_utilisateur' $order");
@@ -135,10 +134,10 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
 
                 <div class="table_skills">
                     <table border="1" class="table table-dark">
-                    <caption>La liste des compétences : <?php echo $nbr_competences; ?></caption>
+                    <caption><?php echo $nbr_competences; ?> compétences</caption>
                         <thead>
                             <tr class="table-active">
-                                <th>Les compétences<a href="competences.php?column=competence&order=asc"> <i class="fas fa-sort-alpha-up"></i></a> | <a href="competences.php?column=competence&order=desc"><i class="fas fa-sort-alpha-down"></i></a></th>
+                                <th>Compétences<a href="competences.php?column=competence&order=asc"> <i class="fas fa-sort-alpha-up"></i></a> | <a href="competences.php?column=competence&order=desc"><i class="fas fa-sort-alpha-down"></i></a></th>
                                 <th>Niveau<a href="competences.php?column=niveau&order=asc"> <i class="far fa-arrow-alt-circle-up"></i></a> | <a href="competences.php?column=niveau&order=desc"><i class="far fa-arrow-alt-circle-down"></i></a></th>
                                 <th>Catégorie<a href="competences.php?column=categorie&order=asc"> <i class="far fa-arrow-alt-circle-up"></i></a> | <a href="competences.php?column=categorie&order=desc"><i class="far fa-arrow-alt-circle-down"></i></a></th>
                                 <th>Modifier</th>
@@ -167,7 +166,7 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
                 <hr>
     
                 <!-- Formulaire d'insertion d'une nouvelle compétence  -->
-                <h1>Insérer une nouvelle compétence</h1>
+                <h1>Nouvelle compétence</h1>
     
                 <div class="card"><!-- début .card -->
                     <form action="competences.php" method="post">
@@ -177,7 +176,7 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
                     </div>
                     <div class="niveau">
                             <label for="niveau">Niveau</label>                
-                            <input type="text" name="niveau" placeholder="niveau en chiffre" class="form-control" required>    
+                            <input type="text" name="niveau" placeholder="Niveau en chiffre" class="form-control" required>    
                     </div>
                     <div class="categorie">
                             <label for="categorie">Catégorie</label>                
@@ -195,10 +194,5 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
 
 </div><!-- fin .container-fluid -->
    
-
-   <!-- Lien Bootstrap script JS  -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 <?php require 'inc/footer.inc.php'; ?>

@@ -19,11 +19,10 @@
 
 
         <div class="jumbotron home"><!-- début .jumbotron -->
-            <h1 class="display-4">Bievenue dans mon site CV www.pmbaye.fr !</h1>
-            <p class="lead">Papaoumar Mbaye 24 ans développeur/intégrateur web.</p>
+            <h1 class="display-4">www.pmbaye.fr Site Portfolio</h1>
+            <p class="lead">Développeur/Intégrateur Web Au PoleS</p>
             <hr class="my-4">
-            <p>Dans ce site, je vais vous présenter mon CV avec les différentes expériences professionnlles que j'ai pu acquérir, ainsi que les compétences acquises, les formations faites en amont, enfin mes différents loisirs</p>
-            <h2>Bonne visite sur le site !!!</h2>
+            
         </div><!-- fin .jumbotron -->
 
         <img class="language" src="img/language.png" alt="Langage de codes">

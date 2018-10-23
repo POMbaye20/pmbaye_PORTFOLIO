@@ -18,8 +18,12 @@
 
 /* loisirs.php */
 .loisirs {
-    /* background: url(../img/coucher_soleil.jpg) ; */
+    background: url(../img/ohio.jpg);
     text-align: center; 
+    background-size: cover;
+    color: white;
+    
+    
 }
 
 .table_loisirs {
@@ -28,8 +32,26 @@
 }
 
 /* formations.php */
+.formations {
+    text-align: center;
+   background: url(../img/defense.jpg);
+   background-size: cover;
+   height: 50vh;
+   color: whitesmoke;
+   
+}
 
 
+
+
+/* experiences.php */
+
+.experiences {
+    background: plum;
+    text-align: center;
+    background: url(../img/fond.jpg);
+    background-size: cover;
+}
 
 
 

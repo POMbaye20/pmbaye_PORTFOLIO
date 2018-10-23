@@ -1,5 +1,5 @@
 <footer class="mt-4  text-center ">
-  <div class="bg-success text-white">
+  <div class="bg-info text-white">
       <div class="card-header">
         &copy; pmbaye.fr Site Portfolio 2018 
       </div>
@@ -8,6 +8,7 @@
           <a href="https://fr.linkedin.com/in/papaoumar-mbaye-6661b3ab" target="_blank"> <i class="fab linkedin fa-linkedin-in"></i></a>  
           <a href="https://github.com/POMbaye20" target="_blank"> <i class="fab github fa-github"></i></a>  
           <p class="contact"><a href="messages.php">Me contacter</a></p>
+          <p><i class="far fa-envelope"></i></p>
           <p>papaoumar.mbaye@laposte.net</p>
         </div>
   </div>

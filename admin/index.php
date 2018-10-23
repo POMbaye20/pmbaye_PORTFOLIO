@@ -61,16 +61,15 @@ if (isset($_GET['deconnexion'])) { //  on récupère le terme deconnexion en GET
     <!-- Ici, j'inclus ma page naviagtion.php -->
     <?php require 'inc/navigation.inc.php'; ?>
 
-    <h1>Welcome <?php echo $ligne_utilisateur['pseudo']; ?> !!</h1>
+    
   
 
 
      <div class="jumbotron"><!-- début .jumbotron -->
-        <h1 class="display-4 ">Bienvenue dans mon site Portfolio (CV)</h1>
-        <p class="lead">Étant développeur intégrateur web, je vais vous présenter dans ce site mon parcours avant d'en arriver là, avec mes formations et mes expériences professionnelles</p>
+     <h1 class="display-4">Welcome <?php echo $ligne_utilisateur['pseudo']; ?> !!</h1>
+        <p class="lead">Développeur /Intégrateur Web au PoleS</p>
         <hr class="my-4">
-        <p>Bonne visite !!! <i class="fas fa-smile"></i></p>
-        <p><i class="fab fa-angellist"></i></p>
+      
     </div><!-- fin .jumbotron -->
 
     
@@ -82,92 +81,97 @@ if (isset($_GET['deconnexion'])) { //  on récupère le terme deconnexion en GET
   <h2 class="titre mb-4">Présentation des rubriques</h2>
 
 
-<div class="row diaporama mb-4">
+<div class="container-fluid"><!-- début .container-fluid -->
+<div class="row">
+    <div class="col-sm">
+    <div class=" diaporama mb-4">
+    
+    <div class="col-lg-8 col-md-12 col-sm-12 m-auto">
+      <div id="carousel01" class="carousel slide" data-ride="carousel"> 
+            <!-- ici on place les indicateurs -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel01" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel01" data-slide-to="1"></li>
+                <li data-target="#carousel01" data-slide-to="2"></li>
+                <li data-target="#carousel01" data-slide-to="3"></li>
+            </ol>
+  
+            <!-- le diapo est dans une div avec un id et sa class et sa data-ride -->
+            <div class="carousel-inner"> <!-- tous les img du diapo sont dans une div class carousel-inner -->
+                <div class="carousel-item active">
+                    <img src="img/welcome.png" alt="Bienvenue" class="w-100 d-block">
+                    <!-- et ici on met la légende de la photo -->
+                    <div class="carousel-caption d-none d-md-block">
+                     
+                    </div>
+                </div>
+  
+                <div class="carousel-item">
+                    <img src="img/langages.jpg" alt="Mes compétences acquises" class="w-100 d-block">
+                    <!-- la légende de la photo -->
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="text-dark font-weight-bold">Compétences</h5>
 
-  <div class="col-lg-8 col-md-12 col-sm-12 m-auto">
-    <div id="carousel01" class="carousel slide" data-ride="carousel"> 
-          <!-- ici on place les indicateurs -->
-          <ol class="carousel-indicators">
-              <li data-target="#carousel01" data-slide-to="0" class="active"></li>
-              <li data-target="#carousel01" data-slide-to="1"></li>
-              <li data-target="#carousel01" data-slide-to="2"></li>
-              <li data-target="#carousel01" data-slide-to="3"></li>
-          </ol>
+                    </div>
+                </div>
+  
+  
+                <div class="carousel-item">
+                    <img src="img/hobbies.jpg" alt="Loisirs" class="w-100 d-block">
+                    <!-- la légende de la photo -->
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Loisirs</h5>
+                        
+                    </div>
+                </div>
+  
+  
+                <div class="carousel-item">
+                    <img src="img/formations.jpg" alt="Formations" class="w-100 d-block">
+                    <!-- la légende de la photo -->
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="text-dark font-weight-bold">Formations</h5>
+                        
+                    </div>
+                </div>
+  
+  
+            </div><!-- fin .carousel-inner -->
+  
+  
+            <!-- ici nous plaçons les contrôles du diaporama -->
+            <a href="#carousel01" role="button" class="carousel-control-prev" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Précédent</span>
+            </a>
+            <!-- sr = screen reader -->
+            <a href="#carousel01" role="button" class="carousel-control-next" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Suivant</span>
+            </a>
+        </div> <!-- fin diapo -->
+    </div> <!-- fin de div largeur -->
+  
+  </div><!-- fin rangée Diaporama -->
+    </div>
+    <div class="col-sm">
+      <p>Dans le menu déroulant situé dans la navigation, vous trouverez les difféentes rubriques du CV</p>
+      <p>Également en aperçu dans le slider situé à gauche de la page</p>
+    </div>
+    
+  </div>
+   
+                                    <!-- Bouton d'accès vers les pages importantes  -->
+    
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary" a href="formations.php">Formations</button>
+            <button type="button" class="btn btn-danger" a href="competences.php">Compétences</button>
+            <button type="button" class="btn btn-success" a href="experiences.php">Expériences</button>
+        </div> 
 
-          <!-- le diapo est dans une div avec un id et sa class et sa data-ride -->
-          <div class="carousel-inner"> <!-- tous les img du diapo sont dans une div class carousel-inner -->
-              <div class="carousel-item active">
-                  <img src="img/welcome.png" alt="Bienvenue" class="w-100 d-block">
-                  <!-- et ici on met la légende de la photo -->
-                  <div class="carousel-caption d-none d-md-block">
-                   
-                  </div>
-              </div>
-
-              <div class="carousel-item">
-                  <img src="img/langages.jpg" alt="Mes compétences acquises" class="w-100 d-block">
-                  <!-- la légende de la photo -->
-                  <div class="carousel-caption d-none d-md-block">
-                      <h5 class="text-dark font-weight-bold">Compétences</h5>
-                      <p class="text-dark font-weight-bold">Mes compétences acquises au cour de la formation</p>
-                  </div>
-              </div>
-
-
-              <div class="carousel-item">
-                  <img src="img/hobbies.jpg" alt="Loisirs" class="w-100 d-block">
-                  <!-- la légende de la photo -->
-                  <div class="carousel-caption d-none d-md-block">
-                      <h5>Loisirs</h5>
-                      <p>Mes centres d'intérêts </p>
-                  </div>
-              </div>
-
-
-              <div class="carousel-item">
-                  <img src="img/formations.jpg" alt="Formations" class="w-100 d-block">
-                  <!-- la légende de la photo -->
-                  <div class="carousel-caption d-none d-md-block">
-                      <h5 class="text-dark font-weight-bold">Formations</h5>
-                      <p class="text-dark font-weight-bold">Présentation de mes formations précédentes</p>
-                  </div>
-              </div>
-
-
-          </div><!-- fin .carousel-inner -->
-
-
-          <!-- ici nous plaçons les contrôles du diaporama -->
-          <a href="#carousel01" role="button" class="carousel-control-prev" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Précédent</span>
-          </a>
-          <!-- sr = screen reader -->
-          <a href="#carousel01" role="button" class="carousel-control-next" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Suivant</span>
-          </a>
-      </div> <!-- fin diapo -->
-  </div> <!-- fin de div largeur -->
-
-</div><!-- fin rangée Diaporama -->
-
-
-                                                        <!-- Liens de raccourci vers les pages importantes  -->
-<div class="raccourci">
-    <a href="formations.php" class="btn btn-warning btn-lg raccourci_link " role="button" aria-pressed="true">Formations</a>
-    <a href="experiences.php" class="btn btn-success btn-lg raccourci_link " role="button" aria-pressed="true">Expériences professionnelles</a>
-    <a href="utilisateurs.php" class="btn btn-info btn-lg raccourci_link " role="button" aria-pressed="true">Utilisateur </a>
-</div>   
+</div><!-- fin .container-fluid -->
 
   
-
-
-    
-<!-- Lien Bootstrap script JS  -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 
 <!-- Ici, j'inclus mon footer (footer.php)  -->
