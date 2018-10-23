@@ -56,7 +56,7 @@ if (isset($_GET['id_message'])) { // on récupère ce que je supprime dans l'url
     
 
     
-       <div class="container-fluid col-lg-6"><!-- début .container-fluid -->
+       <div class="container-fluid col-lg-6 message"><!-- début .container-fluid -->
       
 
         <h2>Renseignez les informations suivantes</h2>
@@ -81,7 +81,7 @@ if (isset($_GET['id_message'])) { // on récupère ce que je supprime dans l'url
                     <label for="message">Le message</label>                
                     <textarea name="message" class="form-control"></textarea>
                </div>
-                <div class="">
+                <div class="mb-4">
                     <button class="btn btn-success" type="submit">Envoyer</button>
                 </div>
             </form>

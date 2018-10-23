@@ -49,12 +49,17 @@
 
 
 /* experiences.php */
-
 .experiences {
     background: plum;
     text-align: center;
     background: url(../img/fond.jpg);
     background-size: cover;
+}
+
+
+/* messages.php */
+.message {
+    background: linear-gradient(lightskyblue, lightgrey);
 }
 
 

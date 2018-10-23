@@ -35,11 +35,11 @@
            
         ?>
     
-    <div class="">
+    <div class="t_exp">
             <table class="table table-light table-hover" border="1">
             
                 <thead class="experiences">
-                    <tr class="text-danger">
+                    <tr>
                         <th>Titre</th>
                         <th>Sous titre</th>
                         <th>Date</th>
