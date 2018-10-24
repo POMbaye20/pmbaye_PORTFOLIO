@@ -5,13 +5,13 @@
           </div>
           <div class="col-sm">
             <h4> Me retrouver sur </h4>
-                <a href="https://fr.linkedin.com/in/papaoumar-mbaye-6661b3ab" target="_blank"> <i class="fab linkedin fa-linkedin-in"></i></a>  
-                <a href="https://github.com/POMbaye20" target="_blank"> <i class="fab github fa-github"></i></a>  
+                <a href="https://fr.linkedin.com/in/papaoumar-mbaye-6661b3ab" class="social_network  " target="_blank"> <i class="fab linkedin fa-linkedin-in"></i></a>  
+                <a href="https://github.com/POMbaye20" class="social_network " target="_blank"> <i class="fab github fa-github"></i></a>  
           </div>
           <div class="col-sm">
               <p class="contact"><a href="messages.php">Me contacter</a></p>
-              <p><i class="far fa-envelope"></i></p>
-              <p>papaoumar.mbaye@laposte.net</p>
+              <p><i class="far fa-envelope"></i> papaoumar.mbaye@laposte.net</p>
+               
           </div>
       </div><!-- fin.row -->
   </div><!-- fin .container pour le footer -->
@@ -23,18 +23,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
   </html>
-              <!-- <footer class="mt-4  text-center ">
-                <div class="bg-info text-white">
-                    <div class="card-header">
-                      &copy; pmbaye.fr Site Portfolio 2018 
-                    </div>
-                      <div class="card-body reseaux">
-                        <h5 class="card-title">Me retrouver sur</h5>
-                        <a href="https://fr.linkedin.com/in/papaoumar-mbaye-6661b3ab" target="_blank"> <i class="fab linkedin fa-linkedin-in"></i></a>  
-                        <a href="https://github.com/POMbaye20" target="_blank"> <i class="fab github fa-github"></i></a>  
-                        <p class="contact"><a href="messages.php">Me contacter</a></p>
-                        <p><i class="far fa-envelope"></i></p>
-                        <p>papaoumar.mbaye@laposte.net</p>
-                      </div>
-                </div>
-              </footer> -->
+   

@@ -90,80 +90,82 @@ if (isset($_GET['id_loisir'])) { // on récupère ce que je supprime dans l'url 
 </head>
 <body>
 
-    <!-- Ici, j'inclus ma page navigation.php avec un require -->
-    <?php require 'inc/navigation.inc.php'; ?>
-
-    <!-- Mon jumbotron -->
-    <div class="jumbotron"><!-- début .jumbotron -->
-        <h1 class="display-4">Loisirs <i class="far fa-futbol "></i> <i class="fas fa-tv text-dark"></i> <i class="fas fa-plane"></i></h1>
-        <hr class="my-4">
-        <p>Admin <?php  echo $ligne_utilisateur['pseudo']; ?></p>
-    </div><!-- fin ..jumbotron -->
+   <main>
+        <!-- Ici, j'inclus ma page navigation.php avec un require -->
+        <?php require 'inc/navigation.inc.php'; ?>
     
-   
-<div class="container-fluid col-lg-6"><!-- début .container-fluid -->
-
-    <h1 class="loisir mt-4">Les loisirs </h1>
-        <?php 
-            //requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
-            $sql = $pdoCV -> prepare("SELECT * FROM t_loisirs WHERE id_utilisateur = '$id_utilisateur'");
-            $sql -> execute();
-            $nbr_loisirs = $sql -> rowCount();
-        ?>
-
-    <div class="row"><!-- début .row -->
-
-        <div class="col"><!-- début col -->
-
-                <div class="table_loisir"><!-- début .table_loisir -->
-                        <table class="table_loisir  " border="1">
-                        <caption><?php echo $nbr_loisirs; ?> loisirs </caption>
-                            <thead class="bg-primary">
-                                <tr>
-                                    <th>Les loisirs</th>
-                                    <th>Modifier</th>
-                                    <th>Suppression</th>
-                                </tr>
-                            </thead>
-                    
-                            <tbody>
-                            <?php  while($ligne_loisir = $sql -> fetch()) 
-                                {
-                            ?>
-                                <tr>
-                                    <td><?php echo $ligne_loisir['loisir']; ?></td>
-                                    <td><a href="modif_loisir.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?> " ><i class="fas fa-edit"></i></a></td>
-                                    <td><a href="loisirs.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?> " ><i class="fas fa-trash text-danger"></i></a></td>
-                                </tr>
-            
-                                <?php 
-                                    }  // fin de la boucle while
-                                ?>
-            
-                            </tbody>
-                        
-                        </table><!-- fin <table> -->
-                </div><!-- fin .table_loisir -->
-
-        </div><!-- fin col -->
+        <!-- Mon jumbotron -->
+        <div class="jumbotron"><!-- début .jumbotron -->
+            <h1 class="display-4">Loisirs <i class="far fa-futbol "></i> <i class="fas fa-tv text-dark"></i> <i class="fas fa-plane"></i></h1>
+            <hr class="my-4">
+            <p>Admin <?php  echo $ligne_utilisateur['pseudo']; ?></p>
+        </div><!-- fin ..jumbotron -->
         
-                <hr>
-                <!-- Insertion d'un nouveau loisir formulaire  -->
-               <div class="col"><!-- début col 2 -->
-                    <form action="loisirs.php" method="post">
-                    <div class="mt-4">
-                            <label for="loisir">Loisir</label>                
-                            <input class="form-control" type="text" name="loisir" placeholder="Nouveau loisir" required>    
-                    </div>
-            
-                        <div class="mt-4">
-                            <button class="btn btn-success" type="submit">Insérer</button>
-                        </div>
-                    </form>
-               </div><!-- fin col 2 -->
-    </div><!-- fin .row -->
-
-</div><!-- fin .container-fluid -->
+       
+        <div class="container-fluid col-lg-6"><!-- début .container-fluid -->
+        
+            <h1 class="loisir mt-4">Les loisirs </h1>
+                <?php 
+                    //requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
+                    $sql = $pdoCV -> prepare("SELECT * FROM t_loisirs WHERE id_utilisateur = '$id_utilisateur'");
+                    $sql -> execute();
+                    $nbr_loisirs = $sql -> rowCount();
+                ?>
+        
+            <div class="row"><!-- début .row -->
+        
+                <div class="col"><!-- début col -->
+        
+                        <div class="table_loisir"><!-- début .table_loisir -->
+                                <table class="table_loisir  " border="1">
+                                <caption><?php echo $nbr_loisirs; ?> loisirs </caption>
+                                    <thead class="bg-primary">
+                                        <tr>
+                                            <th>Les loisirs</th>
+                                            <th>Modifier</th>
+                                            <th>Suppression</th>
+                                        </tr>
+                                    </thead>
+                            
+                                    <tbody>
+                                    <?php  while($ligne_loisir = $sql -> fetch()) 
+                                        {
+                                    ?>
+                                        <tr>
+                                            <td><?php echo $ligne_loisir['loisir']; ?></td>
+                                            <td><a href="modif_loisir.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?> " ><i class="fas fa-edit"></i></a></td>
+                                            <td><a href="loisirs.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?> " ><i class="fas fa-trash text-danger"></i></a></td>
+                                        </tr>
+                    
+                                        <?php 
+                                            }  // fin de la boucle while
+                                        ?>
+                    
+                                    </tbody>
+                                
+                                </table><!-- fin <table> -->
+                        </div><!-- fin .table_loisir -->
+        
+                </div><!-- fin col -->
+                
+                        <hr>
+                        <!-- Insertion d'un nouveau loisir formulaire  -->
+                    <div class="col"><!-- début col 2 -->
+                            <form action="loisirs.php" method="post">
+                            <div class="mt-4">
+                                    <label for="loisir">Loisir</label>                
+                                    <input class="form-control" type="text" name="loisir" placeholder="Nouveau loisir" required>    
+                            </div>
+                    
+                                <div class="mt-4">
+                                    <button class="btn btn-success" type="submit">Insérer</button>
+                                </div>
+                            </form>
+                    </div><!-- fin col 2 -->
+            </div><!-- fin .row -->
+        
+        </div><!-- fin .container-fluid -->
+   </main>
 
 
 

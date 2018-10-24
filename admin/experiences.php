@@ -92,7 +92,7 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
 
 
 <div class="container-fluid col-lg-8"><!-- début de .container-fluid -->
-    <h1 class="text-center">Mes expériences professionnelles <i class="fas fa-briefcase"></i></h1>
+    
         <?php 
             //requête popur compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
             $sql = $pdoCV -> prepare("SELECT * FROM t_experiences WHERE id_utilisateur = '$id_utilisateur'");

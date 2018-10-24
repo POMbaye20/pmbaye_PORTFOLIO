@@ -1,8 +1,6 @@
 <?php require 'connexion.php'; //  ici, je me connecte à la base de données ?>
 
 
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -24,10 +22,10 @@
     <!-- Mon jumbotron -->
 
     <div class="jumbotron loisirs "><!-- début .jumbotron -->
-        <h1 class="display-4">Mes loisirs <i class="fas fa-music"></i> <i class="fas fa-tv "></i> <i class="fas fa-plane    "></i></h1>
-        <p class="lead">Dans cette page, je vais présenter mes loisirs</p>
-        <hr class="my-4">
-        <p>En dessous, voici ma liste des loisirs</p>
+        <h1 class="display-4">Mes loisirs <i class="fas fa-music"></i> <i class="fas fa-tv "></i> <i class="fas fa-plane"></i></h1>
+        <p class="lead">Voici la liste de mes loisirs</p>
+        <hr class="my-4 ">
+        <p>Tableau ci-dessous</p>
     </div><!-- fin ..jumbotron -->
     
    
@@ -44,9 +42,9 @@
 
         <div class="table table-hover "><!-- début col -->
 
-        <h1 class="mt-4 text-center ">Mes loisirs </h1>
+       
 
-                        <table class="table_loisir mx-auto table_loisirs mb-4 mt-4" border="1">
+                        <table class="table_loisir mx-auto table_loisirs mb-4 mt-4 bg-dark text-white" border="1">
                         
                             <thead class="bg-dark text-white">
                                 <tr>

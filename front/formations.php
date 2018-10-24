@@ -10,64 +10,66 @@
      <!-- Je fais un require de tous les liens (Bootstrap, Font awesome, CSS)  -->
      <?php require 'inc/link.inc.php'; ?>
 
-    <title>Mes formations</title>
+    <title>Formations</title>
 </head>
 <body>
 
-    <?php require 'inc/navigation.inc.php'; ?>
-
-    <div class="jumbotron formations "><!-- début .jumbotron -->
-        <h1 class="display-4">Formations <i class="fas fa-graduation-cap"></i></h1>
-        <p class="lead">Bienvenue dans ma page formation où je vais vous lister les différentes formations que j'ai effectué</p>
-        <!-- <hr class="my-4"> -->
-        <!-- <p>Voir le tableau des formations ci-dessous</p> -->
-    </div><!-- fin ..jumbotron -->
-
-
-<div class="container-fluid col-lg-6 col-md-12"><!-- début container-fluid -->
+   <main>
+        <?php require 'inc/navigation.inc.php'; ?>
     
-
-    <h1 class="text-center">Formations</h1>
-        <?php 
-            //requête popur compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
-            $sql = $pdoCV -> prepare("SELECT * FROM t_formations");
-            $sql -> execute();
-           
-        ?>
+        <div class="jumbotron formations "><!-- début .jumbotron -->
+            <h1 class="display-4">Formations <i class="fas fa-graduation-cap"></i></h1>
+            <p class="lead">Les formations que j'ai faite avant d'intégrer l'univers du web, y compris celle-là que je fais actuellement</p>
+            <!-- <hr class="my-4"> -->
+            <!-- <p>Voir le tableau des formations ci-dessous</p> -->
+        </div><!-- fin ..jumbotron -->
     
-    <div class="">
-            <table class="table table-light table-responsive" border="1">
-            
-                <thead>
-                    <tr class="text-primary">
-                        <th>Titre</th>
-                        <th>Sous titre</th>
-                        <th>Date </th>
-                        <th>Description</th>
-                       
-                    </tr>
-                </thead>
+    
+    <div class="container-fluid col-lg-6 col-md-12"><!-- début container-fluid -->
         
-                <tbody>
-                <?php  while($ligne_formation = $sql -> fetch()) 
-                    {
-                ?>
-                    <tr>
-                        <td><?php echo $ligne_formation['titre_form']; ?></td>
-                        <td><?php echo $ligne_formation['stitre_form']; ?></td>
-                        <td><?php echo $ligne_formation['dates_form']; ?></td>
-                        <td><?php echo $ligne_formation['description_form']; ?></td>
-                        
-                    </tr>
-                    <?php 
-                        }  // fin de la boucle while
-                    ?>
-                </tbody>
+    
+        <h1 class="text-center">Formations</h1>
+            <?php 
+                //requête popur compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
+                $sql = $pdoCV -> prepare("SELECT * FROM t_formations");
+                $sql -> execute();
+               
+            ?>
+        
+        <div class="">
+                <table class="table table-light table-responsive bg-dark text-white" border="1">
+                
+                    <thead>
+                        <tr class="text-primary">
+                            <th>Titre</th>
+                            <th>Sous titre</th>
+                            <th>Date </th>
+                            <th>Description</th>
+                           
+                        </tr>
+                    </thead>
             
-            </table><!-- fin <table> -->
-    </div>
-       
-
-</div><!-- fin .container-fluid -->
+                    <tbody>
+                    <?php  while($ligne_formation = $sql -> fetch()) 
+                        {
+                    ?>
+                        <tr>
+                            <td><?php echo $ligne_formation['titre_form']; ?></td>
+                            <td><?php echo $ligne_formation['stitre_form']; ?></td>
+                            <td><?php echo $ligne_formation['dates_form']; ?></td>
+                            <td><?php echo $ligne_formation['description_form']; ?></td>
+                            
+                        </tr>
+                        <?php 
+                            }  // fin de la boucle while
+                        ?>
+                    </tbody>
+                
+                </table><!-- fin <table> -->
+        </div>
+           
+    
+    </div><!-- fin .container-fluid -->
+   </main>
 
 <?php require 'inc/footer.inc.php'; ?>

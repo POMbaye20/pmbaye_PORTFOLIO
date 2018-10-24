@@ -10,7 +10,7 @@
      <!-- Je fais un require de tous les liens (Bootstrap, Font awesome, CSS)  -->
      <?php require 'inc/link.inc.php'; ?>
 
-    <title>Les expériences professionnelles</title>
+    <title>Expériences</title>
 </head>
 <body>
 
@@ -18,9 +18,9 @@
 
     <div class="jumbotron experiences"><!-- début .jumbotron -->
         <h1 class="display-4">Expériences <i class="fas fa-briefcase"></i></h1>
-        <p class="lead">Voici la page des expériences professionnelles</p>
+        <p class="lead">Les expériences acquises dans différents domaines comme la vente en surface lors des périodes de stages, en gare et actuellement dans le développement et intégration web</p>
         <hr class="my-4">
-        <p>Voir le tableau des expériences ci-dessous</p>
+        <p>Tableau ci-dessous</p>
     </div><!-- fin ..jumbotron -->
 
 
@@ -36,15 +36,14 @@
         ?>
     
     <div class="t_exp">
-            <table class="table table-light table-hover" border="1">
+            <table class="table table-light table-hover" border="1"><!-- début <table> -->
             
                 <thead class="experiences">
                     <tr>
                         <th>Titre</th>
                         <th>Sous titre</th>
                         <th>Date</th>
-                        <th>Description</th>
-                       
+                        <th>Description</th>           
                     </tr>
                 </thead>
         
@@ -57,14 +56,14 @@
                         <td><?php echo $ligne_experience['stitre_exp']; ?></td>
                         <td><?php echo $ligne_experience['dates_exp']; ?></td>
                         <td><?php echo $ligne_experience['description_exp']; ?></td>
-                        
                     </tr>
+
                     <?php 
                         }  // fin de la boucle while
                     ?>
                 </tbody>
             
-            </table><!-- fin <table> -->
+            </table><!-- fin </table> -->
     </div>
        
 

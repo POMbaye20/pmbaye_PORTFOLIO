@@ -1,11 +1,15 @@
+main {
+    min-height: 92vh;
 
-/* jumbotron  */
+}
+
 
 /* index.php */
 .home {
     background:url(../img/fond_jumbotron.jpg );
     text-align: center;
 }
+
 
 .the_card {
     width : 50%;
@@ -26,14 +30,13 @@
     text-align: center; 
     background-size: cover;
     color: white;
-    
-    
 }
 
 .table_loisirs {
    width: 60%;
     text-align: center; 
 }
+
 
 /* formations.php */
 .formations {
@@ -45,12 +48,8 @@
    
 }
 
-
-
-
 /* experiences.php */
 .experiences {
-    background: plum;
     text-align: center;
     background: url(../img/fond.jpg);
     background-size: cover;
@@ -62,34 +61,16 @@
     background: linear-gradient(lightskyblue, lightgrey);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.messages {
+    background: linear-gradient(lightsalmon, lightskyblue);
+}
 
 
 /******************************************************************* Footer  *******************************************************************/
 .footer-front {
     text-align: center;
-
 }
+
+
+
+.social_network { font-size: 3vh; letter-spacing: 10px; }
