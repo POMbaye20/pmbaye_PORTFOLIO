@@ -34,7 +34,7 @@
     
         <?php 
             //requête pour afficher la liste des loisirs dans le tableau
-            $sql = $pdoCV -> prepare("SELECT * FROM t_loisirs ");
+            $sql = $pdoCV -> prepare("SELECT * FROM t_loisirs WHERE id_utilisateur=1 ");
             $sql -> execute();
         ?>
 
