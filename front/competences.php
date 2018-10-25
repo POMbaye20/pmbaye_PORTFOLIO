@@ -9,15 +9,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Lien Bootstrap -->
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <!-- Lien Font Awesome pour insérer des icônes  -->
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <!-- Mon style CSS -->
-    <link rel="stylesheet" href="css/style.css">
-  
+   
+    <!-- Ici je fais un require de mes liens -->
+    <?php require 'inc/link.inc.php'; ?>
 
     <title>Mes compétences</title>
     
@@ -44,7 +38,7 @@
         <h1 class="text-dark text-center">Langages de codes acquis <i class="fas fa-check text-success"></i></h1>
             <?php 
                 
-                $sql = $pdoCV -> prepare("SELECT * FROM t_competences ");
+                $sql = $pdoCV -> prepare("SELECT * FROM t_competences WHERE id_utilisateur=1");
                 $sql -> execute();  // j'exécute la requête
                 $nbr_competences = $sql -> rowCount(); // ici, rowCount() indique le nombre d'éléments
             ?>

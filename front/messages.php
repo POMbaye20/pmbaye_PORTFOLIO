@@ -35,12 +35,10 @@ if (isset($_GET['id_message'])) { // on récupère ce que je supprime dans l'url
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Lien Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <!-- Lien Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <!-- Mon style CSS -->
-    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Ici, je fais un require de mes liens cdn -->
+    <?php require 'inc/link.inc.php'; ?>
+
     <title>Contact</title>
 </head>
 <body>
@@ -64,7 +62,7 @@ if (isset($_GET['id_message'])) { // on récupère ce que je supprime dans l'url
           
                 <h2>Renseignez les informations suivantes</h2>
     
-                    <form class="form_message" action="messages.php" method="post">
+                    <form class="form_message mt-4" action="messages.php" method="post">
                     <div class="form-group">
                             <label for="nom">Nom</label>                
                             <input type="text" name="nom" placeholder="Nom" class="form-control" required>    

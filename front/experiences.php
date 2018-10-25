@@ -30,7 +30,7 @@
     
         <?php 
             //requête popur compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
-            $sql = $pdoCV -> prepare("SELECT * FROM t_experiences");
+            $sql = $pdoCV -> prepare("SELECT * FROM t_experiences WHERE id_utilisateur=1");
             $sql -> execute();
            
         ?>

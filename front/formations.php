@@ -27,16 +27,14 @@
     
     <div class="container-fluid col-lg-6 col-md-12"><!-- début container-fluid -->
         
-    
-        <h1 class="text-center">Formations</h1>
             <?php 
                 //requête popur compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
-                $sql = $pdoCV -> prepare("SELECT * FROM t_formations");
+                $sql = $pdoCV -> prepare("SELECT * FROM t_formations WHERE id_utilisateur=1 ");
                 $sql -> execute();
                
             ?>
         
-        <div class="">
+        <div class="table_formation">
                 <table class="table table-light table-responsive bg-dark text-white" border="1">
                 
                     <thead>

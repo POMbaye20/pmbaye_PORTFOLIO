@@ -44,7 +44,7 @@
 
        
 
-                        <table class="table_loisir mx-auto table_loisirs mb-4 mt-4 bg-dark text-white" border="1">
+                        <table class="table_loisir mx-auto table_loisirs mb-4 bg-dark text-white" border="1">
                         
                             <thead class="bg-dark text-white">
                                 <tr>
