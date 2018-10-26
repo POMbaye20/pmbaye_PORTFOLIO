@@ -28,7 +28,7 @@
     <div class="container-fluid col-lg-6 col-md-12"><!-- début container-fluid -->
         
             <?php 
-                //requête popur compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
+                //requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
                 $sql = $pdoCV -> prepare("SELECT * FROM t_formations WHERE id_utilisateur=1 ");
                 $sql -> execute();
                
