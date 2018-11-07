@@ -1,3 +1,7 @@
+main {
+    min-height: 91vh;
+}
+
 body {
     min-height: 92vh;
     font-family: 'Montserrat', sans-serif; 

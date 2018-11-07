@@ -61,8 +61,8 @@
        </div>
 
        <div class="mb-5 text-success">
-           <p>Aller sur la navigation en haut de la page, pour retrouver les autres rubriques</p>
-           <p>Egalement une page si vous souhaitez me contacter</p>
+           <!-- <p>Aller sur la navigation en haut de la page, pour retrouver les autres rubriques</p>
+           <p>Egalement une page si vous souhaitez me contacter</p> -->
            
        </div>
 

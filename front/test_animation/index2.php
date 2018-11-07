@@ -18,7 +18,7 @@
   </div>
 
             <?php 
-                $sql = $pdoCV -> prepare("SELECT * FROM t_competences ");
+                $sql = $pdoCV -> prepare("SELECT * FROM t_competences");
                 $ligne_competence = $sql -> execute();  // j'exécute la requête
             ?>
 
