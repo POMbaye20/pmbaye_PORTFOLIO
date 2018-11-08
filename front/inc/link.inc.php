@@ -15,6 +15,3 @@
     
      <!-- Lien google fonts Roboto Slab -->
      <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
-
-         <!-- Mon style CSS skills-->
-    <link rel="stylesheet" href="anim_skills/style_skills.css">
