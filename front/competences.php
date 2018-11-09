@@ -58,7 +58,7 @@
                 
                         <tbody>
                         <?php  while($ligne_competence = $sql -> fetch()) 
-                            {
+                            { // début de la boucle while du tableau
                         ?>
                             <tr>
                                 <td><?php echo $ligne_competence['competence']; ?></td>

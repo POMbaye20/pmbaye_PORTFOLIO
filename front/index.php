@@ -20,7 +20,7 @@
     
     
             <div class="jumbotron home"><!-- début .jumbotron -->
-                <h1 class="display-4">www.pmbaye.fr Site Portfolio 2018</h1>                   
+                <h1 class="display-4">Papaoumar Mbaye <?= date('Y') - 1994  ?> ans Développeur - Intégrateur Web</h1>                   
             </div><!-- fin .jumbotron -->
     
     

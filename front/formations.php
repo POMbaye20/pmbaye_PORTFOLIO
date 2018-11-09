@@ -49,7 +49,7 @@
             
                     <tbody>
                     <?php  while($ligne_formation = $sql -> fetch()) 
-                        {
+                        { // début de la boucle while du tableau
                     ?>
                         <tr>
                             <td><?php echo $ligne_formation['titre_form']; ?></td>

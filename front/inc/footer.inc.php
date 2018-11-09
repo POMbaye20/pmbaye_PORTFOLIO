@@ -1,4 +1,4 @@
-  <div class="container-fluid bg-info footer-front"><!-- début .container pour le footer -->
+  <div class="container-fluid footer-front"><!-- début .container pour le footer -->
       <div class="row"><!-- début .row -->
           <div class="col-sm">
             &copy; www.pmbaye.fr Site Portfolio 2018
@@ -10,7 +10,7 @@
           </div>
           <div class="col-sm">
               <p class="contact"><a href="messages.php">Me contacter</a></p>
-              <p><i class="far fa-envelope"></i> papaoumar.mbaye@laposte.net</p>
+              <!-- <p><i class="far fa-envelope"></i> papaoumar.mbaye@laposte.net</p> -->
                
           </div>
       </div><!-- fin.row -->
@@ -18,6 +18,7 @@
 
     
     
+    <!-- Lien jQuery, scripts pour bootstrap (exemple : pour la navbar qui se transforme en burger à la réduction de l'écran") -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     
 
