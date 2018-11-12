@@ -1,10 +1,12 @@
 main {
     min-height: 91vh;
+    
 }
 
 body {
     min-height: 92vh;
     font-family: 'Montserrat', sans-serif; 
+    background: #F8F8FF;
 }
 
 /* titres h1, h2 font family roboto */
@@ -24,6 +26,10 @@ th {
 .nav-color {
     background: lightskyblue;
 }
+
+.nav-link { color: #000 !important; }
+
+.nav-link:hover { color: #fff !important; }
 
 
 /* index.php */
@@ -53,9 +59,14 @@ th {
     text-align: center;
 }
 
+.html {color: orangered;}
+
+.css {color: skyblue;}
+
 /* loisirs.php */
 .loisirs {
     background: url(../img/ohio.jpg);
+    min-height: 40vh;
     text-align: center; 
     background-size: cover;
     color: white;

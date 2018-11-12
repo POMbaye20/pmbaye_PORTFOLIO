@@ -23,9 +23,8 @@
 
     <div class="jumbotron loisirs "><!-- début .jumbotron -->
         <h1 class="display-4">Mes loisirs <i class="fas fa-music"></i> <i class="fas fa-tv "></i> <i class="fas fa-plane"></i></h1>
-        <p class="lead">Voici la liste de mes loisirs</p>
-        <hr class="my-4 ">
-        <p>Tableau ci-dessous</p>
+        <p class="lead">Ce que j'aime faire</p>
+    
     </div><!-- fin ..jumbotron -->
     
    
@@ -48,7 +47,7 @@
                         
                             <thead class="bg-dark text-white">
                                 <tr>
-                                    <th>La liste des loisirs</th>
+                                    <th>Hobbies</th>
                                     
                                 </tr>
                             </thead>

@@ -35,7 +35,7 @@
 <div class="container-fluid col-lg-6"><!-- début .container-fluid -->
 
 
-        <h1 class="text-dark text-center">Langages de codes acquis <i class="fas fa-check text-success"></i></h1>
+        <h1 class="text-dark text-center">Langages de codes acquis <i class="fab fa-html5 html"></i> <i class="fab fa-css3 css"></i> </h1>
             <?php 
                 
                 $sql = $pdoCV -> prepare("SELECT * FROM t_competences WHERE id_utilisateur=1");
@@ -50,8 +50,8 @@
                         <thead>
                             <tr class="table-active">
                                 <th>Les compétences</th>
-                                <th>Niveau</th>
-                                <th>Catégorie</th>
+                                <th>Acquis en %</th>
+                                
                                
                             </tr>
                         </thead><!-- fin <thead> -->
@@ -62,8 +62,8 @@
                         ?>
                             <tr>
                                 <td><?php echo $ligne_competence['competence']; ?></td>
-                                <td><?php echo $ligne_competence['niveau']; ?></td>
-                                <td><?php echo $ligne_competence['categorie']; ?></td>
+                                <td><?php echo $ligne_competence['niveau']; ?> %</td>
+                                
                              
                             </tr>
                             <?php 

@@ -36,7 +36,7 @@
         ?>
     
     <div class="t_exp">
-            <table class="table table-light table-hover" border="1"><!-- début <table> -->
+            <table class="table table-light table-hover border border-primary"  border="1"><!-- début <table> -->
             
                 <thead class="experiences">
                     <tr>
