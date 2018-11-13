@@ -105,7 +105,7 @@ if (isset($_GET['id_formation'])) { // on récupère ce que je supprime dans l'u
                 <table class="table table-dark table-responsive" border="1">
                 <caption><?php echo $nbr_formations; ?> formations</caption>
                     <thead>
-                        <tr class="text-primary">
+                        <tr class="tr_form">
                             <th>Titre </th>
                             <th>Sous titre </th>
                             <th>Date</th>

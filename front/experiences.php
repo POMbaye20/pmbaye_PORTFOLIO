@@ -18,9 +18,8 @@
 
     <div class="jumbotron experiences"><!-- début .jumbotron -->
         <h1 class="display-4">Expériences <i class="fas fa-briefcase"></i></h1>
-        <p class="lead">Les expériences acquises dans différents domaines comme la vente en surface lors des périodes de stages, en gare et actuellement dans le développement et intégration web</p>
-        <hr class="my-4">
-        <p>Tableau ci-dessous</p>
+        <p class="lead">Acquises dans différents domaines comme la vente en surface lors des périodes de stages, en gare et actuellement dans le développement et intégration web</p>
+        
     </div><!-- fin ..jumbotron -->
 
 

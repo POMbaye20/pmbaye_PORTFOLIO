@@ -91,6 +91,11 @@ th {
     text-align: center; 
 }
 
+.tr_form {
+    background: black;
+    color: #fff;
+}
+
 /* experiences.php */
 .experiences {
     text-align: center;

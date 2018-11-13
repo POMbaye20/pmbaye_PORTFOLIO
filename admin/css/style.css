@@ -10,9 +10,6 @@ nav {
 
 }
 
-a:hover {
-    /* background: skyblue; */
-}
 
 body {
     font-family: 'Roboto Slab', serif;
@@ -50,6 +47,11 @@ body {
 .form_formation {
     text-align: center; 
 }
+
+.tr_form { 
+    background: black;
+    color: #fff;
+ }
     
 
 /************************************************** loisirs.php **************************************************/

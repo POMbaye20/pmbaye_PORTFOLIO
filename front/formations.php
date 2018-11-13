@@ -38,7 +38,7 @@
                 <table class="table table-light table-responsive bg-dark text-white" border="1">
                 
                     <thead>
-                        <tr class="text-primary">
+                        <tr class="tr_form">
                             <th>Titre</th>
                             <th>Sous titre</th>
                             <th>Date </th>
