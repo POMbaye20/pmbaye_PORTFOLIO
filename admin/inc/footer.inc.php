@@ -10,8 +10,8 @@
            <a href="https:github.com/POMbaye20" target="_blank"> <i class="fab github fa-github"></i></a>
     </div>
     <div class="col-sm">
-      <p class="mt-4">Me contacter <i class="fas fa-envelope"></i></p> 
-      <p>papaoumar.mbaye@laposte.net</p> 
+      <p class="mt-4">2018/2019 </p> 
+      <p>Page admin</p> 
     </div>
   </div><!-- fin .row -->
 </div><!-- fin .container pour le footer -->

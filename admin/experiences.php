@@ -74,6 +74,8 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
     <link rel="stylesheet" href="css/style.css">
      <!-- ck editor 4 -->
      <script src="ckeditor/ckeditor.js"></script>
+
+
     <title>Admin Expériences :   <?php echo $ligne_utilisateur['pseudo']; ?></title>
 </head>
 <body>
@@ -124,7 +126,7 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
                         <td><?php echo $ligne_experience['dates_exp']; ?></td>
                         <td><?php echo $ligne_experience['description_exp']; ?></td>
                         <td><a href="modif_experience.php?id_experience=<?php echo $ligne_experience['id_experience']; ?> " ><i class="fas fa-edit"></i></a></td>
-                        <td><a href="experiences.php?id_experience=<?php echo $ligne_experience['id_experience']; ?> " ><i class="fas fa-trash text-danger"></i></a></td>
+                        <td><a href="experiences.php?id_experience=<?php echo $ligne_experience['id_experience']; ?> " onclick="return(confirm('Etes-vous certain de vouloir supprimer cette expérience ?'))" ><i class="fas fa-trash text-danger"></i></a></td>
                     </tr>
                     <?php 
                         }  // fin de la boucle while

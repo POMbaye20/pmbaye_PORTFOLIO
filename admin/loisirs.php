@@ -134,7 +134,7 @@ if (isset($_GET['id_loisir'])) { // on récupère ce que je supprime dans l'url 
                                         <tr>
                                             <td><?php echo $ligne_loisir['loisir']; ?></td>
                                             <td><a href="modif_loisir.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?> " ><i class="fas fa-edit"></i></a></td>
-                                            <td><a href="loisirs.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?> " ><i class="fas fa-trash text-danger"></i></a></td>
+                                            <td><a href="loisirs.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?>" onclick="return(confirm('Etes-vous certain de vouloir supprimer ce loisir ?'))" ><i class="fas fa-trash text-danger"></i></a></td>
                                         </tr>
                     
                                         <?php 
@@ -158,7 +158,7 @@ if (isset($_GET['id_loisir'])) { // on récupère ce que je supprime dans l'url 
                             </div>
                     
                                 <div class="mt-4">
-                                    <button class="btn btn-success" type="submit">Insérer</button>
+                                    <button class="btn btn-success" type="submit" onclick="return(confirm('Félicitations ! Le losir a bien été inséré'))">Insérer</button>
                                 </div>
                             </form>
                     </div><!-- fin col 2 -->
