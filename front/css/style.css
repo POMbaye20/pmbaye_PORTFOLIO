@@ -55,7 +55,7 @@ th {
 
 /* competences.php  */
 .competences {
-    background: linear-gradient(lightgrey, lightyellow);
+    background: linear-gradient(rgb(211, 211, 211), rgb(224, 236, 255));
     text-align: center;
 }
 
