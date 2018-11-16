@@ -1,4 +1,7 @@
 <?php require 'connexion.php'; 
+
+
+
  
 // insertion d'un formulaire
 if (isset($_POST['nom'])) { // si on a reçu un nouveau message
@@ -16,6 +19,22 @@ if (isset($_POST['nom'])) { // si on a reçu un nouveau message
     } // ferme le if n'est pas vide
 } // fin de isset($_POST['nom'])
 
+
+// pour fabriquer l'email que l'on reçoit
+    $entete = "";
+    $entete .= "";
+    $entete .= "";
+    $entete .= "";
+    $entete .= "";
+
+
+    $corps ="";
+    $corps .="";
+    $corps .="";
+    $corps .="";
+    $corps .="";
+
+
 // suppresion d'un élément de la BDD
 if (isset($_GET['id_message'])) { // on récupère ce que je supprime dans l'url par son id
     $efface = $_GET['id_message']; // je passe l'id dans une variable $efface
@@ -26,6 +45,9 @@ if (isset($_GET['id_message'])) { // on récupère ce que je supprime dans l'url
     header("location: ../admin/messages.php");
     
 }   // fin de isset($_GET['id_message']) pour la suppresion
+
+
+
 
 
 ?>
