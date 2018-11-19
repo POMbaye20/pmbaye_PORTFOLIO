@@ -20,19 +20,28 @@ if (isset($_POST['nom'])) { // si on a reçu un nouveau message
 } // fin de isset($_POST['nom'])
 
 
+// ************************ Début pour le mail ************************
+
 // pour fabriquer l'email que l'on reçoit
-    $entete = "";
-    $entete .= "";
-    $entete .= "";
-    $entete .= "";
-    $entete .= "";
+    $entete = "From: page patrick isola <papaoumar.mbaye@laposte.net>\r\n";
+    $entete .= "Reply-To: papaoumar.mbaye@laposte.net\r\n";
+    $entete .= "MIME-version: 1.0\r\n";
+    $entete .= "Content-Type: text/html; charset=\"UTF-8\""."\n";
+    $entete .= "Content-Transfer-Encoding: 8bit";
 
 
-    $corps ="";
-    $corps .="";
-    $corps .="";
-    $corps .="";
-    $corps .="";
+    $corps ="Nouveau message : '.$nom.' vient d\'écrire.";
+    $corps .="<br>Nom : <strong>".$nom.'</strong><br> ';
+    $corps .="Courriel : <em>".$email.'</em><br>';
+    $corps .="Message. : ".$message.'<br>';
+
+    mail('papaoumar.mbaye@laposte.net','Message de : '.$nom, $corps, $entete);
+
+
+    header("location: index.php");
+            exit();
+            
+    // ******************** Fin pour le mail ********************
 
 
 // suppresion d'un élément de la BDD
