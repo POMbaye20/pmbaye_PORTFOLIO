@@ -113,6 +113,10 @@ th {
     background: linear-gradient(lightsalmon, lightskyblue);
 }
 
+.send {
+    margin: 0 auto;
+}
+
 
 /******************************************************************* Footer  *******************************************************************/
 .footer-front {

@@ -1,4 +1,4 @@
-<?php require 'connexion.php'; 
+ <?php require 'connexion.php'; 
 
 
 
@@ -13,47 +13,34 @@ if (isset($_POST['nom'])) { // si on a reçu un nouveau message
         $message = addslashes($_POST['message']);
         $pdoCV -> exec(" INSERT INTO t_messages VALUES (NULL, '$nom', '$email', '$sujet', '$message') ");
 
-        header("location: ../front/index.php");
-            exit(); 
-
-    } // ferme le if n'est pas vide
-} // fin de isset($_POST['nom'])
-
-
-// ************************ Début pour le mail ************************
-
-// pour fabriquer l'email que l'on reçoit
-    $entete = "From: page patrick isola <papaoumar.mbaye@laposte.net>\r\n";
+       // pour fabriquer l'email que l'on reçoit
+    $entete = "From: page papaoumar mbaye <papaoumar.mbaye@laposte.net>\r\n";
     $entete .= "Reply-To: papaoumar.mbaye@laposte.net\r\n";
     $entete .= "MIME-version: 1.0\r\n";
     $entete .= "Content-Type: text/html; charset=\"UTF-8\""."\n";
     $entete .= "Content-Transfer-Encoding: 8bit";
 
 
-    $corps ="Nouveau message : '.$nom.' vient d\'écrire.";
+    $corps ="Nouveau message : ".$nom.' vient d\'écrire.';
     $corps .="<br>Nom : <strong>".$nom.'</strong><br> ';
     $corps .="Courriel : <em>".$email.'</em><br>';
+    $corps .="Sujet : <em>".$sujet.'</em><br>';
     $corps .="Message. : ".$message.'<br>';
 
     mail('papaoumar.mbaye@laposte.net','Message de : '.$nom, $corps, $entete);
 
+    $versleclient='Bonjour <br> Merci pour votre message <br>';
+    $versleclient.='Je vous contacte très vite ! Merci';
+    $versleclient.='<br><a href=\"https://www.pmbaye.fr\">www.pmbaye.fr</a>';
+
+    mail($email, 'Depuis le site www.pmbaye.fr', $versleclient, $entete);
+
 
     header("location: index.php");
             exit();
-            
-    // ******************** Fin pour le mail ********************
 
-
-// suppresion d'un élément de la BDD
-if (isset($_GET['id_message'])) { // on récupère ce que je supprime dans l'url par son id
-    $efface = $_GET['id_message']; // je passe l'id dans une variable $efface
-
-    $sql = " DELETE FROM t_messages WHERE id_message = '$efface' "; // delete de la base 
-    $pdoCV -> query($sql); // on peut le faire avec exec également
-
-    header("location: ../admin/messages.php");
-    
-}   // fin de isset($_GET['id_message']) pour la suppresion
+    } // ferme le if n'est pas vide
+} // fin de isset($_POST['nom'])
 
 
 
@@ -91,31 +78,34 @@ if (isset($_GET['id_message'])) { // on récupère ce que je supprime dans l'url
         
            <div class="container-fluid col-lg-6 message"><!-- début .container-fluid -->
           
-                <h2>Renseignez les informations suivantes</h2>
+                <h2 class="text-center">Renseignez les informations suivantes</h2>
     
                     <form class="form_message mt-4" action="messages.php" method="post">
-                    <div class="form-group">
-                            <label for="nom">Nom</label>                
-                            <input type="text" name="nom" placeholder="Nom" class="form-control" required>    
-                    </div>
-                
-                        <div class="form-group">
-                            <label for="email">Email <i class="fas fa-at"></i></label>                
-                            <input type="text" name="email" placeholder="xxx@xxx.fr" class="form-control" required>    
-                    </div>
-                
-                        <div class="form-group">
-                            <label for="sujet">Sujet</label>                
-                            <input type="text" name="sujet" placeholder="Le sujet du message" class="form-control" required>    
-                    </div>
-                
-                        <div class="form-group">
-                            <label for="message">Le message</label>                
-                            <textarea name="message" class="form-control"></textarea>
-                    </div>
-                        <div class="mb-4">
-                            <button class="btn btn-success mb-4" type="submit">Envoyer</button>
+                   <div class="form-row">
+                        <div class="form-group col-md-4">
+                                <label for="nom">Nom</label>                
+                                <input type="text" name="nom" placeholder="Nom" class="form-control" required>    
                         </div>
+                    
+                        <div class="form-group col-md-4">
+                                <label for="email">Email <i class="fas fa-at"></i></label>                
+                                <input type="text" name="email" placeholder="xxx@xxx.fr" class="form-control" required>    
+                        </div>
+                    
+                        <div class="form-group col-md-4">
+                                <label for="sujet">Sujet</label>                
+                                <input type="text" name="sujet" placeholder="Le sujet du message" class="form-control" required>    
+                        </div>
+                    
+                        <div class="form-group col-md-12">
+                                <label for="message">Le message</label>                
+                                <textarea name="message" class="form-control"></textarea>
+                        </div>
+                        
+                            <div class="mb-4 send">
+                                <button class="btn btn-success mb-4 " type="submit">Envoyer</button>
+                            </div>
+                   </div>
                     </form>
     
            </div><!-- fin .container-fluid -->
