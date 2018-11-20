@@ -3,6 +3,10 @@ main {
     
 }
 
+
+
+
+
 body {
     min-height: 92vh;
     font-family: 'Montserrat', sans-serif; 
@@ -41,7 +45,7 @@ th {
 .the_card:hover {
     background: lightskyblue;
     transform: scale(1.1);
-    transition-duration: 1s;  
+    transition-duration: 1s; /* Transition de 1 seconde */ 
 }
 
 

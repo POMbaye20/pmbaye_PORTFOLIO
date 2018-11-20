@@ -59,7 +59,7 @@ if (isset($_POST['nom'])) { // si on a reçu un nouveau message
 
     <title>Contact</title>
 </head>
-<body>
+<body style="background:#FFEBCD">
 
     <main><!-- début <main> -->
 
