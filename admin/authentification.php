@@ -59,7 +59,7 @@ if (isset($_POST['connexion'])) {
         <div style="background-image: url(images/arka.jpg); background-attachment: fixed; background-size: cover; width: 100%; height: 100vh; position: relative;" >
 
             <div class="baslik"><!-- début de .baslik -->
-                <b style="font-size: 101px; text-align: center; margin-bottom: -21px; display: block;">Admin</b>
+                <b style="font-size: 101px; text-align: center; margin-bottom: -21px; display: block;">Ma page Admin</b>
                 <span style="font-size: 19px; text-align: center; display: block; margin-bottom: 25px;"><i class="fas fa-sign-in-alt"></i></span>
             </div><!-- fin de  de .baslik -->
 
@@ -68,15 +68,14 @@ if (isset($_POST['connexion'])) {
                 <form method="post" action="authentification.php"><!-- début <form> -->
                     <div class="arkalogin">
                         <div class="loginbaslik text-center">Se connecter ici</div>
-                        <hr style="border: 1px solid #ccc;">
 
                         <i class="fas fa-at"></i>
                         <input class="giris" type="text" name="email" placeholder="Votre email">
 
                         <i class="fas fa-key"></i>
-                        <input class="giris" type="password" name="mdp" placeholder="Votre mot de passe">
+                        <input class="giris" type="password" name="mdp" placeholder="Votre mot de passe"> 
                         
-                        <a href="https://dogukankeskin.com" target="blank"><input class="butonlogin" type="submit" name="connexion" value="Se connecter"></a>
+                        <a href="https://dogukankeskin.com" target="blank"><input class="butonlogin mb-4" type="submit" name="connexion" value="Se connecter"></a>
                     </div>
                 </form><!-- fin </form> -->
 
@@ -84,11 +83,10 @@ if (isset($_POST['connexion'])) {
             
             <br>
 
-            <span style="font-size: 23px; text-align: center; display: block; color: #E6E6E6;">Bienvenue dans ton admin ! <i class="fas fa-user"></i></span>
+            <span style="font-size: 23px; text-align: center; display: block; color: #E6E6E6;">Bienvenue dans le back ! <i class="fas fa-user"></i></span>
 
             <span style="font-size: 24px; text-align: center; display: block; color: #fff; font-weight: bold; margin-bottom: 34px;">Connexion ! <i class="fas fa-sign-in-alt"></i></span>
 
-            <span style="font-size: 17px; text-align: center; display: block; color: #fff;">Site Portfolio en cours </span>
 
         </div>
 

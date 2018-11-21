@@ -14,58 +14,60 @@
 </head>
 <body>
 
-    <?php require 'inc/navigation.inc.php'; ?>
-
-    <div class="jumbotron experiences"><!-- début .jumbotron -->
-        <h1 class="display-4">Expériences <i class="fas fa-briefcase"></i></h1>
-        <p class="lead">Acquises dans différents domaines comme la vente en surface lors des périodes de stages, en gare et actuellement dans le développement et intégration web</p>
-        
-    </div><!-- fin ..jumbotron -->
-
-
-<div class="container-fluid col-lg-6 col-md-12"><!-- début container-fluid -->
+    <main>
+        <?php require 'inc/navigation.inc.php'; ?>
     
-
-    
-        <?php 
-            //requête popur compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
-            $sql = $pdoCV -> prepare("SELECT * FROM t_experiences WHERE id_utilisateur=1");
-            $sql -> execute();
-           
-        ?>
-    
-    <div class="t_exp">
-            <table class="table table-light table-hover border border-primary"  border="1"><!-- début <table> -->
+        <div class="jumbotron experiences"><!-- début .jumbotron -->
+            <h1 class="display-4">Expériences <i class="fas fa-briefcase"></i></h1>
+            <p class="lead">Acquises dans différents domaines comme la vente en surface lors des périodes de stages, en gare et actuellement dans le développement et intégration web</p>
             
-                <thead class="experiences">
-                    <tr>
-                        <th>Titre</th>
-                        <th>Sous titre</th>
-                        <th>Date</th>
-                        <th>Description</th>           
-                    </tr>
-                </thead>
+        </div><!-- fin ..jumbotron -->
+    
+    
+    <div class="container-fluid col-lg-6 col-md-12"><!-- début container-fluid -->
         
-                <tbody>
-                <?php  while($ligne_experience = $sql -> fetch()) 
-                    {
-                ?>
-                    <tr>
-                        <td><?php echo $ligne_experience['titre_exp']; ?></td>
-                        <td><?php echo $ligne_experience['stitre_exp']; ?></td>
-                        <td><?php echo $ligne_experience['dates_exp']; ?></td>
-                        <td><?php echo $ligne_experience['description_exp']; ?></td>
-                    </tr>
-
-                    <?php 
-                        }  // fin de la boucle while
+    
+        
+            <?php 
+                //requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a un prépare
+                $sql = $pdoCV -> prepare("SELECT * FROM t_experiences WHERE id_utilisateur=1");
+                $sql -> execute();
+               
+            ?>
+        
+        <div class="t_exp">
+                <table class="table table-light table-responsive table-hover border border-primary"  border="1"><!-- début <table> -->
+                
+                    <thead class="experiences">
+                        <tr>
+                            <th>Titre</th>
+                            <th>Sous titre</th>
+                            <th>Date</th>
+                            <th>Description</th>           
+                        </tr>
+                    </thead>
+            
+                    <tbody>
+                    <?php  while($ligne_experience = $sql -> fetch()) 
+                        {
                     ?>
-                </tbody>
-            
-            </table><!-- fin </table> -->
-    </div>
-       
+                        <tr>
+                            <td><?php echo $ligne_experience['titre_exp']; ?></td>
+                            <td><?php echo $ligne_experience['stitre_exp']; ?></td>
+                            <td><?php echo $ligne_experience['dates_exp']; ?></td>
+                            <td><?php echo $ligne_experience['description_exp']; ?></td>
+                        </tr>
+    
+                        <?php 
+                            }  // fin de la boucle while
+                        ?>
+                    </tbody>
+                
+                </table><!-- fin </table> -->
+        </div>
+           
 
-</div><!-- fin .container-fluid -->
+    </div><!-- fin .container-fluid -->
 
+</main>  
 <?php require 'inc/footer.inc.php'; ?>

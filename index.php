@@ -20,45 +20,49 @@
     
     
             <div class="jumbotron home"><!-- début .jumbotron -->
-                <h1 class="display-4">Papaoumar Mbaye <?= date('Y') - 1994  ?> ans Développeur - Intégrateur Web</h1>                   
+                <h1 class="display-4 title_home">Papaoumar Mbaye <?= date('Y') - 1994  ?> ans Développeur - Intégrateur Web</h1>   
+                <h5><i class="fas fa-map-marker-alt"></i> Paris, Ile-de-France</h5>   
+                         
             </div><!-- fin .jumbotron -->
 
             
     
     
     
-       <div class="container col-lg-9">
-            <div class="card-deck mt-4 mb-4"><!-- début .card-deck -->
+       <div class="container col-lg-9 col-sm-12">
+            <div class="card-deck mt-4 mb-4 "><!-- début .card-deck -->
         
-                <div class="card the_card"><!-- début 1st card -->
-                    <img class="card-img-top" src="img/competences.png" alt="Les compétences">
-                        <div class="card-body">
-                            <h5 class="card-title">Compétences</h5>
-                            <p class="card-text">Les compétences que j'ai pu acquérir au cours de mes expériences professionnelles</p>
-                            <a href="competences.php "><p class="card-text "><small class="text-danger ">Voir mes compétences</small></p></a>
-                        </div>
-                </div><!-- fin 1st card -->
-        
-        
-                <div class="card the_card"><!-- début 2nd card -->
-                        <img class="card-img-top" src="img/work-experience.jpg" alt="Experiences professionnelles">
+              <div class="row mx-auto">
+                    <div class="card the_card col-sm-12"><!-- début 1st card -->
+                        <img class="card-img-top" src="img/competences.png" alt="Les compétences">
                             <div class="card-body">
-                                <h5 class="card-title">Expériences professionnelles</h5>
-                                <p class="card-text">Ce que j'ai pu acquérir au cours de mes stages en entreprises, où les différents emplois</p>
-                                <a href="experiences.php"><p class="card-text"><small class="text-danger">Voir le tableau</small></p></a>
+                                <h5 class="card-title">Compétences</h5>
+                                <p class="card-text">Les compétences que j'ai pu acquérir au cours de mes expériences professionnelles</p>
+                                <a href="competences.php "><p class="card-text "><small class="text-danger ">Voir mes compétences</small></p></a>
                             </div>
-                </div>
-        
-        
-                <div class="card the_card"><!-- début 3rd card -->
-                        <img class="card-img-top" src="img/formations.jpg" alt="Formations">
-                            <div class="card-body">
-                                <h5 class="card-title">Formations</h5>
-                                <p class="card-text">Mes formations effectuées en amont</p>
-                                <a href="formations.php"><p class="card-text"><small class="text-danger">Lien vers la page</small></p></a>
-                            </div>
-                </div><!-- fin 3rd card -->
-        
+                    </div><!-- fin 1st card -->
+            
+            
+                    <div class="card the_card col-sm-12"><!-- début 2nd card -->
+                            <img class="card-img-top" src="img/work-experience.jpg" alt="Experiences professionnelles">
+                                <div class="card-body">
+                                    <h5 class="card-title">Expériences professionnelles</h5>
+                                    <p class="card-text">Ce que j'ai pu acquérir au cours de mes stages en entreprises, où les différents emplois</p>
+                                    <a href="experiences.php"><p class="card-text"><small class="text-danger">Voir le tableau</small></p></a>
+                                </div>
+                    </div>
+            
+            
+                    <div class="card the_card col-sm-12"><!-- début 3rd card -->
+                            <img class="card-img-top" src="img/formations.jpg" alt="Formations">
+                                <div class="card-body">
+                                    <h5 class="card-title">Formations</h5>
+                                    <p class="card-text">Mes formations effectuées en amont</p>
+                                    <a href="formations.php"><p class="card-text"><small class="text-danger">Lien vers la page</small></p></a>
+                                </div>
+                    </div><!-- fin 3rd card -->
+            
+              </div><!-- fin .row -->
             </div><!-- fin .card-deck -->
        </div>
 
@@ -69,7 +73,6 @@
        </div>
 
    </main><!-- fin </main> -->
-
 
 
 
