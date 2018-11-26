@@ -76,7 +76,7 @@ if (isset($_POST['nom'])) { // si on a reçu un nouveau message
         
     
         
-           <div class="container-fluid col-lg-6 message"><!-- début .container-fluid -->
+           <div class="container-fluid col-lg-6 message mx-auto"><!-- début .container-fluid -->
           
                 <h2 class="text-center">Renseignez les informations suivantes</h2>
     

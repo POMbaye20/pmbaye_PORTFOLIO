@@ -19,9 +19,6 @@
     
         <div class="jumbotron formations "><!-- début .jumbotron -->
             <h1 class="display-4">Formations <i class="fas fa-graduation-cap"></i></h1>
-            <p class="lead">Les formations que j'ai faite avant d'intégrer l'univers du web, y compris celle-là que je fais actuellement</p>
-            <!-- <hr class="my-4"> -->
-            <!-- <p>Voir le tableau des formations ci-dessous</p> -->
         </div><!-- fin ..jumbotron -->
     
     
