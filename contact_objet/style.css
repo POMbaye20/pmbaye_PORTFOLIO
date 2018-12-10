@@ -1,0 +1,7 @@
+body{
+    margin-top: 10vh;
+    /* background: url('bg.jpg') repeat; */
+}
+span.error{
+    color: red;
+}
