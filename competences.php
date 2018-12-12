@@ -49,8 +49,8 @@
                     
                         <thead>
                             <tr class="table-active">
-                                <th>Les compétences</th>
-                                <th>Acquis en %</th>
+                                <th>Langages de développement</th>
+                                <th>Compétences acquises en %</th>
                                 
                                
                             </tr>

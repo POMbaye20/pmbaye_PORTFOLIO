@@ -38,7 +38,7 @@
                         <tr class="tr_form">
                             <th>Titre</th>
                             <th>Sous titre</th>
-                            <th>Date </th>
+                            <th>Les dates </th>
                             <th>Description</th>
                            
                         </tr>

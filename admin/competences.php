@@ -154,7 +154,8 @@ if(isset($_GET['order']) && isset($_GET['column'])){	// début de if(isset($_GET
                                 <td><?php echo $ligne_competence['niveau']; ?></td>
                                 <td><?php echo $ligne_competence['categorie']; ?></td>
                                 <td><a href="modif_competence.php?id_competence=<?php echo $ligne_competence['id_competence']; ?> " ><i class="fas fa-edit"></i></a></td>
-                                <td><a href="competences.php?id_competence=<?php echo $ligne_competence['id_competence']; ?> " ><i class="fas fa-trash text-danger"></i></a></td>
+                                <td><a href="competences.php?id_competence=<?php echo $ligne_competence['id_competence']; ?> " onclick="return(confirm('Etes-vous certain de vouloir supprimer cette compétence ?'))" ><i class="fas fa-trash text-danger"></i></a></td>
+                                <!-- La ligne onclick="" permet de créer un alert afin d'avoir un message de confirmation si l'on veut bien supprimer la compétence selectionnée. -->
                             </tr>
                             <?php 
                                 }  // fin de la boucle while

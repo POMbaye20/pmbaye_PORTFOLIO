@@ -19,8 +19,7 @@
     
         <div class="jumbotron experiences"><!-- début .jumbotron -->
             <h1 class="display-4">Expériences <i class="fas fa-briefcase"></i></h1>
-            <p class="lead">Acquises dans différents domaines comme la vente en surface lors des périodes de stages, en gare et actuellement dans le développement et intégration web</p>
-            
+            <p class="lead">Acquises dans différents domaines comme la vente en surface lors des périodes de stages, en gare et actuellement dans le développement et intégration web</p>  
         </div><!-- fin ..jumbotron -->
     
     
@@ -40,10 +39,10 @@
                 
                     <thead class="experiences">
                         <tr>
-                            <th>Titre</th>
-                            <th>Sous titre</th>
-                            <th>Date</th>
-                            <th>Description</th>           
+                            <th>Entreprise</th>
+                            <th>Poste</th>
+                            <th>Les dates</th>
+                            <th>Description des missions</th>           
                         </tr>
                     </thead>
             

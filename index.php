@@ -66,6 +66,8 @@
             </div><!-- fin .card-deck -->
        </div>
 
+       <div class="telechargement"><p><a class="btn btn-primary" href="img/pmbaye_cv.pdf" ><i class="far fa-file-pdf"></i></a></p></div>
+
        <div class="mb-5 text-success">
            <!-- <p>Aller sur la navigation en haut de la page, pour retrouver les autres rubriques</p>
            <p>Egalement une page si vous souhaitez me contacter</p> -->

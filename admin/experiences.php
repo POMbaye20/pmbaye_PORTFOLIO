@@ -107,10 +107,10 @@ if (isset($_GET['id_experience'])) { // on récupère ce que je supprime dans l'
             <caption><?php echo $nbr_experiences; ?> expériences professionnelles</caption>
                 <thead>
                     <tr>
-                        <th>Titre</th>
-                        <th>Sous titre</th>
-                        <th>Date</th>
-                        <th>Description</th>
+                        <th>Titre / Entreprise</th>
+                        <th>Poste</th>
+                        <th>Les dates</th>
+                        <th>Description des missions</th> 
                         <th>Modification</th>
                         <th>Suppression</th>
                     </tr>
